@@ -23,10 +23,13 @@ project(
 )
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Core REQUIRED)
 
 get_target_property(Qt5Includes Qt5::Widgets INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(Qt5IncludesCore Qt5::Core INTERFACE_INCLUDE_DIRECTORIES)
 
 message(STATUS "Qt5Includes: ${Qt5Includes}")
+message(STATUS "Qt5IncludesCore: ${Qt5IncludesCore}")
 
 add_executable(
         ${PROJECT_NAME}
@@ -42,6 +45,7 @@ add_compile_options(
 include_directories(
         ${CMAKE_SOURCE_DIR}/src
         ${Qt5Includes}
+        ${Qt5IncludesCore}
 )
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/window)

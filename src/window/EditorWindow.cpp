@@ -5,6 +5,7 @@
 #include <QFileDialog>
 
 #include "EditorWindow.moc.h"
+#include "FilterCreator.h"
 
 EditorWindow::EditorWindow() : menus(*this)
 {
@@ -89,11 +90,11 @@ void EditorWindow::newTxt()
 void EditorWindow::openTxt()
 {
   auto filename = QFileDialog::getOpenFileName(
-this,
-tr("Open a text file"),
-"/",
-tr(defaultFileFilter)
-   );
+    this,
+    tr("Open a text file"),
+    "/",
+    FilterCreator::defaultTxtFilter()
+  );
 
   if (!filename.isEmpty())
   { openFile(filename); }
@@ -113,7 +114,7 @@ void EditorWindow::saveTxtAs()
 {
   QString filename = QFileDialog::getSaveFileName(this, tr("Save File As"),
                                                   "/home/",
-                                                  defaultFileFilter);
+                                                  FilterCreator::defaultTxtFilter());
 
   if (filename.isEmpty())
   { return ; }

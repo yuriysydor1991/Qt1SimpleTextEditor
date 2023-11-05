@@ -19,15 +19,21 @@ add_custom_target(
 )
 
 add_compile_options(
-        -I${CMAKE_BINARY_DIR}/src/window
         -fPIC
 )
 
 add_library(
         ${QT_WINDOW_LIB_TARGET}
         OBJECT
+        FilterCreator.cpp
         EditorWindow.cpp
         WindowFactory.cpp
+)
+
+target_include_directories(
+        ${QT_WINDOW_LIB_TARGET}
+        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+        PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 add_dependencies(
@@ -35,4 +41,4 @@ add_dependencies(
         ${QT_WINDOW_TARGET}
 )
 
-add_subdirectory(embalishers)
+add_subdirectory(embellishers)

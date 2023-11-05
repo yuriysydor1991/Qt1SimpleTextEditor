@@ -7,7 +7,11 @@
 
 
 class FilterCreator {
+public:
 
+  FilterCreator() = default ;
+
+  static const char* defaultTxtFilter () ;
 };
 
 

@@ -42,7 +42,7 @@ private slots:
 private:
 
   static constexpr const char* defaultStatus = "<No file opened>" ;
-  static constexpr const char* defaultFileFilter = "Text Files (*.txt *.csv *.xml *.html *.css *.h *.cpp *.cxx *.c *.js)" ;
+
 
   QFile file;
 

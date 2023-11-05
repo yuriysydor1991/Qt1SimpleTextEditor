@@ -12,8 +12,8 @@ message(STATUS "Qt5AUTOMOC_EXECUTABLE: ${Qt5AUTOMOC_EXECUTABLE}")
 
 add_custom_target(
         ${QT_WINDOW_TARGET}
-        COMMAND ${Qt5AUTOMOC_EXECUTABLE} "${CMAKE_SOURCE_DIR}/src/window/EditorWindow.h" -o EditorWindow.moc.h
-        BYPRODUCTS ${CMAKE_BINARY_DIR}/src/window/EditorWindow.moc.h
+        COMMAND ${Qt5AUTOMOC_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/EditorWindow.h" -o EditorWindow.moc.h
+        BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/EditorWindow.moc.h
         SOURCES EditorWindow.h
         COMMENT "QT5 window header moc preprocess command"
 )
@@ -34,3 +34,5 @@ add_dependencies(
         ${QT_WINDOW_LIB_TARGET}
         ${QT_WINDOW_TARGET}
 )
+
+add_subdirectory(embalishers)

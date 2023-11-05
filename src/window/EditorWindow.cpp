@@ -6,15 +6,12 @@
 
 #include "EditorWindow.moc.h"
 
-EditorWindow::EditorWindow()
+EditorWindow::EditorWindow() : menus(*this)
 {
   setCentralWidget (&textEdit);
-  setMenuBar (&menuBar);
-  setStatusBar(&statusBar);
+  setStatusBar (&statusBar) ;
   statusBar.addPermanentWidget(&permanentStatus, 1);
 
-  entitleMenus();
-  packMenus ();
   connectMenus();
 
   showStatusMessage(defaultStatus);
@@ -61,6 +58,11 @@ bool EditorWindow::openFile(const QString& path)
 
 bool EditorWindow::clear()
 {
+  if (file.isOpen ())
+  {
+    // as the user about file close
+  }
+
   textEdit.clear();
   file.close();
   file.setFileName("");
@@ -70,51 +72,13 @@ bool EditorWindow::clear()
   return true ;
 }
 
-void EditorWindow::entitleMenus()
-{
-  topMFile.setTitle(tr("File"));
-  topMEdit.setTitle(tr("Edit"));
-  topMHelp.setTitle(tr("Help"));
-
-  fileNew.setText(tr("New"));
-  fileOpen.setText(tr("Open"));
-  fileSave.setText(tr("Save"));
-  fileSaveAs.setText(tr("SaveAs"));
-  fileClose.setText(tr("Close"));
-
-  editCopy.setText(tr("Copy"));
-  editCut.setText(tr("Cut"));
-  editPaste.setText(tr("Paste"));
-
-  helpAbout.setText(tr("About"));
-}
-
-void EditorWindow::packMenus ()
-{
-  menuBar.addMenu(&topMFile);
-  menuBar.addMenu(&topMEdit);
-  menuBar.addMenu(&topMHelp);
-
-  topMFile.addAction(&fileNew);
-  topMFile.addAction(&fileOpen);
-  topMFile.addAction(&fileSave);
-  topMFile.addAction(&fileSaveAs);
-  topMFile.addAction(&fileClose);
-
-  topMEdit.addAction(&editCopy);
-  topMEdit.addAction(&editCut);
-  topMEdit.addAction(&editPaste);
-
-  topMHelp.addAction(&helpAbout);
-}
-
 void EditorWindow::connectMenus()
 {
-  connect(&fileNew, SIGNAL(triggered()), this, SLOT(newTxt()));
-  connect(&fileClose, SIGNAL(triggered()), this, SLOT(newTxt()));
-  connect(&fileOpen, SIGNAL(triggered()), this, SLOT(openTxt()));
-  connect(&fileSave, SIGNAL(triggered()), this, SLOT(saveTxt()));
-  connect(&fileSaveAs, SIGNAL(triggered()), this, SLOT(saveTxtAs()));
+  connect(&menus.getFileNew(), SIGNAL(triggered()), this, SLOT(newTxt()));
+  connect(&menus.getFileClose(), SIGNAL(triggered()), this, SLOT(newTxt()));
+  connect(&menus.getFileOpen(), SIGNAL(triggered()), this, SLOT(openTxt()));
+  connect(&menus.getFileSave(), SIGNAL(triggered()), this, SLOT(saveTxt()));
+  connect(&menus.getFileSaveAs(), SIGNAL(triggered()), this, SLOT(saveTxtAs()));
 }
 
 void EditorWindow::newTxt()

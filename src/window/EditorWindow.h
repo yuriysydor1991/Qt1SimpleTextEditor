@@ -7,13 +7,12 @@
 
 #include <QMainWindow>
 #include <QTextEdit>
-#include <QMenuBar>
-#include <QMenu>
 #include <QStatusBar>
 #include <QLabel>
 #include <QFile>
 #include <QString>
-#include <QAction>
+
+#include "MenuEmbalisher.h"
 
 class EditorWindow: public QMainWindow
 {
@@ -48,28 +47,10 @@ private:
   QFile file;
 
   QTextEdit textEdit;
-  QMenuBar menuBar;
   QStatusBar statusBar;
   QLabel permanentStatus;
+  MenuEmbalisher menus ;
 
-  QMenu topMFile;
-  QMenu topMEdit;
-  QMenu topMHelp;
-
-  QAction fileNew;
-  QAction fileOpen;
-  QAction fileSave;
-  QAction fileSaveAs;
-  QAction fileClose;
-
-  QAction editCopy;
-  QAction editCut;
-  QAction editPaste;
-
-  QAction helpAbout;
-
-  void entitleMenus();
-  void packMenus () ;
   void connectMenus();
 
 };

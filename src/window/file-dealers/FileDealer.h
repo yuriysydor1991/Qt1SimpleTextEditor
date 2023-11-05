@@ -50,6 +50,8 @@ private:
 
   std::shared_ptr<IDealer> define_dealer(const QString &path);
 
+  QString get_home_folder () ;
+
 };
 
 

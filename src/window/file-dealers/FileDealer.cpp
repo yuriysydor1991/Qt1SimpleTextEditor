@@ -3,6 +3,7 @@
 //
 
 #include <QFileDialog>
+#include <QStandardPaths>
 
 #include "FileDealer.h"
 #include "FilterCreator.h"
@@ -36,13 +37,21 @@ bool FileDealer::newFile() {
   return clear();
 }
 
-bool FileDealer::openFile() {
-  QString folder{default_save_folder};
+QString FileDealer:: get_home_folder ()
+{
+  auto path = QStandardPaths::displayName (QStandardPaths::HomeLocation) ;
 
+  if (path.isEmpty ())
+  { path = default_save_folder ; }
+
+  return path ;
+}
+
+bool FileDealer::openFile() {
   auto filename = QFileDialog::getOpenFileName(
     &window.widget(),
     window.t("Open a text file"),
-    folder,
+    get_home_folder (),
     FilterCreator::defaultTxtFilter()
   );
 
@@ -69,12 +78,10 @@ bool FileDealer::saveFile() {
 }
 
 bool FileDealer::saveFileAs() {
-  QString folder{default_save_folder};
-
   QString filename = QFileDialog::getSaveFileName(
     &window.widget(),
     window.t("Save File As"),
-    folder,
+    get_home_folder (),
     FilterCreator::defaultTxtFilter()
   );
 

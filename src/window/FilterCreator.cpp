@@ -13,9 +13,9 @@ namespace {
   */
   static constexpr const char* defaultFileFilter
     = "All files (*)\n"
-      "Text files (*.txt *.ini *.conf *.xml *.json)\n"
+      "Text files (*.txt *.ini *.conf *.xml *.json *.md)\n"
       "Tables text files (*.csv *tsv)\n"
-      "Project files (README LICENSE AUTHORS .gitignore OWNERS WATCHLISTS DEPS)\n"
+      "Project files (README LICENSE AUTHORS .gitignore OWNERS WATCHLISTS DEPS UPDATING RELNOTES MAINTAINERS COPYRIGHT Makefile)\n"
       "Known text files ("
       "*.enc *.txt *.srt *.ris *.cm0013 *.1 *.vtt *.html *.vmg *.csv *.asc *.xml *.plist *.xlog *.ass "
       "*.sub *.rdf *.arff *.lst *.conf *.iif *.adoc *.asp *.textclipping *.wrl *.tbl *.htm *.bas *.md "
@@ -250,6 +250,8 @@ namespace {
       " *.ftr *.g1w *.hdl *.nunjs *.inspxeproj *.seestyle *.tes5pas *.wdgtproj *.urj *.djconfig "
       " *.dwav *.hemcr *.ad *.ads *.eql *.ap? *.djscript *.cp? *.dimg *.mac "
       " *.xmp *.jxl *.no *.gql "
+      // by me
+      " Makefile .puml"
       ")";
 }
 

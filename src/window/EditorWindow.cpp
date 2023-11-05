@@ -45,10 +45,10 @@ bool EditorWindow::openFile(const QString& path)
     return false ;
   }
 
-  while (!file.atEnd()) {
+  while (!file.atEnd())
+  {
     QString line = file.readLine() ;
-    line.resize(line.size() - 1);
-    textEdit.append(line);
+    textEdit.insertPlainText (line) ;
   }
 
   showStatusMessage(path);

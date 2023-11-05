@@ -5,121 +5,79 @@
 #include <QFileDialog>
 
 #include "EditorWindow.moc.h"
-#include "FilterCreator.h"
 
-EditorWindow::EditorWindow() : menus(*this)
-{
-  setCentralWidget (&textEdit);
-  setStatusBar (&statusBar) ;
+EditorWindow::EditorWindow() :
+  menus{*this},
+  dealer{*this} {
+  setCentralWidget(&textEdit);
+  setStatusBar(&statusBar);
   statusBar.addPermanentWidget(&permanentStatus, 1);
 
   connectMenus();
 
-  showStatusMessage(defaultStatus);
+  dealer.clear();
 }
 
-void EditorWindow::showStatusMessage(const char* status)
-{
+void EditorWindow::setMainMenu(QMenuBar &menu) {
+  setMenuBar(&menu);
+}
+
+QTextEdit &EditorWindow::getTextEdit() {
+  return textEdit;
+}
+
+void EditorWindow::showStatusMessage(const char *status) {
   showStatusMessage(QString(status));
 }
 
-void EditorWindow::showStatusMessage(const QString& status)
-{
-  permanentStatus.setText (status) ;
+void EditorWindow::showStatusMessage(const QString &status) {
+  permanentStatus.setText(status);
 }
 
-bool EditorWindow::openFile(const char* path)
-{
+bool EditorWindow::openFile(const char *path) {
   return openFile(QString(path));
 }
 
-bool EditorWindow::openFile(const QString& path)
-{
-  if (!file.fileName().isEmpty())
-  { file.close(); }
+bool EditorWindow::openFile(const QString &path) {
+  if (! clear()) { return false; }
 
-  file.setFileName(path);
-
-  if (!file.open(QIODevice::ReadWrite | QIODevice::Text))
-  {
-    showStatusMessage("Error while opening file: " + path);
-    return false ;
-  }
-
-  while (!file.atEnd())
-  {
-    QString line = file.readLine() ;
-    textEdit.insertPlainText (line) ;
-  }
-
-  showStatusMessage(path);
-
-  return true ;
+  return dealer.openFile(path);
 }
 
-bool EditorWindow::clear()
-{
-  if (file.isOpen ())
-  {
-    // as the user about file close
-  }
-
-  textEdit.clear();
-  file.close();
-  file.setFileName("");
-
-  showStatusMessage(defaultStatus);
-
-  return true ;
+bool EditorWindow::clear() {
+  return dealer.clear();
 }
 
-void EditorWindow::connectMenus()
-{
-  connect(&menus.getFileNew(), SIGNAL(triggered()), this, SLOT(newTxt()));
-  connect(&menus.getFileClose(), SIGNAL(triggered()), this, SLOT(newTxt()));
-  connect(&menus.getFileOpen(), SIGNAL(triggered()), this, SLOT(openTxt()));
-  connect(&menus.getFileSave(), SIGNAL(triggered()), this, SLOT(saveTxt()));
-  connect(&menus.getFileSaveAs(), SIGNAL(triggered()), this, SLOT(saveTxtAs()));
+void EditorWindow::connectMenus() {
+  connect(&menus.getFileNew(), SIGNAL(triggered()), this, SLOT(newFile()));
+  connect(&menus.getFileClose(), SIGNAL(triggered()), this, SLOT(newFile()));
+  connect(&menus.getFileOpen(), SIGNAL(triggered()), this, SLOT(openFile()));
+  connect(&menus.getFileSave(), SIGNAL(triggered()), this, SLOT(saveFile()));
+  connect(&menus.getFileSaveAs(), SIGNAL(triggered()), this, SLOT(saveFileAs()));
 }
 
-void EditorWindow::newTxt()
-{
+void EditorWindow::newFile() {
   clear();
 }
 
-void EditorWindow::openTxt()
-{
-  auto filename = QFileDialog::getOpenFileName(
-    this,
-    tr("Open a text file"),
-    "/",
-    FilterCreator::defaultTxtFilter()
-  );
+void EditorWindow::openFile() {
+  if (! clear()) { return; }
 
-  if (!filename.isEmpty())
-  { openFile(filename); }
+  dealer.openFile();
 }
 
-void EditorWindow::saveTxt()
-{
-  if (file.fileName().isEmpty())
-  { return ; }
-
-  QString data = textEdit.toPlainText();
-
-  file.write(data.toLocal8Bit());
+void EditorWindow::saveFile() {
+  dealer.saveFile();
 }
 
-void EditorWindow::saveTxtAs()
-{
-  QString filename = QFileDialog::getSaveFileName(this, tr("Save File As"),
-                                                  "/home/",
-                                                  FilterCreator::defaultTxtFilter());
+void EditorWindow::saveFileAs() {
+  dealer.saveFileAs();
+}
 
-  if (filename.isEmpty())
-  { return ; }
+QString EditorWindow::t(const char *txt) {
+  return tr(txt);
+}
 
-  openFile(filename);
-
-  saveTxt();
+QMainWindow &EditorWindow::widget() {
+  return *this;
 }

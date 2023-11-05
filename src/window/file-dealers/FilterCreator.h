@@ -9,9 +9,9 @@
 class FilterCreator {
 public:
 
-  FilterCreator() = default ;
+  FilterCreator() = default;
 
-  static const char* defaultTxtFilter () ;
+  static const char *defaultTxtFilter();
 };
 
 

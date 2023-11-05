@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.26.4)
 
 message(STATUS "QT_WINDOW_TARGET: ${QT_WINDOW_TARGET}")
 
-execute_process (
+execute_process(
         COMMAND which moc
         OUTPUT_VARIABLE Qt5AUTOMOC_EXECUTABLE
         OUTPUT_STRIP_TRAILING_WHITESPACE
@@ -25,7 +25,6 @@ add_compile_options(
 add_library(
         ${QT_WINDOW_LIB_TARGET}
         OBJECT
-        FilterCreator.cpp
         EditorWindow.cpp
         WindowFactory.cpp
 )
@@ -42,3 +41,4 @@ add_dependencies(
 )
 
 add_subdirectory(embellishers)
+add_subdirectory(file-dealers)

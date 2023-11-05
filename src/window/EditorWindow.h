@@ -12,44 +12,54 @@
 #include <QFile>
 #include <QString>
 
-#include "MenuEmbalisher.h"
+#include "IEditorWindow.h"
+#include "MenuEmbellisher.h"
+#include "FileDealer.h"
 
-class EditorWindow: public QMainWindow
-{
-  Q_OBJECT
+class EditorWindow :
+  public QMainWindow,
+  public IEditorWindow {
+Q_OBJECT
 
 public:
+
   EditorWindow();
 
-  void showStatusMessage(const char* status);
-  void showStatusMessage(const QString& status);
+  virtual void showStatusMessage(const char *status) override;
 
-  bool openFile(const char* path);
-  bool openFile(const QString& path);
+  virtual void showStatusMessage(const QString &status) override;
 
-  bool clear();
+  virtual bool openFile(const char *path) override;
+
+  virtual bool openFile(const QString &path) override;
+
+  virtual bool clear() override;
+
+  virtual void setMainMenu(QMenuBar &menu) override;
+
+  virtual QTextEdit &getTextEdit() override;
+
+  virtual QString t(const char *txt) override;
+
+  virtual QMainWindow &widget() override;
 
 private slots:
 
-  void newTxt();
+  void newFile();
 
-  void openTxt();
+  void openFile();
 
-  void saveTxt();
+  void saveFile();
 
-  void saveTxtAs();
+  void saveFileAs();
 
 private:
-
-  static constexpr const char* defaultStatus = "<No file opened>" ;
-
-
-  QFile file;
 
   QTextEdit textEdit;
   QStatusBar statusBar;
   QLabel permanentStatus;
-  MenuEmbalisher menus ;
+  MenuEmbellisher menus;
+  FileDealer dealer;
 
   void connectMenus();
 

@@ -8,16 +8,16 @@
 
 class WindowFactory {
 public:
-  explicit WindowFactory(int& argc, char** (&argv));
+  explicit WindowFactory(int &argc, char **(&argv));
 
   int run();
 
-  static int execute (int& argc, char** (&argv));
+  static int execute(int &argc, char **(&argv));
 
 private:
 
-  int& m_argc;
-  char** &m_argv;
+  int &m_argc;
+  char **&m_argv;
 };
 
 #endif //QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H

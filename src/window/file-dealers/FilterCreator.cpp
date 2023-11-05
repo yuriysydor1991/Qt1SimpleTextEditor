@@ -11,7 +11,7 @@ namespace {
    * https://www.file-extensions.org/filetype/extension/name/source-code-and-script-files/
    * for providing ALL the text files extensions available.
   */
-  static constexpr const char* defaultFileFilter
+  static constexpr const char *defaultFileFilter
     = "All files (*)\n"
       "Text files (*.txt *.ini *.conf *.xml *.json *.md)\n"
       "Tables text files (*.csv *tsv)\n"
@@ -255,7 +255,6 @@ namespace {
       ")";
 }
 
-const char* FilterCreator :: defaultTxtFilter ()
-{
-  return defaultFileFilter ;
+const char *FilterCreator::defaultTxtFilter() {
+  return defaultFileFilter;
 }

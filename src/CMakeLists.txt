@@ -22,6 +22,43 @@ else()
     )
 endif()
 
+# for doxygen documentation generation
+# not required to build the project
+# Doc output directory under CMAKE_BINARY_DIR
+find_program(
+        DOXYGEN_EXEC
+        doxygen
+)
+
+find_program(
+        GRAPHIZ_DOT_EXEC
+        dot
+)
+
+if (DOXYGEN_EXEC AND GRAPHIZ_DOT_EXEC)
+    message(STATUS "Doxygen: " ${DOXYGEN_EXEC})
+    message(STATUS "Doxygen input configure file: " ${DOXYGEN_CONF_INPUT})
+    message(STATUS "Doxygen configure file: " ${DOXYGEN_CONF_OUTPUT})
+
+    configure_file(
+            ${DOXYGEN_CONF_INPUT}
+            ${DOXYGEN_CONF_OUTPUT}
+    )
+
+    add_custom_target (
+            Doxygen-doc
+            COMMAND ${DOXYGEN_EXEC} ${DOXYGEN_CONF_OUTPUT}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    )
+else()
+    message(WARNING
+            "No doxygen or graphiz' dot executable found.\n"
+            "No code documentation generation target will be declared.\n"
+            "if you want to generate documentation, please, install doxygen and graphviz by a command:\n"
+            "sudo apt-get install -y doxygen graphviz"
+    )
+endif()
+
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Core REQUIRED)
 

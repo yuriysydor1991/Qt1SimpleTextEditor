@@ -12,6 +12,17 @@ set(
         QT_WINDOW_LIB_TARGET "QtWindowLibraryTarget"
         CACHE STRING "Qt window target object file library target"
 )
+set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}" CACHE STRING "Doxygen documentation output if any.")
+set(DOXYGEN_TAB_SIZE "2" CACHE STRING "Doxygen documentation tab size if any.")
+set(DOXYGEN_INLINE_SOURCES "YES" CACHE STRING "Include source code into doxygen documentaiton if any.")
+set(
+        DOXYGEN_CONF_OUTPUT "${CMAKE_BINARY_DIR}/Doxygen"
+        CACHE STRING "Doxygen documentation output configure file if any."
+)
+set(
+        DOXYGEN_CONF_INPUT "${CMAKE_SOURCE_DIR}/Doxygen.in"
+        CACHE STRING "Doxygen documentation input configure file if any."
+)
 
 message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
 

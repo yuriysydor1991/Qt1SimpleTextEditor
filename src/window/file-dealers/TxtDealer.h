@@ -7,15 +7,14 @@
 
 #include <QFile>
 
-#include "IEditorWindow.h"
 #include "IDealer.h"
+#include "IEditorWindow.h"
 
 class TxtDealer : public IDealer {
-public:
+ public:
+  TxtDealer(IEditorWindow& main);
 
-  TxtDealer(IEditorWindow &main);
-
-  virtual bool openFile(const QString &path) override;
+  virtual bool openFile(const QString& path) override;
 
   virtual bool newFile() override;
 
@@ -25,23 +24,20 @@ public:
 
   virtual bool saveFileAs() override;
 
-  virtual bool saveFileAs(const QString &path) override;
+  virtual bool saveFileAs(const QString& path) override;
 
   virtual bool clear() override;
 
   virtual bool isOpen() override;
 
-  virtual QString filename () override;
+  virtual QString filename() override;
 
-private:
-
-  IEditorWindow &window;
+ private:
+  IEditorWindow& window;
 
   QFile file;
 
-  bool hideOpen(const QString &path);
-
+  bool hideOpen(const QString& path);
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_TXTDEALER_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_TXTDEALER_H

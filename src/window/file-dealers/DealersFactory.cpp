@@ -2,17 +2,18 @@
 // Created by cc on 05.11.23.
 //
 
-#include <memory>
+#include "DealersFactory.h"
 
 #include <QFileInfo>
+#include <memory>
 
-#include "DealersFactory.h"
-#include "TxtDealer.h"
 #include "IEditorWindow.h"
+#include "TxtDealer.h"
 
-DealersFactory::DealersFactory(IEditorWindow &main) : window{main} {}
+DealersFactory::DealersFactory(IEditorWindow& main) : window{main} {}
 
-std::shared_ptr<IDealer> DealersFactory::dealer_by_ext(const QString &filepath) {
+std::shared_ptr<IDealer> DealersFactory::dealer_by_ext(
+    const QString& filepath) {
   // QFileInfo finfo(filepath) ;
   // returns txt
   // QString ext = finfo.completeSuffix() ;

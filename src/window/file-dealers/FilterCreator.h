@@ -5,14 +5,11 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H
 #define QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H
 
-
 class FilterCreator {
-public:
-
+ public:
   FilterCreator() = default;
 
-  static const char *defaultTxtFilter();
+  static const char* defaultTxtFilter();
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H

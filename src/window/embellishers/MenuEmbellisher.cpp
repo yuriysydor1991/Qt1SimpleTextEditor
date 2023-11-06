@@ -4,22 +4,22 @@
 
 #include "MenuEmbellisher.h"
 
-MenuEmbellisher::MenuEmbellisher(IEditorWindow &main) : window{main} {
+MenuEmbellisher::MenuEmbellisher(IEditorWindow& main) : window{main} {
   entitleMenus();
   packMenus();
 
   window.setMainMenu(menuBar);
 }
 
-QAction &MenuEmbellisher::getFileNew() { return fileNew; }
+QAction& MenuEmbellisher::getFileNew() { return fileNew; }
 
-QAction &MenuEmbellisher::getFileOpen() { return fileOpen; }
+QAction& MenuEmbellisher::getFileOpen() { return fileOpen; }
 
-QAction &MenuEmbellisher::getFileClose() { return fileClose; }
+QAction& MenuEmbellisher::getFileClose() { return fileClose; }
 
-QAction &MenuEmbellisher::getFileSave() { return fileSave; }
+QAction& MenuEmbellisher::getFileSave() { return fileSave; }
 
-QAction &MenuEmbellisher::getFileSaveAs() { return fileSaveAs; }
+QAction& MenuEmbellisher::getFileSaveAs() { return fileSaveAs; }
 
 void MenuEmbellisher::entitleMenus() {
   topMFile.setTitle(window.t("File"));

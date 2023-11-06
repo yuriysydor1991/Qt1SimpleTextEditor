@@ -8,15 +8,14 @@
 #include <QString>
 
 class IDealer {
-public:
-
+ public:
   IDealer() = default;
 
   virtual ~IDealer() = default;
 
   // true on success,
   // on a failure - everything else
-  virtual bool openFile(const QString &path) = 0;
+  virtual bool openFile(const QString& path) = 0;
 
   virtual bool newFile() = 0;
 
@@ -26,15 +25,13 @@ public:
 
   virtual bool saveFileAs() = 0;
 
-  virtual bool saveFileAs(const QString &path) = 0;
+  virtual bool saveFileAs(const QString& path) = 0;
 
   virtual bool clear() = 0;
 
   virtual bool isOpen() = 0;
 
-  virtual QString filename () = 0 ;
-
+  virtual QString filename() = 0;
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_IDEALER_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_IDEALER_H

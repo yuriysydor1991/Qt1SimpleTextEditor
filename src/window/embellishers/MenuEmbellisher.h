@@ -5,31 +5,29 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H
 #define QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H
 
-#include <QMenuBar>
 #include <QAction>
 #include <QMenu>
+#include <QMenuBar>
 #include <QString>
 
 #include "IEditorWindow.h"
 
 class MenuEmbellisher {
-public:
+ public:
+  MenuEmbellisher(IEditorWindow& main);
 
-  MenuEmbellisher(IEditorWindow &main);
+  QAction& getFileNew();
 
-  QAction &getFileNew();
+  QAction& getFileOpen();
 
-  QAction &getFileOpen();
+  QAction& getFileClose();
 
-  QAction &getFileClose();
+  QAction& getFileSave();
 
-  QAction &getFileSave();
+  QAction& getFileSaveAs();
 
-  QAction &getFileSaveAs();
-
-private:
-
-  IEditorWindow &window;
+ private:
+  IEditorWindow& window;
 
   QMenuBar menuBar;
 
@@ -52,8 +50,6 @@ private:
   void entitleMenus();
 
   void packMenus();
-
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H

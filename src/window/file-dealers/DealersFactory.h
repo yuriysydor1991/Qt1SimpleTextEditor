@@ -11,21 +11,17 @@
 #include "IEditorWindow.h"
 
 class DealersFactory {
-public:
-
-  DealersFactory(IEditorWindow &main);
+ public:
+  DealersFactory(IEditorWindow& main);
 
   virtual ~DealersFactory() = default;
 
-  virtual std::shared_ptr<IDealer> dealer_by_ext(const QString &filepath);
+  virtual std::shared_ptr<IDealer> dealer_by_ext(const QString& filepath);
 
-protected:
-
-  IEditorWindow &window;
+ protected:
+  IEditorWindow& window;
 
   virtual std::shared_ptr<IDealer> defaultDealer();
-
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_DEALERSFACTORY_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_DEALERSFACTORY_H

@@ -5,19 +5,17 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H
 #define QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H
 
-
 class WindowFactory {
-public:
-  explicit WindowFactory(int &argc, char **(&argv));
+ public:
+  explicit WindowFactory(int& argc, char**(&argv));
 
   int run();
 
-  static int execute(int &argc, char **(&argv));
+  static int execute(int& argc, char**(&argv));
 
-private:
-
-  int &m_argc;
-  char **&m_argv;
+ private:
+  int& m_argc;
+  char**& m_argv;
 };
 
-#endif //QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H

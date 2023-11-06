@@ -19,7 +19,7 @@ bool FileDealer::openFile(const QString &path) {
   define_dealer(path);
 
   if (cdealer == nullptr || define_dealer(path) == nullptr) {
-    window.showStatusMessage(window.t("Failure to create a reader object: ") + path);
+    window.showStatusMessage(window.t("Error while creating reader for a file: ") + path);
     return false;
   }
 
@@ -68,7 +68,7 @@ bool FileDealer::saveFile() {
 
   if (!cdealer->saveFile())
   {
-    window.showStatusMessage(window.t("Failure to the file: ") + filename());
+    window.showStatusMessage(window.t("Failure to save the file: ") + filename());
     return false;
   }
 
@@ -102,7 +102,7 @@ bool FileDealer::saveFileAs() {
 
 bool FileDealer::saveFileAs(const QString &path) {
   if (cdealer == nullptr || define_dealer(path) == nullptr) {
-    window.showStatusMessage(window.t("Failure to create reader object for: ") + path);
+    window.showStatusMessage(window.t("Error while creating reader for a file: ") + path);
     return false;
   }
 
@@ -120,7 +120,7 @@ bool FileDealer::clear() {
   window.getTextEdit().clear();
 
   if (cdealer != nullptr) {
-    // as the user about file close
+    // ask the user about file close
     // if (cdealer->isOpen ())
     // {}
 

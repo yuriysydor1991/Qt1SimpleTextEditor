@@ -2,13 +2,16 @@ cmake_minimum_required(VERSION 3.26.4)
 
 message(STATUS "QT_WINDOW_TARGET: ${QT_WINDOW_TARGET}")
 
-execute_process(
-        COMMAND which moc
-        OUTPUT_VARIABLE Qt5AUTOMOC_EXECUTABLE
-        OUTPUT_STRIP_TRAILING_WHITESPACE
+find_program(
+        Qt5AUTOMOC_EXECUTABLE
+        moc
 )
 
 message(STATUS "Qt5AUTOMOC_EXECUTABLE: ${Qt5AUTOMOC_EXECUTABLE}")
+
+if(NOT Qt5AUTOMOC_EXECUTABLE)
+    message(FATAL_ERROR "No moc Qt5 executable found, please install Qt5 dev package")
+endif()
 
 add_custom_target(
         ${QT_WINDOW_TARGET}

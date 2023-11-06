@@ -14,6 +14,7 @@ set(
 )
 
 message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
+message(STATUS "CLANG_FORMAT: " ${CLANG_FORMAT})
 
 project(
         ${PROJECT_NAME}
@@ -57,4 +58,4 @@ target_link_libraries(
         $<TARGET_OBJECTS:${QT_WINDOW_LIB_TARGET}>
 )
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/window)
+add_subdirectory(src)

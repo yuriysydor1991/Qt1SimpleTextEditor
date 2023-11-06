@@ -7,7 +7,7 @@ find_program(
         clang-format
 )
 
-if (CLANG_FORMAT_EXEC AND CLANG_FORMAT)
+if (CLANG_FORMAT_EXEC)
     file (GLOB_RECURSE ALLSOURCES LIST_DIRECTORIES false "*.h" "*.cpp")
 
     message(STATUS "All the sources: " ${ALLSOURCES})

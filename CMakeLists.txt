@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26.4)
+cmake_minimum_required(VERSION 3.16.3)
 
 set(
         PROJECT_NAME "Qt1SimpleTextEditorDemo"
@@ -14,7 +14,6 @@ set(
 )
 
 message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
-message(STATUS "CLANG_FORMAT: " ${CLANG_FORMAT})
 
 project(
         ${PROJECT_NAME}
@@ -25,37 +24,5 @@ project(
 )
 
 set(CMAKE_CXX_STANDARD 17)
-
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt5 COMPONENTS Core REQUIRED)
-
-get_target_property(Qt5Includes Qt5::Widgets INTERFACE_INCLUDE_DIRECTORIES)
-get_target_property(Qt5CoreIncludes Qt5::Core INTERFACE_INCLUDE_DIRECTORIES)
-
-include_directories(
-        ${Qt5Includes} ${Qt5CoreIncludes}
-)
-
-add_executable(
-        ${PROJECT_NAME}
-        src/main.cpp
-)
-
-add_compile_options(
-        -Wall
-        -pedantic
-)
-
-add_dependencies(
-        ${PROJECT_NAME}
-        ${QT_WINDOW_LIB_TARGET}
-)
-
-target_link_libraries(
-        ${PROJECT_NAME}
-        Qt5::Core
-        Qt5::Widgets
-        $<TARGET_OBJECTS:${QT_WINDOW_LIB_TARGET}>
-)
 
 add_subdirectory(src)

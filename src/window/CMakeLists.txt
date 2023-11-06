@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26.4)
+cmake_minimum_required(VERSION 3.16.3)
 
 message(STATUS "QT_WINDOW_TARGET: ${QT_WINDOW_TARGET}")
 
@@ -29,19 +29,14 @@ add_library(
         ${QT_WINDOW_LIB_TARGET}
         OBJECT
         EditorWindow.cpp
-        WindowFactory.cpp
 )
 
-target_include_directories(
+include_directories(
         ${QT_WINDOW_LIB_TARGET}
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
-        PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
+        ${Qt5Includes} ${Qt5CoreIncludes} ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 add_dependencies(
         ${QT_WINDOW_LIB_TARGET}
         ${QT_WINDOW_TARGET}
 )
-
-add_subdirectory(embellishers)
-add_subdirectory(file-dealers)

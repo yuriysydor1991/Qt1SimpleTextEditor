@@ -28,3 +28,19 @@ find . -name 'Qt1SimpleTextEditorDemo'
 ```
 
 Don't forget to build it as in previous section shown.
+
+# Generating documentation
+
+Ensure that there are required Doxygen and Graphviz packages in your system:
+
+```
+sudo apt-get install -y doxygen graphviz
+```
+
+To generate Doxygen documentation execute the following commands:
+
+```
+mkdir -vp build && cd build && cmake ../ && cmake --build . --target Doxygen-doc
+```
+
+Under the build directory there will be created among others the "html" directory with index.html. 

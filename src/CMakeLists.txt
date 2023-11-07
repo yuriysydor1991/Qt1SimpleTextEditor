@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.16.3)
 
+configure_file(
+        Qt1SimpleTextEditor-conf.h.in
+        ${CMAKE_BINARY_DIR}/Qt1SimpleTextEditor-conf.h
+)
+
 find_program(
         CLANG_FORMAT_EXEC
         clang-format

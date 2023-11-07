@@ -23,6 +23,21 @@ set(
         DOXYGEN_CONF_INPUT "${CMAKE_SOURCE_DIR}/Doxygen.in"
         CACHE STRING "Doxygen documentation input configure file if any."
 )
+set(EDITOR_CREATOR_NAME "Yuriy Sydor")
+set(PROJECT_CREATOR_EMAIL "yuriysydor1991@gmail.com")
+set(PROJECT_GIT_URL "https://github.com/yuriysydor1991/Qt1SimpleTextEditor")
+
+# Thanks for
+# https://stackoverflow.com/questions/71762846/set-cmake-project-description-with-commit-id
+# page for git commit id code.
+find_package(Git REQUIRED)
+execute_process(
+        COMMAND "${GIT_EXECUTABLE}" rev-parse HEAD
+        OUTPUT_VARIABLE PROJECT_GIT_COMMIT
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+string(TIMESTAMP PROJECT_BUILD_DATE "%Y-%m-%d %H:%M:%S %Z")
 
 message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
 

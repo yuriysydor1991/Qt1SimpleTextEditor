@@ -45,6 +45,9 @@ class MenuEmbellisher {
   QAction editCut;
   QAction editPaste;
 
+  QAction editUndo;
+  QAction editRedo;
+
   QAction helpAbout;
 
   void entitleMenus();

@@ -36,6 +36,9 @@ void MenuEmbellisher::entitleMenus() {
   editCut.setText(window.t("Cut"));
   editPaste.setText(window.t("Paste"));
 
+  editUndo.setText(window.t("Undo"));
+  editRedo.setText(window.t("Redo"));
+
   helpAbout.setText(window.t("About"));
 }
 
@@ -53,6 +56,8 @@ void MenuEmbellisher::packMenus() {
   topMEdit.addAction(&editCopy);
   topMEdit.addAction(&editCut);
   topMEdit.addAction(&editPaste);
+  topMEdit.addAction(&editUndo);
+  topMEdit.addAction(&editRedo);
 
   topMHelp.addAction(&helpAbout);
 }

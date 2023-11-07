@@ -1,11 +1,21 @@
 # Qt5SimpleTextEditorDemo project
 
-Just a demonstration project.
+Just a demonstration project for educational purposes.
+
 Currently in development.
+
+# Project goal
+
+Project goal is to create simple text editor with some basic features:
++ open/edit/save text file;
++ copy/cut/paste into text document;
++ undo/redo features;
++ find text in the document;
++ crossplatform application with Qt5, etc. 
 
 # Home page
 
-Visint [http://www.kytok.org.ua/](http://www.kytok.org.ua/) for more.
+Visit [http://www.kytok.org.ua/](http://www.kytok.org.ua/) for more.
 
 # Building
 
@@ -13,7 +23,7 @@ To build this project run next command
 ```
 mkdir -vp build && cd build && cmake ../ && cmake --build . -j$(nproc)
 ```
-And **voila!** You have executable under the build directory.
+And **voilà!** You have executable under the build directory.
 
 # Running the executable
 

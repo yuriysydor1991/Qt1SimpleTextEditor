@@ -50,6 +50,16 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void saveFileAs();
 
+  void paste();
+
+  void cut();
+
+  void copy();
+
+  void undo();
+
+  void redo();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;

@@ -50,6 +50,12 @@ void EditorWindow::connectMenus() {
   connect(&menus.getFileSave(), SIGNAL(triggered()), this, SLOT(saveFile()));
   connect(&menus.getFileSaveAs(), SIGNAL(triggered()), this,
           SLOT(saveFileAs()));
+
+  connect(&menus.getEditCopy(), SIGNAL(triggered()), this, SLOT(copy()));
+  connect(&menus.getEditCut(), SIGNAL(triggered()), this, SLOT(cut()));
+  connect(&menus.getEditPaste(), SIGNAL(triggered()), this, SLOT(paste()));
+  connect(&menus.getEditUndo(), SIGNAL(triggered()), this, SLOT(undo()));
+  connect(&menus.getEditRedo(), SIGNAL(triggered()), this, SLOT(redo()));
 }
 
 void EditorWindow::newFile() { clear(); }
@@ -69,3 +75,13 @@ void EditorWindow::saveFileAs() { dealer.saveFileAs(); }
 QString EditorWindow::t(const char* txt) { return tr(txt); }
 
 QMainWindow& EditorWindow::widget() { return *this; }
+
+void EditorWindow::paste() { textEdit.paste(); }
+
+void EditorWindow::cut() { textEdit.cut(); }
+
+void EditorWindow::copy() { textEdit.copy(); }
+
+void EditorWindow::undo() { textEdit.undo(); }
+
+void EditorWindow::redo() { textEdit.redo(); }

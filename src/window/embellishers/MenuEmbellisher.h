@@ -36,6 +36,8 @@ class MenuEmbellisher {
 
   QAction& getEditRedo();
 
+  QAction& getHelpAbout();
+
  private:
   IEditorWindow& window;
 
@@ -52,16 +54,14 @@ class MenuEmbellisher {
   QAction fileClose;
 
   QAction editCopy;
-
- private:
   QAction editCut;
   QAction editPaste;
-
   QAction editUndo;
   QAction editRedo;
 
   QAction helpAbout;
 
+ private:
   void entitleMenus();
 
   void packMenus();

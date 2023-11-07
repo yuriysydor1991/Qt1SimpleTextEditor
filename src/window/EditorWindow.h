@@ -12,6 +12,7 @@
 #include <QString>
 #include <QTextEdit>
 
+#include "AboutDialogEmbellisher.h"
 #include "FileDealer.h"
 #include "IEditorWindow.h"
 #include "MenuEmbellisher.h"
@@ -60,11 +61,14 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void redo();
 
+  void show_about();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;
   QLabel permanentStatus;
   MenuEmbellisher menus;
+  AboutDialogEmbellisher about;
   FileDealer dealer;
 
   void connectMenus();

@@ -79,10 +79,13 @@ add_executable(
         window/file-dealers/FilterCreator.cpp
         window/file-dealers/DealersFactory.cpp
         window/embellishers/MenuEmbellisher.cpp
+        window/embellishers/AboutDialogEmbellisher.cpp
 )
 
 include_directories(
-        ${Qt5Includes} ${Qt5CoreIncludes} window window/file-dealers window/embellishers
+        ${Qt5Includes} ${Qt5CoreIncludes}
+        window window/file-dealers window/embellishers
+        ${CMAKE_BINARY_DIR}
 )
 
 add_compile_options(

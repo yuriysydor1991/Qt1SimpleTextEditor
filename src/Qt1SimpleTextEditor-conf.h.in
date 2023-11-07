@@ -1,0 +1,20 @@
+//
+// Created by cc on 07.11.23.
+//
+
+#ifndef QT1SIMPLETEXTEDITORDEMO_CONF_H
+#define QT1SIMPLETEXTEDITORDEMO_CONF_H
+
+namespace qt1simpleted::constants {
+
+constexpr const char* const EDITOR_VERSION = "${CMAKE_PROJECT_VERSION}" ;
+constexpr const char* const EDITOR_CREATOR_NAME = "${EDITOR_CREATOR_NAME}" ;
+constexpr const char* const EDITOR_CREATOR_EMAIL = "${PROJECT_CREATOR_EMAIL}";
+constexpr const char* const EDITOR_HOMEPAGE_URL = "${PROJECT_HOMEPAGE_URL}";
+constexpr const char* const PROJECT_GIT_URL = "${PROJECT_GIT_URL}";
+constexpr const char* const PROJECT_GIT_COMMIT = "${PROJECT_GIT_COMMIT}";
+constexpr const char* const PROJECT_BUILD_DATE = "${PROJECT_BUILD_DATE}";
+
+}
+
+#endif //QT1SIMPLETEXTEDITORDEMO_CONF_H

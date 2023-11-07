@@ -92,3 +92,5 @@ void MenuEmbellisher::setMenusShortCuts() {
   editUndo.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Z));
   editRedo.setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_Z));
 }
+
+QAction& MenuEmbellisher::getHelpAbout() { return helpAbout; }

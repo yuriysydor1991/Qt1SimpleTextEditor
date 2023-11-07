@@ -53,4 +53,24 @@ To generate Doxygen documentation execute the following commands:
 mkdir -vp build && cd build && cmake ../ && cmake --build . --target Doxygen-doc
 ```
 
-Under the build directory there will be created among others the "html" directory with index.html. 
+Under the build directory there will be created among others the "html" directory with index.html.
+
+# Running cppcheck
+
+## Installing cppcheck 
+
+Ensure that cppcheck tools is installed in your system. If not, install it with help of a command (for Debian and descendants):
+
+```
+sudo apt-get install -y cppcheck
+```
+
+## Running all available checks
+
+To run project wide checks with help of cppcheck, execute next command:
+
+```
+mkdir -vp build && cd build && cmake ../ && cmake --build . --target cppcheck-project
+```
+
+ALl the warnings and errors if any will be printed for the stdout.

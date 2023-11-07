@@ -26,6 +26,16 @@ class MenuEmbellisher {
 
   QAction& getFileSaveAs();
 
+  QAction& getEditCopy();
+
+  QAction& getEditCut();
+
+  QAction& getEditPaste();
+
+  QAction& getEditUndo();
+
+  QAction& getEditRedo();
+
  private:
   IEditorWindow& window;
 
@@ -42,6 +52,8 @@ class MenuEmbellisher {
   QAction fileClose;
 
   QAction editCopy;
+
+ private:
   QAction editCut;
   QAction editPaste;
 

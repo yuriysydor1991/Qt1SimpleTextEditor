@@ -24,6 +24,16 @@ QAction& MenuEmbellisher::getFileSave() { return fileSave; }
 
 QAction& MenuEmbellisher::getFileSaveAs() { return fileSaveAs; }
 
+QAction& MenuEmbellisher::getEditCopy() { return editCopy; }
+
+QAction& MenuEmbellisher::getEditCut() { return editCut; }
+
+QAction& MenuEmbellisher::getEditPaste() { return editPaste; }
+
+QAction& MenuEmbellisher::getEditUndo() { return editUndo; }
+
+QAction& MenuEmbellisher::getEditRedo() { return editRedo; }
+
 void MenuEmbellisher::entitleMenus() {
   topMFile.setTitle(window.t("File"));
   topMEdit.setTitle(window.t("Edit"));

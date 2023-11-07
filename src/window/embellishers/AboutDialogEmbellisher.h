@@ -13,7 +13,7 @@
 
 class AboutDialogEmbellisher {
  public:
-  AboutDialogEmbellisher(IEditorWindow& main);
+  explicit AboutDialogEmbellisher(IEditorWindow& main);
 
   void show();
 
@@ -30,11 +30,11 @@ class AboutDialogEmbellisher {
   void build_dialog();
   void set_labels();
 
-  inline QString make_creator_name();
-  inline QString make_creator_email_link();
-  inline QString make_homepage_link();
-  inline QString make_git_link();
-  inline QString make_link(const QString& url, const QString& text);
+  static inline QString make_creator_name();
+  static inline QString make_creator_email_link();
+  static inline QString make_homepage_link();
+  static inline QString make_git_link();
+  static inline QString make_link(const QString& url, const QString& text);
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_ABOUTDIALOGEMBELLISHER_H

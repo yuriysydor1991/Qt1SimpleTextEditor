@@ -13,7 +13,7 @@
 
 class FileDealer : public IDealer {
  public:
-  FileDealer(IEditorWindow& main);
+  explicit FileDealer(IEditorWindow& main);
 
   ~FileDealer() override = default;
 
@@ -32,7 +32,7 @@ class FileDealer : public IDealer {
 
   virtual bool saveFileAs(const QString& path) override;
 
-  virtual bool clear();
+  virtual bool clear() override;
 
   virtual bool isOpen() override;
 
@@ -47,7 +47,7 @@ class FileDealer : public IDealer {
 
   std::shared_ptr<IDealer> define_dealer(const QString& path);
 
-  QString get_home_folder();
+  static QString get_home_folder();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_FILEDEALER_H

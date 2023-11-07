@@ -12,7 +12,7 @@
 
 class TxtDealer : public IDealer {
  public:
-  TxtDealer(IEditorWindow& main);
+  explicit TxtDealer(IEditorWindow& main);
 
   virtual bool openFile(const QString& path) override;
 

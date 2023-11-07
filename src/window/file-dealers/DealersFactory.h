@@ -12,7 +12,7 @@
 
 class DealersFactory {
  public:
-  DealersFactory(IEditorWindow& main);
+  explicit DealersFactory(IEditorWindow& main);
 
   virtual ~DealersFactory() = default;
 

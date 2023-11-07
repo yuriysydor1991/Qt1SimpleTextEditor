@@ -14,7 +14,7 @@
 
 class MenuEmbellisher {
  public:
-  MenuEmbellisher(IEditorWindow& main);
+  explicit MenuEmbellisher(IEditorWindow& main);
 
   QAction& getFileNew();
 

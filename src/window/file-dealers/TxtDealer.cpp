@@ -39,7 +39,7 @@ bool TxtDealer::saveFile() {
   auto data = window.getTextEdit().toPlainText().toLocal8Bit();
 
   return file.reset() && file.resize(data.size()) && file.write(data) >= 0 &&
-         file.flush() && file.flush();
+         (file.flush() || file.flush());
 }
 
 bool TxtDealer::saveFileAs() { return false; }

@@ -85,4 +85,10 @@ void MenuEmbellisher::setMenusShortCuts() {
   fileOpen.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
   fileSave.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
   fileSaveAs.setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_S));
+
+  editCut.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_X));
+  editCopy.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_C));
+  editPaste.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_V));
+  editUndo.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Z));
+  editRedo.setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_Z));
 }

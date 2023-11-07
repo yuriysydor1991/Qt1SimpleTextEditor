@@ -5,6 +5,7 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H
 #define QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H
 
+#include <QObject>
 #include <QFile>
 #include <QLabel>
 #include <QMainWindow>

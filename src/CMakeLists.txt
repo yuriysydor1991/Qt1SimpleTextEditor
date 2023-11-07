@@ -117,7 +117,7 @@ if (CPPCHECK_EXEC)
             cppcheck-project
             COMMAND ${CPPCHECK_EXEC} --std=c++${CMAKE_CXX_STANDARD} --inconclusive --enable=all
                 ${Qt5Includes} ${Qt5CoreIncludes}
-                -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR}
+                -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR} -I${CMAKE_BINARY_DIR}/src/window
                 ${CMAKE_CURRENT_SOURCE_DIR}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             COMMENT "Executes cppcheck command for all project sources. Just outputs all findings into stdout."

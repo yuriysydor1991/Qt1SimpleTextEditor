@@ -106,3 +106,27 @@ target_link_libraries(
 )
 
 add_subdirectory(window)
+
+# cppcheck integration
+find_program(CPPCHECK_EXEC cppcheck)
+
+if (CPPCHECK_EXEC)
+    message(STATUS "cppcheck: ${CPPCHECK_EXEC}")
+
+    add_custom_target (
+            cppcheck-project
+            COMMAND ${CPPCHECK_EXEC} --std=c++${CMAKE_CXX_STANDARD} --inconclusive --enable=all
+                ${Qt5Includes} ${Qt5CoreIncludes}
+                -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR}
+                ${CMAKE_CURRENT_SOURCE_DIR}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            COMMENT "Executes cppcheck command for all project sources. Just outputs all findings into stdout."
+    )
+else()
+    message(WARNING
+            "No cppcheck executable found.\n"
+            "No code check target will be declared.\n"
+            "Install cppcheck by using command:\n"
+            "sudo apt-get install -y cppcheck"
+    )
+endif()

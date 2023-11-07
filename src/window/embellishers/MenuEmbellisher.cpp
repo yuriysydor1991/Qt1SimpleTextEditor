@@ -4,9 +4,12 @@
 
 #include "MenuEmbellisher.h"
 
+#include <QKeySequence>
+
 MenuEmbellisher::MenuEmbellisher(IEditorWindow& main) : window{main} {
   entitleMenus();
   packMenus();
+  setMenusShortCuts();
 
   window.setMainMenu(menuBar);
 }
@@ -64,4 +67,12 @@ void MenuEmbellisher::packMenus() {
   topMEdit.addAction(&editRedo);
 
   topMHelp.addAction(&helpAbout);
+}
+
+void MenuEmbellisher::setMenusShortCuts() {
+  fileNew.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_P));
+  fileClose.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_W));
+  fileOpen.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_O));
+  fileSave.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_S));
+  fileSaveAs.setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_S));
 }

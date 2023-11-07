@@ -53,6 +53,8 @@ class MenuEmbellisher {
   void entitleMenus();
 
   void packMenus();
+
+  void setMenusShortCuts();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H

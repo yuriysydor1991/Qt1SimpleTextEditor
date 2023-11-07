@@ -48,14 +48,18 @@ void MenuEmbellisher::packMenus() {
   menuBar.addMenu(&topMHelp);
 
   topMFile.addAction(&fileNew);
+  topMFile.addSeparator();
   topMFile.addAction(&fileOpen);
+  topMFile.addSeparator();
   topMFile.addAction(&fileSave);
   topMFile.addAction(&fileSaveAs);
+  topMFile.addSeparator();
   topMFile.addAction(&fileClose);
 
   topMEdit.addAction(&editCopy);
   topMEdit.addAction(&editCut);
   topMEdit.addAction(&editPaste);
+  topMEdit.addSeparator();
   topMEdit.addAction(&editUndo);
   topMEdit.addAction(&editRedo);
 

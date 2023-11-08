@@ -38,6 +38,9 @@ class MenuEmbellisher {
 
   QAction& getHelpAbout();
 
+  QAction& getEditFind();
+  QAction& getEditFindBack();
+
  private:
   IEditorWindow& window;
 
@@ -58,6 +61,8 @@ class MenuEmbellisher {
   QAction editPaste;
   QAction editUndo;
   QAction editRedo;
+  QAction editFind;
+  QAction editFindBack;
 
   QAction helpAbout;
 

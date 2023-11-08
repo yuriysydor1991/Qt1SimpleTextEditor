@@ -5,22 +5,20 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_FINDEMBELLISHER_H
 #define QT1SIMPLETEXTEDITORDEMO_FINDEMBELLISHER_H
 
-#include <QHBoxLayout>
+#include <QString>
 
 #include "IEditorWindow.h"
 
-class FindEmbellisher: public QHBoxLayout
-{
-public:
+class FindEmbellisher {
+ public:
+  explicit FindEmbellisher(IEditorWindow& main);
 
-  explicit FindEmbellisher (IEditorWindow& main) ;
+  void show(bool backwards = false);
 
-  QWidget& getWidget () ;
+ private:
+  IEditorWindow& window;
 
-private:
-    IEditorWindow& window ;
-
+  QString text;
 };
 
-
-#endif //QT1SIMPLETEXTEDITORDEMO_FINDEMBELLISHER_H
+#endif  // QT1SIMPLETEXTEDITORDEMO_FINDEMBELLISHER_H

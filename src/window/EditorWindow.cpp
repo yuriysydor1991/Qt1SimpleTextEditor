@@ -6,14 +6,16 @@
 
 #include "EditorWindow.moc.h"
 
-EditorWindow::EditorWindow() : menus{*this}, about{*this}, finder{*this}, dealer{*this} {
+EditorWindow::EditorWindow()
+    : menus{*this}, about{*this}, finder{*this}, dealer{*this} {
   textEdit.setUndoRedoEnabled(true);
   setCentralWidget(&textEdit);
-  layout()->addWidget(&finder.widget());
   setStatusBar(&statusBar);
   statusBar.addPermanentWidget(&permanentStatus, 1);
 
   connectMenus();
+
+  // finder.show () ;
 
   dealer.clear();
 }
@@ -57,6 +59,9 @@ void EditorWindow::connectMenus() {
   connect(&menus.getEditPaste(), SIGNAL(triggered()), this, SLOT(paste()));
   connect(&menus.getEditUndo(), SIGNAL(triggered()), this, SLOT(undo()));
   connect(&menus.getEditRedo(), SIGNAL(triggered()), this, SLOT(redo()));
+  connect(&menus.getEditFind(), SIGNAL(triggered()), this, SLOT(show_find()));
+  connect(&menus.getEditFindBack(), SIGNAL(triggered()), this,
+          SLOT(show_find_back()));
 
   connect(&menus.getHelpAbout(), SIGNAL(triggered()), this, SLOT(show_about()));
 }
@@ -90,3 +95,7 @@ void EditorWindow::undo() { textEdit.undo(); }
 void EditorWindow::redo() { textEdit.redo(); }
 
 void EditorWindow::show_about() { about.show(); }
+
+void EditorWindow::show_find() { finder.show(); }
+
+void EditorWindow ::show_find_back() { finder.show(true); }

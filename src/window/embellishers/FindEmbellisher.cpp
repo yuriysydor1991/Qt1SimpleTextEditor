@@ -4,12 +4,25 @@
 
 #include "FindEmbellisher.h"
 
-FindEmbellisher :: FindEmbellisher (IEditorWindow& main): window{main}
-{
+#include <QInputDialog>
 
-}
+FindEmbellisher ::FindEmbellisher(IEditorWindow& main) : window{main} {}
 
-QWidget& FindEmbellisher :: getWidget ()
-{
-  return *this ;
+void FindEmbellisher ::show(bool backwards) {
+  bool ok;
+  text = QInputDialog::getText(
+      &window.widget(),
+      backwards ? window.t("Find text previous") : window.t("Find text next"),
+      window.t("Input the search text:"), QLineEdit::Normal, text, &ok);
+  if (ok) {
+    window.showStatusMessage("Searched text: " + text);
+
+    QTextDocument::FindFlags flags = QTextDocument::FindCaseSensitively;
+
+    if (backwards) {
+      flags |= QTextDocument::FindBackward;
+    }
+
+    window.getTextEdit().find(text, flags);
+  }
 }

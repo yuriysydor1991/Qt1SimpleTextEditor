@@ -14,9 +14,9 @@
 
 #include "AboutDialogEmbellisher.h"
 #include "FileDealer.h"
+#include "FindEmbellisher.h"
 #include "IEditorWindow.h"
 #include "MenuEmbellisher.h"
-#include "FindEmbellisher.h"
 
 class EditorWindow : public QMainWindow, public IEditorWindow {
   Q_OBJECT
@@ -64,13 +64,17 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void show_about();
 
+  void show_find();
+
+  void show_find_back();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;
   QLabel permanentStatus;
   MenuEmbellisher menus;
   AboutDialogEmbellisher about;
-  FindEmbellisher finder ;
+  FindEmbellisher finder;
   FileDealer dealer;
 
   void connectMenus();

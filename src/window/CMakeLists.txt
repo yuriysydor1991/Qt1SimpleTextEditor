@@ -15,8 +15,8 @@ endif()
 
 add_custom_target(
         ${QT_WINDOW_TARGET}
-        COMMAND ${Qt5AUTOMOC_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/EditorWindow.h" -o EditorWindow.moc.h
-        BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/EditorWindow.moc.h
+        COMMAND ${Qt5AUTOMOC_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/EditorWindow.h" -o ${CMAKE_BINARY_DIR}/EditorWindow.moc.h
+        BYPRODUCTS ${CMAKE_BINARY_DIR}/EditorWindow.moc.h
         SOURCES EditorWindow.h
         COMMENT "QT5 window header moc preprocess command"
 )

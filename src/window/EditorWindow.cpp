@@ -6,9 +6,10 @@
 
 #include "EditorWindow.moc.h"
 
-EditorWindow::EditorWindow() : menus{*this}, about{*this}, dealer{*this} {
+EditorWindow::EditorWindow() : menus{*this}, about{*this}, finder{*this}, dealer{*this} {
   textEdit.setUndoRedoEnabled(true);
   setCentralWidget(&textEdit);
+  layout()->addWidget(&finder.widget());
   setStatusBar(&statusBar);
   statusBar.addPermanentWidget(&permanentStatus, 1);
 

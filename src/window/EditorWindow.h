@@ -16,6 +16,7 @@
 #include "FileDealer.h"
 #include "IEditorWindow.h"
 #include "MenuEmbellisher.h"
+#include "FindEmbellisher.h"
 
 class EditorWindow : public QMainWindow, public IEditorWindow {
   Q_OBJECT
@@ -69,6 +70,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
   QLabel permanentStatus;
   MenuEmbellisher menus;
   AboutDialogEmbellisher about;
+  FindEmbellisher finder ;
   FileDealer dealer;
 
   void connectMenus();

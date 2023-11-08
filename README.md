@@ -70,7 +70,7 @@ sudo apt-get install -y cppcheck
 To run project wide checks with help of cppcheck, execute next command:
 
 ```
-mkdir -vp build && cd build && cmake ../ && cmake --build . --target cppcheck-project
+mkdir -vp build && cd build && cmake ../ && cmake --build . --target unstable-cppcheck
 ```
 
-ALl the warnings and errors if any will be printed for the stdout.
+All the warnings and errors if any will be printed for the stdout.

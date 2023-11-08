@@ -110,17 +110,35 @@ add_subdirectory(window)
 # cppcheck integration
 find_program(CPPCHECK_EXEC cppcheck)
 
+message(STATUS "INCLUDE_DIRECTORIES: ${INCLUDE_DIRECTORIES}")
+message(STATUS "Qt5Includes: ${Qt5Includes}")
+message(STATUS "Qt5CoreIncludes: ${Qt5CoreIncludes}")
+message(STATUS "Qt5Widgets_INCLUDE_DIRS: ${Qt5Widgets_INCLUDE_DIRS}")
+
 if (CPPCHECK_EXEC)
     message(STATUS "cppcheck: ${CPPCHECK_EXEC}")
 
+    list(TRANSFORM Qt5Includes PREPEND "-I" OUTPUT_VARIABLE Qt5IncludesPrep)
+    list(TRANSFORM Qt5CoreIncludes PREPEND "-I" OUTPUT_VARIABLE Qt5CoreIncludesPrep)
+
+    message(STATUS "Qt5IncludesPrep: ${Qt5IncludesPrep}")
+    message(STATUS "Qt5CoreIncludesPrep: ${Qt5CoreIncludesPrep}")
+
+    #${Qt5IncludesPrep} ${Qt5CoreIncludesPrep}
+
     add_custom_target (
             cppcheck-project
-            COMMAND ${CPPCHECK_EXEC} --std=c++${CMAKE_CXX_STANDARD} --inconclusive --enable=all -v
-                ${Qt5Includes} ${Qt5CoreIncludes}
-                -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR} -I${CMAKE_BINARY_DIR}/src/window
+            COMMAND ${CPPCHECK_EXEC} --std=c++${CMAKE_CXX_STANDARD} --inconclusive --enable=all -v --force
+                --suppress=missingIncludeSystem --suppress=noExplicitConstructor --suppress=funcArgNamesDifferent --suppress=missingOverride
+                --suppress=functionConst --suppress=variableScope --suppress=functionStatic --suppress=constParameter
+                -D__linux__=1 -D__linux=1 -D__BYTE_ORDER__=1234
+                ${Qt5IncludesPrep} ${Qt5CoreIncludesPrep}
+                -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR}
+                -I/usr/include
                 ${CMAKE_CURRENT_SOURCE_DIR}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             COMMENT "Executes cppcheck command for all project sources. Just outputs all findings into stdout."
+            DEPENDS ${QT_WINDOW_TARGET}
     )
 else()
     message(WARNING

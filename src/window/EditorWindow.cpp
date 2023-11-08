@@ -7,7 +7,11 @@
 #include "EditorWindow.moc.h"
 
 EditorWindow::EditorWindow()
-    : menus{*this}, about{*this}, finder{*this}, dealer{*this} {
+    : menus{*this},
+      about{*this},
+      finder{*this},
+      gotoLine{*this},
+      dealer{*this} {
   textEdit.setUndoRedoEnabled(true);
   setCentralWidget(&textEdit);
   setStatusBar(&statusBar);
@@ -62,6 +66,7 @@ void EditorWindow::connectMenus() {
   connect(&menus.getEditFind(), SIGNAL(triggered()), this, SLOT(show_find()));
   connect(&menus.getEditFindBack(), SIGNAL(triggered()), this,
           SLOT(show_find_back()));
+  connect(&menus.getEditGoTo(), SIGNAL(triggered()), this, SLOT(show_goto()));
 
   connect(&menus.getHelpAbout(), SIGNAL(triggered()), this, SLOT(show_about()));
 }
@@ -99,3 +104,5 @@ void EditorWindow::show_about() { about.show(); }
 void EditorWindow::show_find() { finder.show(); }
 
 void EditorWindow ::show_find_back() { finder.show(true); }
+
+void EditorWindow ::show_goto() { gotoLine.show_goto(); }

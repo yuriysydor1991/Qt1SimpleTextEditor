@@ -15,6 +15,7 @@
 #include "AboutDialogEmbellisher.h"
 #include "FileDealer.h"
 #include "FindEmbellisher.h"
+#include "GoToLineEmbellisher.h"
 #include "IEditorWindow.h"
 #include "MenuEmbellisher.h"
 
@@ -68,6 +69,8 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void show_find_back();
 
+  void show_goto();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;
@@ -75,6 +78,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
   MenuEmbellisher menus;
   AboutDialogEmbellisher about;
   FindEmbellisher finder;
+  GoToLineEmbellisher gotoLine;
   FileDealer dealer;
 
   void connectMenus();

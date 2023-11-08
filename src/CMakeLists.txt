@@ -80,6 +80,7 @@ add_executable(
         window/file-dealers/DealersFactory.cpp
         window/embellishers/MenuEmbellisher.cpp
         window/embellishers/AboutDialogEmbellisher.cpp
+        window/embellishers/GoToLineEmbellisher.cpp
 )
 
 include_directories(

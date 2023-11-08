@@ -55,6 +55,8 @@ void MenuEmbellisher::entitleMenus() {
   editFind.setText(window.t("Find"));
   editFindBack.setText(window.t("Find backwards"));
 
+  editGoTo.setText(window.t("Go to line"));
+
   helpAbout.setText(window.t("About"));
 }
 
@@ -74,6 +76,8 @@ void MenuEmbellisher::packMenus() {
 
   topMEdit.addAction(&editFind);
   topMEdit.addAction(&editFindBack);
+  topMEdit.addSeparator();
+  topMEdit.addAction(&editGoTo);
   topMEdit.addSeparator();
   topMEdit.addAction(&editCopy);
   topMEdit.addAction(&editCut);
@@ -99,6 +103,7 @@ void MenuEmbellisher::setMenusShortCuts() {
   editRedo.setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_Z));
   editFind.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_F));
   editFindBack.setShortcut(QKeySequence(Qt::CTRL + Qt::ALT + Qt::Key_F));
+  editGoTo.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
 }
 
 QAction& MenuEmbellisher::getHelpAbout() { return helpAbout; }
@@ -106,3 +111,5 @@ QAction& MenuEmbellisher::getHelpAbout() { return helpAbout; }
 QAction& MenuEmbellisher::getEditFind() { return editFind; }
 
 QAction& MenuEmbellisher::getEditFindBack() { return editFindBack; }
+
+QAction& MenuEmbellisher::getEditGoTo() { return editGoTo; }

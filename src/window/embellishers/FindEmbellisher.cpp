@@ -15,7 +15,7 @@ void FindEmbellisher ::show(bool backwards) {
       backwards ? window.t("Find text previous") : window.t("Find text next"),
       window.t("Input the search text:"), QLineEdit::Normal, text, &ok);
   if (ok) {
-    QTextDocument::FindFlags flags = QTextDocument::FindCaseSensitively;
+    QTextDocument::FindFlags flags{};
 
     if (backwards) {
       flags |= QTextDocument::FindBackward;

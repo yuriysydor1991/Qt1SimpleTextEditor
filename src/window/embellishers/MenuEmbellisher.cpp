@@ -81,12 +81,12 @@ void MenuEmbellisher::packMenus() {
   topMFind.addSeparator();
   topMFind.addAction(&editGoTo);
 
+  topMEdit.addAction(&editUndo);
+  topMEdit.addAction(&editRedo);
+  topMEdit.addSeparator();
   topMEdit.addAction(&editCopy);
   topMEdit.addAction(&editCut);
   topMEdit.addAction(&editPaste);
-  topMEdit.addSeparator();
-  topMEdit.addAction(&editUndo);
-  topMEdit.addAction(&editRedo);
 
   topMHelp.addAction(&helpAbout);
 }

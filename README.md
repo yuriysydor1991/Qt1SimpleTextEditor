@@ -1,6 +1,6 @@
 # Qt5SimpleTextEditorDemo project
 
-Just a demonstration project for educational purposes.
+Just a demonstration project for the educational purposes.
 
 Currently in development.
 
@@ -8,10 +8,12 @@ Currently in development.
 
 Project goal is to create simple text editor with some basic features:
 + open/edit/save text file;
++ dealing with unsaved altered data 
 + copy/cut/paste into text document;
 + undo/redo features;
 + find text in the document;
-+ crossplatform application with Qt5, etc. 
++ go to line feature
++ cross-platform application with Qt5, etc. 
 
 # Home page
 

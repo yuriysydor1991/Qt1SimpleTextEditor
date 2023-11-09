@@ -37,6 +37,7 @@ class MenuEmbellisher {
   QAction& getEditRedo();
 
   QAction& getHelpAbout();
+  QAction& getHelpAboutQt();
 
   QAction& getEditFind();
   QAction& getEditFindBack();
@@ -69,6 +70,7 @@ class MenuEmbellisher {
   QAction editGoTo;
 
   QAction helpAbout;
+  QAction helpAboutQt;
 
  private:
   void entitleMenus();

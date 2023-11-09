@@ -16,6 +16,7 @@ class AboutDialogEmbellisher {
   explicit AboutDialogEmbellisher(IEditorWindow& main);
 
   void show();
+  void show_aboutQt();
 
  private:
   IEditorWindow& window;

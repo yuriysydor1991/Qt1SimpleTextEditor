@@ -59,6 +59,7 @@ void MenuEmbellisher::entitleMenus() {
   editGoTo.setText(window.t("Go to line"));
 
   helpAbout.setText(window.t("About"));
+  helpAboutQt.setText(window.t("About Qt5"));
 }
 
 void MenuEmbellisher::packMenus() {
@@ -89,6 +90,7 @@ void MenuEmbellisher::packMenus() {
   topMEdit.addAction(&editPaste);
 
   topMHelp.addAction(&helpAbout);
+  topMHelp.addAction(&helpAboutQt);
 }
 
 void MenuEmbellisher::setMenusShortCuts() {
@@ -115,3 +117,5 @@ QAction& MenuEmbellisher::getEditFind() { return editFind; }
 QAction& MenuEmbellisher::getEditFindBack() { return editFindBack; }
 
 QAction& MenuEmbellisher::getEditGoTo() { return editGoTo; }
+
+QAction& MenuEmbellisher::getHelpAboutQt() { return helpAboutQt; }

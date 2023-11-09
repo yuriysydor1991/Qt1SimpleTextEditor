@@ -5,6 +5,7 @@
 #include "AboutDialogEmbellisher.h"
 
 #include <QLayout>
+#include <QMessageBox>
 
 #include "Qt1SimpleTextEditor-conf.h"
 
@@ -78,4 +79,8 @@ QString AboutDialogEmbellisher ::make_link(const QString& url,
                                            const QString& text) {
   return QString{"<a href=\""} + (url.contains("@") ? "mailto:" + url : url) +
          "\">" + text + "</a>";
+}
+
+void AboutDialogEmbellisher ::show_aboutQt() {
+  QMessageBox::aboutQt(&window.widget(), window.t("About used Qt5 framework"));
 }

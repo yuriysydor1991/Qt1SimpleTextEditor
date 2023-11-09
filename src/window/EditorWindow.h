@@ -75,6 +75,8 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void textChanged();
 
+  void show_about_qt();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;

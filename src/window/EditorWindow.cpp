@@ -68,6 +68,8 @@ void EditorWindow::connectSignals() {
   connect(&menus.getEditGoTo(), SIGNAL(triggered()), this, SLOT(show_goto()));
 
   connect(&menus.getHelpAbout(), SIGNAL(triggered()), this, SLOT(show_about()));
+  connect(&menus.getHelpAboutQt(), SIGNAL(triggered()), this,
+          SLOT(show_about_qt()));
 
   connect(&textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));
 }
@@ -122,3 +124,5 @@ void EditorWindow::updateWindowTitle(const QString& appender) {
   setWindowTitle(projectName + " " + projectVersion +
                  (appender.isEmpty() ? appender : " " + appender));
 }
+
+void EditorWindow::show_about_qt() { about.show_aboutQt(); }

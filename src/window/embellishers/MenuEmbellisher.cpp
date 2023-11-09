@@ -36,6 +36,7 @@ QAction& MenuEmbellisher::getEditRedo() { return editRedo; }
 
 void MenuEmbellisher::entitleMenus() {
   topMFile.setTitle(window.t("File"));
+  topMFind.setTitle(window.t("Find"));
   topMEdit.setTitle(window.t("Edit"));
   topMHelp.setTitle(window.t("Help"));
 
@@ -62,6 +63,7 @@ void MenuEmbellisher::entitleMenus() {
 
 void MenuEmbellisher::packMenus() {
   menuBar.addMenu(&topMFile);
+  menuBar.addMenu(&topMFind);
   menuBar.addMenu(&topMEdit);
   menuBar.addMenu(&topMHelp);
 
@@ -74,11 +76,11 @@ void MenuEmbellisher::packMenus() {
   topMFile.addSeparator();
   topMFile.addAction(&fileClose);
 
-  topMEdit.addAction(&editFind);
-  topMEdit.addAction(&editFindBack);
-  topMEdit.addSeparator();
-  topMEdit.addAction(&editGoTo);
-  topMEdit.addSeparator();
+  topMFind.addAction(&editFind);
+  topMFind.addAction(&editFindBack);
+  topMFind.addSeparator();
+  topMFind.addAction(&editGoTo);
+
   topMEdit.addAction(&editCopy);
   topMEdit.addAction(&editCut);
   topMEdit.addAction(&editPaste);

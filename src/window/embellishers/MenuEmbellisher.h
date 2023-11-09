@@ -49,6 +49,7 @@ class MenuEmbellisher {
   QMenuBar menuBar;
 
   QMenu topMFile;
+  QMenu topMFind;
   QMenu topMEdit;
   QMenu topMHelp;
 

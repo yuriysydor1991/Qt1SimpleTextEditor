@@ -95,7 +95,7 @@ bool FileDealer::saveFileAs() {
 }
 
 bool FileDealer::saveFileAs(const QString& path) {
-  if (cdealer == nullptr || define_dealer(path) == nullptr) {
+  if (cdealer == nullptr && define_dealer(path) == nullptr) {
     window.showStatusMessage(
         window.t("Error while creating reader for a file: ") + path);
     return false;

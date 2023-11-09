@@ -113,7 +113,7 @@ bool FileDealer::saveFileAs(const QString& path) {
 
 bool FileDealer::clear() {
   // ask the user about file close
-  if ((isOpen() || window.isTextChanged()) && !ensure_user_close()) {
+  if (window.isTextChanged() && !ensure_user_close()) {
     return false;
   }
 

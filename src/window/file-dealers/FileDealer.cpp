@@ -5,6 +5,7 @@
 #include "FileDealer.h"
 
 #include <QFileDialog>
+#include <QMessageBox>
 #include <QStandardPaths>
 
 #include "FilterCreator.h"
@@ -111,14 +112,14 @@ bool FileDealer::saveFileAs(const QString& path) {
 }
 
 bool FileDealer::clear() {
-  if (cdealer != nullptr) {
-    // ask the user about file close
-    if (isOpen() && window.isTextChanged()) {
-      // if (!ensure_user_close ())
-      //{ return ; }
-    }
+  // ask the user about file close
+  if ((isOpen() || window.isTextChanged()) && !ensure_user_close()) {
+    return false;
+  }
 
+  if (cdealer != nullptr) {
     cdealer->clear();
+    cdealer.reset();
   }
 
   window.getTextEdit().clear();
@@ -144,4 +145,35 @@ std::shared_ptr<IDealer> FileDealer::define_dealer(const QString& path) {
 
 QString FileDealer ::filename() {
   return cdealer != nullptr ? cdealer->filename() : QString{};
+}
+
+bool FileDealer::ensure_user_close() {
+  auto button = askUserAboutUnsaveds();
+
+  if (button == QMessageBox::No) {
+    return false;
+  } else if (button == QMessageBox::Save) {
+    saveFile();
+  }
+
+  return true;
+}
+
+const QString FileDealer::makeCloseDialogText() {
+  return window.t(
+      "Close and dismiss unsaved data? - Press \"Yes\" button.\n"
+      "Cancel operation? - Press \"No\" button.\n"
+      "Save data into current file? - Press \"Save\" button.\n");
+}
+
+QMessageBox::StandardButtons FileDealer::makeCloseDialogButtons() {
+  return QMessageBox::StandardButtons(QMessageBox::Yes | QMessageBox::No |
+                                      QMessageBox::Save);
+}
+
+QMessageBox::StandardButton FileDealer::askUserAboutUnsaveds() {
+  return QMessageBox::question(&window.widget(),
+                               window.t("What to do with the unsaved data?"),
+                               makeCloseDialogText(), makeCloseDialogButtons(),
+                               QMessageBox::StandardButton::No);
 }

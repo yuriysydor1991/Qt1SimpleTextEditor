@@ -5,6 +5,7 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_FILEDEALER_H
 #define QT1SIMPLETEXTEDITORDEMO_FILEDEALER_H
 
+#include <QMessageBox>
 #include <memory>
 
 #include "DealersFactory.h"
@@ -48,6 +49,12 @@ class FileDealer : public IDealer {
   std::shared_ptr<IDealer> define_dealer(const QString& path);
 
   static QString get_home_folder();
+
+  bool ensure_user_close();
+
+  const QString makeCloseDialogText();
+  QMessageBox::StandardButtons makeCloseDialogButtons();
+  QMessageBox::StandardButton askUserAboutUnsaveds();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_FILEDEALER_H

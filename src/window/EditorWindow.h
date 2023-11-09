@@ -43,15 +43,17 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   virtual QMainWindow& widget() override;
 
+  virtual bool isTextChanged() override;
+
  private slots:
 
   void newFile();
 
-  void openFile();
+  bool openFile();
 
-  void saveFile();
+  bool saveFile();
 
-  void saveFileAs();
+  bool saveFileAs();
 
   void paste();
 
@@ -71,6 +73,8 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   void show_goto();
 
+  void textChanged();
+
  private:
   QTextEdit textEdit;
   QStatusBar statusBar;
@@ -81,7 +85,11 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
   GoToLineEmbellisher gotoLine;
   FileDealer dealer;
 
-  void connectMenus();
+  void connectSignals();
+
+  bool setUnchanged();
+
+  void updateWindowTitle(const QString& appender = QString{});
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H

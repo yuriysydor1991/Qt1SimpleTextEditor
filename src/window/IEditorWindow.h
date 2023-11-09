@@ -33,6 +33,8 @@ class IEditorWindow {
   virtual QString t(const char* txt) = 0;
 
   virtual QMainWindow& widget() = 0;
+
+  virtual bool isTextChanged() = 0;
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_IEDITORWINDOW_H

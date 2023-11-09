@@ -5,6 +5,7 @@
 #include <QFileDialog>
 
 #include "EditorWindow.moc.h"
+#include "Qt1SimpleTextEditor-conf.h"
 
 EditorWindow::EditorWindow()
     : menus{*this},
@@ -17,11 +18,11 @@ EditorWindow::EditorWindow()
   setStatusBar(&statusBar);
   statusBar.addPermanentWidget(&permanentStatus, 1);
 
-  connectMenus();
+  connectSignals();
 
-  // finder.show () ;
+  clear();
 
-  dealer.clear();
+  updateWindowTitle("[*]");
 }
 
 void EditorWindow::setMainMenu(QMenuBar& menu) { setMenuBar(&menu); }
@@ -41,16 +42,12 @@ bool EditorWindow::openFile(const char* path) {
 }
 
 bool EditorWindow::openFile(const QString& path) {
-  if (!clear()) {
-    return false;
-  }
-
-  return dealer.openFile(path);
+  return clear() && dealer.openFile(path) && setUnchanged();
 }
 
-bool EditorWindow::clear() { return dealer.clear(); }
+bool EditorWindow::clear() { return dealer.clear() && setUnchanged(); }
 
-void EditorWindow::connectMenus() {
+void EditorWindow::connectSignals() {
   connect(&menus.getFileNew(), SIGNAL(triggered()), this, SLOT(newFile()));
   connect(&menus.getFileClose(), SIGNAL(triggered()), this, SLOT(newFile()));
   connect(&menus.getFileOpen(), SIGNAL(triggered()), this, SLOT(openFile()));
@@ -69,21 +66,21 @@ void EditorWindow::connectMenus() {
   connect(&menus.getEditGoTo(), SIGNAL(triggered()), this, SLOT(show_goto()));
 
   connect(&menus.getHelpAbout(), SIGNAL(triggered()), this, SLOT(show_about()));
+
+  connect(&textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));
 }
 
 void EditorWindow::newFile() { clear(); }
 
-void EditorWindow::openFile() {
-  if (!clear()) {
-    return;
-  }
-
-  dealer.openFile();
+bool EditorWindow::openFile() {
+  return clear() && dealer.openFile() && setUnchanged();
 }
 
-void EditorWindow::saveFile() { dealer.saveFile(); }
+bool EditorWindow::saveFile() { return dealer.saveFile() && setUnchanged(); }
 
-void EditorWindow::saveFileAs() { dealer.saveFileAs(); }
+bool EditorWindow::saveFileAs() {
+  return dealer.saveFileAs() && setUnchanged();
+}
 
 QString EditorWindow::t(const char* txt) { return tr(txt); }
 
@@ -106,3 +103,20 @@ void EditorWindow::show_find() { finder.show(); }
 void EditorWindow ::show_find_back() { finder.show(true); }
 
 void EditorWindow ::show_goto() { gotoLine.show_goto(); }
+
+void EditorWindow ::textChanged() { setWindowModified(true); }
+
+bool EditorWindow ::setUnchanged() {
+  setWindowModified(false);
+  return !isTextChanged();
+}
+
+bool EditorWindow::isTextChanged() { return isWindowModified(); }
+
+void EditorWindow::updateWindowTitle(const QString& appender) {
+  static const QString projectName{qt1simpleted::constants::PROJECT_NAME};
+  static const QString projectVersion{qt1simpleted::constants::EDITOR_VERSION};
+
+  setWindowTitle(projectName + " " + projectVersion +
+                 (appender.isEmpty() ? appender : " " + appender));
+}

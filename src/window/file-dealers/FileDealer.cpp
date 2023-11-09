@@ -111,19 +111,17 @@ bool FileDealer::saveFileAs(const QString& path) {
 }
 
 bool FileDealer::clear() {
-  window.getTextEdit().clear();
-
   if (cdealer != nullptr) {
     // ask the user about file close
-    // if (cdealer->isOpen ())
-    // {}
+    if (isOpen() && window.isTextChanged()) {
+      // if (!ensure_user_close ())
+      //{ return ; }
+    }
 
     cdealer->clear();
   }
 
-  // also check if text is filled
-  // to ask if user want to close it
-  // QString data = window.getTextEdit().toPlainText () ;
+  window.getTextEdit().clear();
 
   window.showStatusMessage(defaultStatus);
 

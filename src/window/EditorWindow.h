@@ -90,6 +90,8 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
   bool setUnchanged();
 
   void updateWindowTitle(const QString& appender = QString{});
+
+  bool clearNoVirtual();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H

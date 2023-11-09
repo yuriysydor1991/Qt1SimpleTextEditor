@@ -20,7 +20,7 @@ EditorWindow::EditorWindow()
 
   connectSignals();
 
-  clear();
+  clearNoVirtual();
 
   updateWindowTitle("[*]");
 }
@@ -45,7 +45,9 @@ bool EditorWindow::openFile(const QString& path) {
   return clear() && dealer.openFile(path) && setUnchanged();
 }
 
-bool EditorWindow::clear() { return dealer.clear() && setUnchanged(); }
+bool EditorWindow::clear() { return clearNoVirtual(); }
+
+bool EditorWindow::clearNoVirtual() { return dealer.clear() && setUnchanged(); }
 
 void EditorWindow::connectSignals() {
   connect(&menus.getFileNew(), SIGNAL(triggered()), this, SLOT(newFile()));

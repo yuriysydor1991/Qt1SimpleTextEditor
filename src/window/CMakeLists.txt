@@ -29,8 +29,6 @@ add_library(
         ${QT_WINDOW_LIB_TARGET}
         OBJECT
         EditorWindow.cpp
-        embellishers/FindEmbellisher.cpp
-        embellishers/FindEmbellisher.h
 )
 
 include_directories(

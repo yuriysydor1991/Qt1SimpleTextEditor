@@ -32,9 +32,10 @@ class TxtDealer : public IDealer {
 
   virtual QString filename() override;
 
- private:
+ protected:
   IEditorWindow& window;
 
+ private:
   QFile file;
 
   bool hideOpen(const QString& path);

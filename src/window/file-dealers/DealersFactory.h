@@ -22,6 +22,7 @@ class DealersFactory {
   IEditorWindow& window;
 
   virtual std::shared_ptr<IDealer> defaultDealer();
+  virtual std::shared_ptr<IDealer> htmlDealer();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_DEALERSFACTORY_H

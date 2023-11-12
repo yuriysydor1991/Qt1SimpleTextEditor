@@ -8,12 +8,14 @@ Currently in development.
 
 Project goal is to create simple text editor with some basic features:
 + open/edit/save text file;
-+ dealing with unsaved altered data 
++ dealing with unsaved altered data;
 + copy/cut/paste into text document;
 + undo/redo features;
 + find text in the document;
-+ go to line feature
-+ cross-platform application with Qt5, etc. 
++ go to line feature;
++ cross-platform application with Qt5, etc.
+
+There are implemented additional functionality for the HTML files. This text editor allows to wrap selected text with chosen HTML tags to increase text formatting. It is available in Edit menu during *.html file opening or saving.
 
 # Home page
 

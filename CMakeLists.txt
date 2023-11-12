@@ -30,12 +30,12 @@ set(
 set(RESOURCES_DIR "${CMAKE_SOURCE_DIR}/resources" CACHE STRING "Directory with additional project resources.")
 set(LUPDATE_PRO_IN "${CMAKE_SOURCE_DIR}/src/lupdate.pro.in" CACHE STRING "Qt5 Linguist's lupdate tool project file configure input")
 set(LUPDATE_PRO "${CMAKE_BINARY_DIR}/lupdate.pro" CACHE STRING "Qt5 Linguist's lupdate tool project file")
-set(UA_TRANSLATION_TS "${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_uk_UA.ts" CACHE STRING "Ukrainian TS translation file.")
-set(PL_TRANSLATION_TS "${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_pl_PL.ts" CACHE STRING "Polish TS translation file.")
-set(UA_TRANSLATION_QM "${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_uk_UA.qm" CACHE STRING "Ukrainian QM translation file.")
-set(PL_TRANSLATION_QM "${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_pl_PL.qm" CACHE STRING "Ukrainian QM translation file.")
 set(QM_TARGET "generate-QM-files" CACHE STRING "Qt qm binary translation file target")
-set(ALL_TRANSLATION_FILES "${UA_TRANSLATION_TS} ${PL_TRANSLATION_TS}" CACHE STRING "All dest TS files to generate")
+set(
+    ALL_TRANSLATION_FILES
+    "${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_uk_UA.ts ${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_pl_PL.ts ${RESOURCES_DIR}/Qt1SimpleTextEditorDemo_de_DE.ts"
+    CACHE STRING "All dest TS files to generate"
+)
 set(EDITOR_CREATOR_NAME "Yuriy Sydor")
 set(PROJECT_CREATOR_EMAIL "yuriysydor1991@gmail.com")
 set(PROJECT_GIT_URL "https://github.com/yuriysydor1991/Qt1SimpleTextEditor")

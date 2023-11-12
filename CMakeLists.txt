@@ -9,6 +9,10 @@ set(
         CACHE STRING "Qt window custom moc preprocessor stage target name"
 )
 set(
+        QT_HTML_DEALER "QtHtmlDealerMocPreprocessingCustomTarget"
+        CACHE STRING "Qt Html dealer custom moc preprocessor stage target name"
+)
+set(
         QT_WINDOW_LIB_TARGET "QtWindowLibraryTarget"
         CACHE STRING "Qt window target object file library target"
 )

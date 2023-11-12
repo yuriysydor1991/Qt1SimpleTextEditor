@@ -35,6 +35,9 @@ class IEditorWindow {
   virtual QMainWindow& widget() = 0;
 
   virtual bool isTextChanged() = 0;
+
+  virtual void addToEdit(QMenu& newMenu) = 0;
+  virtual void removeFromEdit(QMenu& newMenu) = 0;
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_IEDITORWINDOW_H

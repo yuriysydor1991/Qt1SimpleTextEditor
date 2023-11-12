@@ -81,7 +81,6 @@ add_executable(
         window/embellishers/MenuEmbellisher.cpp
         window/embellishers/AboutDialogEmbellisher.cpp
         window/embellishers/GoToLineEmbellisher.cpp
-        window/file-dealers/HtmlDealer.cpp
         window/embellishers/FindEmbellisher.cpp
 )
 

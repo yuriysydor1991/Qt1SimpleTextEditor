@@ -21,6 +21,14 @@ add_custom_target(
         COMMENT "QT5 window header moc preprocess command"
 )
 
+add_custom_target(
+        ${QT_HTML_DEALER}
+        COMMAND ${Qt5AUTOMOC_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/file-dealers/HtmlDealer.h" -o ${CMAKE_BINARY_DIR}/HtmlDealer.moc.h
+        BYPRODUCTS ${CMAKE_BINARY_DIR}/HtmlDealer.moc.h
+        SOURCES file-dealers/HtmlDealer.h
+        COMMENT "QT5 Html file dealer header moc preprocess command"
+)
+
 add_compile_options(
         -fPIC
 )
@@ -29,6 +37,7 @@ add_library(
         ${QT_WINDOW_LIB_TARGET}
         OBJECT
         EditorWindow.cpp
+        file-dealers/HtmlDealer.cpp
 )
 
 include_directories(
@@ -39,4 +48,5 @@ include_directories(
 add_dependencies(
         ${QT_WINDOW_LIB_TARGET}
         ${QT_WINDOW_TARGET}
+        ${QT_HTML_DEALER}
 )

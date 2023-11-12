@@ -126,3 +126,9 @@ void EditorWindow::updateWindowTitle(const QString& appender) {
 }
 
 void EditorWindow::show_about_qt() { about.show_aboutQt(); }
+
+void EditorWindow::addToEdit(QMenu& newMenu) { menus.addToEdit(newMenu); }
+
+void EditorWindow::removeFromEdit(QMenu& newMenu) {
+  menus.removeFromEdit(newMenu);
+}

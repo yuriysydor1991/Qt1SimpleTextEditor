@@ -45,6 +45,9 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   virtual bool isTextChanged() override;
 
+  virtual void addToEdit(QMenu& newMenu) override;
+  virtual void removeFromEdit(QMenu& newMenu) override;
+
  private slots:
 
   void newFile();

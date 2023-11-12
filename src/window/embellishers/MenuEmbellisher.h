@@ -44,6 +44,9 @@ class MenuEmbellisher {
 
   QAction& getEditGoTo();
 
+  void addToEdit(QMenu& newMenu);
+  void removeFromEdit(QMenu& newMenu);
+
  private:
   IEditorWindow& window;
 

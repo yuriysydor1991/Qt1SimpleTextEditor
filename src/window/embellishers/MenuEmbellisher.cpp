@@ -119,3 +119,9 @@ QAction& MenuEmbellisher::getEditFindBack() { return editFindBack; }
 QAction& MenuEmbellisher::getEditGoTo() { return editGoTo; }
 
 QAction& MenuEmbellisher::getHelpAboutQt() { return helpAboutQt; }
+
+void MenuEmbellisher::addToEdit(QMenu& newMenu) { topMEdit.addMenu(&newMenu); }
+
+void MenuEmbellisher::removeFromEdit(QMenu& newMenu) {
+  topMEdit.removeAction(newMenu.menuAction());
+}

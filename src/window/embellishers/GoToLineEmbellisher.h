@@ -14,6 +14,8 @@ class GoToLineEmbellisher {
   void show_goto();
 
  private:
+  constexpr static const char* const classname = "GoToLineEmbellisher";
+
   IEditorWindow& window;
 
   constexpr static const char NLINE = '\n';

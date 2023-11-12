@@ -36,6 +36,8 @@ class TxtDealer : public IDealer {
   IEditorWindow& window;
 
  private:
+  constexpr static const char* const classname = "TxtDealer";
+
   QFile file;
 
   bool hideOpen(const QString& path);

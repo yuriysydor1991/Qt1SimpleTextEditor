@@ -39,7 +39,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
   virtual QTextEdit& getTextEdit() override;
 
-  virtual QString t(const char* txt) override;
+  virtual QString t(const char* txt, const char* ctx) override;
 
   virtual QMainWindow& widget() override;
 

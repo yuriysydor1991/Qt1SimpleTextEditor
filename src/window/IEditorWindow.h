@@ -30,7 +30,7 @@ class IEditorWindow {
 
   virtual QTextEdit& getTextEdit() = 0;
 
-  virtual QString t(const char* txt) = 0;
+  virtual QString t(const char* txt, const char* ctx) = 0;
 
   virtual QMainWindow& widget() = 0;
 

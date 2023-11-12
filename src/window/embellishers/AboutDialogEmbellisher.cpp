@@ -38,21 +38,22 @@ void AboutDialogEmbellisher::build_dialog() {
 }
 
 void AboutDialogEmbellisher::set_labels() {
-  dialog.setWindowTitle(window.t("About window"));
+  dialog.setWindowTitle(window.t("About window", classname));
 
-  gitlabel.setText(window.t("Visit project github repository ") +
+  gitlabel.setText(window.t("Visit project github repository ", classname) +
                    make_git_link() +
-                   window.t(" for updates and additional info"));
+                   window.t(" for updates and additional info", classname));
 
-  mainLabel.setText(window.t("Created by ") + QString{make_creator_name()} +
-                    " " + make_creator_email_link());
+  mainLabel.setText(window.t("Created by ", classname) +
+                    QString{make_creator_name()} + " " +
+                    make_creator_email_link());
 
-  homepageLabel.setText(window.t("Visit home page for more ") +
+  homepageLabel.setText(window.t("Visit home page for more ", classname) +
                         make_homepage_link());
 
-  buildLabel.setText(window.t("Build date: ") +
+  buildLabel.setText(window.t("Build date: ", classname) +
                      QString{qt1simpleted::constants::PROJECT_BUILD_DATE} +
-                     window.t(" and git commit: ") +
+                     window.t(" and git commit: ", classname) +
                      QString{qt1simpleted::constants::PROJECT_GIT_COMMIT});
 }
 
@@ -82,5 +83,6 @@ QString AboutDialogEmbellisher ::make_link(const QString& url,
 }
 
 void AboutDialogEmbellisher ::show_aboutQt() {
-  QMessageBox::aboutQt(&window.widget(), window.t("About used Qt5 framework"));
+  QMessageBox::aboutQt(&window.widget(),
+                       window.t("About used Qt5 framework", classname));
 }

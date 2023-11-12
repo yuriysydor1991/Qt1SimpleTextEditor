@@ -15,10 +15,11 @@ void GoToLineEmbellisher ::show_goto() {
   const qsizetype lines = text.count(NLINE);
 
   bool ok;
-  const qsizetype cline = QInputDialog::getInt(
-      &window.widget(), window.t("Go to line"),
-      window.t("Line ") + QString("(max %1):").arg(lines == 0 ? 1 : lines), 1,
-      1, lines, 1, &ok);
+  const qsizetype cline =
+      QInputDialog::getInt(&window.widget(), window.t("Go to line", classname),
+                           window.t("Line ", classname) +
+                               QString("(max %1):").arg(lines == 0 ? 1 : lines),
+                           1, 1, lines, 1, &ok);
   if (ok) {
     searchAndSet(edit, text, cline);
   }

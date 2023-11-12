@@ -22,22 +22,24 @@ bool HtmlDealer ::isHtml(const QString& ext) {
 void HtmlDealer::buildHtmlMenu() {
   subHtml.setTitle("HTML");
 
-  QAction* bWrap = subHtml.addAction(window.t("Wrap <b>bold</b>"));
-  QAction* iWrap = subHtml.addAction(window.t("Wrap <i>italic</i>"));
-  QAction* uWrap = subHtml.addAction(window.t("Wrap <u>underline</u>"));
+  QAction* bWrap = subHtml.addAction(window.t("Wrap <b>bold</b>", classname));
+  QAction* iWrap = subHtml.addAction(window.t("Wrap <i>italic</i>", classname));
+  QAction* uWrap =
+      subHtml.addAction(window.t("Wrap <u>underline</u>", classname));
 
   subHtml.addSeparator();
 
-  QAction* aWrap = subHtml.addAction(window.t("Wrap <a href=\"\"...>"));
+  QAction* aWrap =
+      subHtml.addAction(window.t("Wrap <a href=\"\"...>", classname));
 
   subHtml.addSeparator();
 
-  QAction* h1Wrap = subHtml.addAction(window.t("Wrap <h1>"));
-  QAction* h2Wrap = subHtml.addAction(window.t("Wrap <h2>"));
-  QAction* h3Wrap = subHtml.addAction(window.t("Wrap <h3>"));
-  QAction* h4Wrap = subHtml.addAction(window.t("Wrap <h4>"));
-  QAction* h5Wrap = subHtml.addAction(window.t("Wrap <h5>"));
-  QAction* h6Wrap = subHtml.addAction(window.t("Wrap <h6>"));
+  QAction* h1Wrap = subHtml.addAction(window.t("Wrap <h1>", classname));
+  QAction* h2Wrap = subHtml.addAction(window.t("Wrap <h2>", classname));
+  QAction* h3Wrap = subHtml.addAction(window.t("Wrap <h3>", classname));
+  QAction* h4Wrap = subHtml.addAction(window.t("Wrap <h4>", classname));
+  QAction* h5Wrap = subHtml.addAction(window.t("Wrap <h5>", classname));
+  QAction* h6Wrap = subHtml.addAction(window.t("Wrap <h6>", classname));
 
   bWrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_B));
   iWrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_I));

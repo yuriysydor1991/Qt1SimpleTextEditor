@@ -19,12 +19,13 @@ bool FileDealer::openFile(const QString& path) {
 
   if (cdealer == nullptr || define_dealer(path) == nullptr) {
     window.showStatusMessage(
-        window.t("Error while creating reader for a file: ") + path);
+        window.t("Error while creating reader for a file: ", classname) + path);
     return false;
   }
 
   if (!cdealer->openFile(path)) {
-    window.showStatusMessage(window.t("Failure to the file: ") + path);
+    window.showStatusMessage(window.t("Failure to read the file: ", classname) +
+                             path);
     return false;
   }
 
@@ -47,11 +48,11 @@ QString FileDealer::get_home_folder() {
 
 bool FileDealer::openFile() {
   auto filename = QFileDialog::getOpenFileName(
-      &window.widget(), window.t("Open a text file"), get_home_folder(),
-      FilterCreator::defaultTxtFilter());
+      &window.widget(), window.t("Open a text file", classname),
+      get_home_folder(), FilterCreator::defaultTxtFilter());
 
   if (filename.isEmpty()) {
-    window.showStatusMessage(window.t("No file path given"));
+    window.showStatusMessage(window.t("No file path given", classname));
     return false;
   }
 
@@ -64,7 +65,7 @@ bool FileDealer::saveFile() {
   }
 
   if (!cdealer->saveFile()) {
-    window.showStatusMessage(window.t("Failure to save the file: ") +
+    window.showStatusMessage(window.t("Failure to save the file: ", classname) +
                              filename());
     return false;
   }
@@ -76,16 +77,17 @@ bool FileDealer::saveFile() {
 
 bool FileDealer::saveFileAs() {
   QString filename = QFileDialog::getSaveFileName(
-      &window.widget(), window.t("Save File As"), get_home_folder(),
+      &window.widget(), window.t("Save File As", classname), get_home_folder(),
       FilterCreator::defaultTxtFilter());
 
   if (filename.isEmpty()) {
-    window.showStatusMessage(window.t("No file path given"));
+    window.showStatusMessage(window.t("No file path given", classname));
     return false;
   }
 
   if (!saveFileAs(filename)) {
-    window.showStatusMessage(window.t("Failure to open file: ") + filename);
+    window.showStatusMessage(window.t("Failure to open file: ", classname) +
+                             filename);
     return false;
   }
 
@@ -97,12 +99,13 @@ bool FileDealer::saveFileAs() {
 bool FileDealer::saveFileAs(const QString& path) {
   if (cdealer == nullptr && define_dealer(path) == nullptr) {
     window.showStatusMessage(
-        window.t("Error while creating reader for a file: ") + path);
+        window.t("Error while creating reader for a file: ", classname) + path);
     return false;
   }
 
   if (!cdealer->saveFileAs(path)) {
-    window.showStatusMessage(window.t("Failure to save file as: ") + path);
+    window.showStatusMessage(window.t("Failure to save file as: ", classname) +
+                             path);
     return false;
   }
 
@@ -124,7 +127,7 @@ bool FileDealer::clear() {
 
   window.getTextEdit().clear();
 
-  window.showStatusMessage(defaultStatus);
+  window.showStatusMessage(window.t("<No file opened>", classname));
 
   return true;
 }
@@ -136,7 +139,7 @@ std::shared_ptr<IDealer> FileDealer::define_dealer(const QString& path) {
 
   if (cdealer == nullptr) {
     window.showStatusMessage(
-        window.t("Error while creating reader for a file: ") + path);
+        window.t("Error while creating reader for a file: ", classname) + path);
     return {};
   }
 
@@ -160,10 +163,10 @@ bool FileDealer::ensure_user_close() {
 }
 
 const QString FileDealer::makeCloseDialogText() {
-  return window.t(
-      "Close and dismiss unsaved data? - Press \"Yes\" button.\n"
-      "Cancel operation? - Press \"No\" button.\n"
-      "Save data into current file? - Press \"Save\" button.\n");
+  return window.t(classname,
+                  "Close and dismiss unsaved data? - Press \"Yes\" button.\n"
+                  "Cancel operation? - Press \"No\" button.\n"
+                  "Save data into current file? - Press \"Save\" button.\n");
 }
 
 QMessageBox::StandardButtons FileDealer::makeCloseDialogButtons() {
@@ -172,8 +175,9 @@ QMessageBox::StandardButtons FileDealer::makeCloseDialogButtons() {
 }
 
 QMessageBox::StandardButton FileDealer::askUserAboutUnsaveds() {
-  return QMessageBox::question(&window.widget(),
-                               window.t("What to do with the unsaved data?"),
-                               makeCloseDialogText(), makeCloseDialogButtons(),
-                               QMessageBox::StandardButton::No);
+  return QMessageBox::question(
+      &window.widget(),
+      window.t("What to do with the unsaved data?", classname),
+      makeCloseDialogText(), makeCloseDialogButtons(),
+      QMessageBox::StandardButton::No);
 }

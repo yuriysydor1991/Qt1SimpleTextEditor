@@ -76,6 +76,8 @@ class MenuEmbellisher {
   QAction helpAboutQt;
 
  private:
+  constexpr static const char* const classname = "MenuEmbellisher";
+
   void entitleMenus();
 
   void packMenus();

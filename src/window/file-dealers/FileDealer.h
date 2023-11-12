@@ -19,7 +19,6 @@ class FileDealer : public IDealer {
   ~FileDealer() override = default;
 
   constexpr static const char* const default_save_folder = "/home/";
-  constexpr static const char* defaultStatus = "<No file opened>";
 
   virtual bool openFile(const QString& path) override;
 
@@ -40,6 +39,8 @@ class FileDealer : public IDealer {
   virtual QString filename() override;
 
  private:
+  constexpr static const char* const classname = "FileDealer";
+
   IEditorWindow& window;
 
   DealersFactory dfactory;

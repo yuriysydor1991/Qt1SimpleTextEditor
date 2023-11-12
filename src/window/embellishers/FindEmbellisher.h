@@ -16,6 +16,8 @@ class FindEmbellisher {
   void show(bool backwards = false);
 
  private:
+  constexpr static const char* const classname = "FindEmbellisher";
+
   IEditorWindow& window;
 
   QString text;

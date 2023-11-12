@@ -61,7 +61,8 @@ bool TxtDealer::hideOpen(const QString& path) {
   file.setFileName(path);
 
   if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
-    window.showStatusMessage(window.t("Error while opening the file: ") + path);
+    window.showStatusMessage(
+        window.t("Error while opening the file: ", classname) + path);
     return false;
   }
 

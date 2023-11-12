@@ -5,6 +5,8 @@
 #include "WindowFactory.h"
 
 #include <QApplication>
+#include <QLocale>
+#include <QTranslator>
 
 #include "EditorWindow.h"
 
@@ -13,6 +15,15 @@ WindowFactory::WindowFactory(int& argc, char**& argv)
 
 int WindowFactory::run() {
   QApplication EditorApp(m_argc, m_argv);
+
+  QTranslator translator;
+
+  // TODO: specify system installation
+  //  directory etc for lookup.
+  if (translator.load(QLocale(), "Qt1SimpleTextEditorDemo", "_",
+                      "../../resources/")) {
+    EditorApp.installTranslator(&translator);
+  }
 
   EditorWindow Editor;
 

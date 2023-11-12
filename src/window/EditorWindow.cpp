@@ -2,6 +2,7 @@
 // Created by cc on 03.09.23.
 //
 
+#include <QApplication>
 #include <QFileDialog>
 
 #include "EditorWindow.moc.h"
@@ -86,7 +87,9 @@ bool EditorWindow::saveFileAs() {
   return dealer.saveFileAs() && setUnchanged();
 }
 
-QString EditorWindow::t(const char* txt) { return tr(txt); }
+QString EditorWindow::t(const char* txt, const char* ctx) {
+  return QApplication::translate(ctx, txt);
+}
 
 QMainWindow& EditorWindow::widget() { return *this; }
 

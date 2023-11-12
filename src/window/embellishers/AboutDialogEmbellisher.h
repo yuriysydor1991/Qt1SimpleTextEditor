@@ -19,6 +19,8 @@ class AboutDialogEmbellisher {
   void show_aboutQt();
 
  private:
+  constexpr static const char* const classname = "AboutDialogEmbellisher";
+
   IEditorWindow& window;
   QDialog dialog;
 

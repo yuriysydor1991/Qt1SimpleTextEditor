@@ -45,6 +45,9 @@ class HtmlDealer : public QObject, public TxtDealer {
   void wrapH4();
   void wrapH5();
   void wrapH6();
+
+ private:
+  constexpr static const char* const classname = "HtmlDealer";
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_HTMLDEALER_H

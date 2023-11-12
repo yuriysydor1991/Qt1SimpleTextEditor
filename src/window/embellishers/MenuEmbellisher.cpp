@@ -35,31 +35,31 @@ QAction& MenuEmbellisher::getEditUndo() { return editUndo; }
 QAction& MenuEmbellisher::getEditRedo() { return editRedo; }
 
 void MenuEmbellisher::entitleMenus() {
-  topMFile.setTitle(window.t("File"));
-  topMFind.setTitle(window.t("Find"));
-  topMEdit.setTitle(window.t("Edit"));
-  topMHelp.setTitle(window.t("Help"));
+  topMFile.setTitle(window.t("File", classname));
+  topMFind.setTitle(window.t("Find", classname));
+  topMEdit.setTitle(window.t("Edit", classname));
+  topMHelp.setTitle(window.t("Help", classname));
 
-  fileNew.setText(window.t("New"));
-  fileOpen.setText(window.t("Open"));
-  fileSave.setText(window.t("Save"));
-  fileSaveAs.setText(window.t("SaveAs"));
-  fileClose.setText(window.t("Close"));
+  fileNew.setText(window.t("New", classname));
+  fileOpen.setText(window.t("Open", classname));
+  fileSave.setText(window.t("Save", classname));
+  fileSaveAs.setText(window.t("SaveAs", classname));
+  fileClose.setText(window.t("Close", classname));
 
-  editCopy.setText(window.t("Copy"));
-  editCut.setText(window.t("Cut"));
-  editPaste.setText(window.t("Paste"));
+  editCopy.setText(window.t("Copy", classname));
+  editCut.setText(window.t("Cut", classname));
+  editPaste.setText(window.t("Paste", classname));
 
-  editUndo.setText(window.t("Undo"));
-  editRedo.setText(window.t("Redo"));
+  editUndo.setText(window.t("Undo", classname));
+  editRedo.setText(window.t("Redo", classname));
 
-  editFind.setText(window.t("Find"));
-  editFindBack.setText(window.t("Find backwards"));
+  editFind.setText(window.t("Find", classname));
+  editFindBack.setText(window.t("Find backwards", classname));
 
-  editGoTo.setText(window.t("Go to line"));
+  editGoTo.setText(window.t("Go to line", classname));
 
-  helpAbout.setText(window.t("About"));
-  helpAboutQt.setText(window.t("About Qt5"));
+  helpAbout.setText(window.t("About", classname));
+  helpAboutQt.setText(window.t("About Qt5", classname));
 }
 
 void MenuEmbellisher::packMenus() {

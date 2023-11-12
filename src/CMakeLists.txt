@@ -8,6 +8,7 @@ configure_file(
 find_program(
         CLANG_FORMAT_EXEC
         clang-format
+        clang-format.exe
 )
 
 if (CLANG_FORMAT_EXEC)
@@ -38,6 +39,7 @@ find_program(
 find_program(
         GRAPHIZ_DOT_EXEC
         dot
+        dot.exe
 )
 
 if (DOXYGEN_EXEC AND GRAPHIZ_DOT_EXEC)
@@ -98,6 +100,7 @@ add_compile_options(
 add_dependencies(
         ${PROJECT_NAME}
         ${QT_WINDOW_LIB_TARGET}
+        ${QM_TARGET}
 )
 
 target_link_libraries(
@@ -110,7 +113,7 @@ target_link_libraries(
 add_subdirectory(window)
 
 # cppcheck integration
-find_program(CPPCHECK_EXEC cppcheck)
+find_program(CPPCHECK_EXEC cppcheck cppcheck.exe)
 
 if (CPPCHECK_EXEC)
     message(STATUS "cppcheck: ${CPPCHECK_EXEC}")
@@ -130,5 +133,40 @@ else()
             "No code check target will be declared.\n"
             "Install cppcheck by using command:\n"
             "sudo apt-get install -y cppcheck"
+    )
+endif()
+
+# Qt linguist integration
+find_program(LUPDATE_EXEC lupdate lupdate.exe)
+find_program(LRELEASE_EXEC lrelease lrelease.exe)
+
+if (LUPDATE_EXEC AND LRELEASE_EXEC)
+    file(GLOB_RECURSE ALL_HEADERS_LIST LIST_DIRECTORIES false "*.h" "*.hpp" "*.H" "*.hxx")
+    file(GLOB_RECURSE ALL_SOURCES_LIST LIST_DIRECTORIES false "*.cpp" "*.cxx" "*.C" "*.c++")
+
+    list(JOIN ALL_HEADERS_LIST " " ALL_HEADERS)
+    list(JOIN ALL_SOURCES_LIST " " ALL_SOURCES)
+
+    configure_file(${LUPDATE_PRO_IN} ${LUPDATE_PRO})
+
+    # to generate TS translation files
+    # that can be used by the linguist command
+    add_custom_target (
+            generate-TS-files
+            COMMAND ${LUPDATE_EXEC} -locations none -pro "${LUPDATE_PRO}" -tr-function-alias tr+=t
+            COMMENT "Calls lupdate tool from Qt Linguist package to search for text string and generate TS file for future translation."
+    )
+
+    # to generate QM files
+    add_custom_target (
+            generate-QM-files
+            COMMAND ${LRELEASE_EXEC} "${LUPDATE_PRO}"
+            COMMENT "Calls lrelease tool from Qt Linguist package to generate all the QM files from TS files available."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+            DEPENDS generate-TS-files
+    )
+else()
+    message(WARNING "Qt linguist's lupdate and/or lrelease tools were not found in the system. To install them run next command (Debian/Ubuntu):\n"
+            "sudo apt-get install -y qttools5-dev-tools"
     )
 endif()

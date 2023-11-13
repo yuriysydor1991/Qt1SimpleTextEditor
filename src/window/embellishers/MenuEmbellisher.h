@@ -8,7 +8,6 @@
 #include <QAction>
 #include <QMenu>
 #include <QMenuBar>
-#include <QString>
 
 #include "IEditorWindow.h"
 

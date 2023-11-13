@@ -37,7 +37,7 @@ To find and run the executable run next commands:
 # to find the executable under the source/build tree
 find . -name 'Qt1SimpleTextEditorDemo'
 
-# example of the text editor executable dislocation
+# example of the text editor executable location
 ./build/src/Qt1SimpleTextEditorDemo
 ```
 
@@ -45,11 +45,15 @@ Don't forget to build it as in previous section shown.
 
 # Generating documentation
 
+## Installing packages
+
 Ensure that there are required Doxygen and Graphviz packages in your system:
 
 ```
 sudo apt-get install -y doxygen graphviz
 ```
+
+## Generating
 
 To generate Doxygen documentation execute the following commands:
 
@@ -57,9 +61,11 @@ To generate Doxygen documentation execute the following commands:
 mkdir -vp build && cd build && cmake ../ && cmake --build . --target Doxygen-doc
 ```
 
-Under the build directory there will be created among others the "html" directory with index.html.
+Under the build directory there will be created, among others, the "html" directory with index.html.
 
 # Running cppcheck
+
+The cppcheck command run in unstable at current moment producing unpredictable results.
 
 ## Installing cppcheck 
 

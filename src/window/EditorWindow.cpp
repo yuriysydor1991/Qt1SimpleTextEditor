@@ -3,7 +3,7 @@
 //
 
 #include <QApplication>
-#include <QFileDialog>
+#include <QCloseEvent>
 
 #include "EditorWindow.moc.h"
 #include "Qt1SimpleTextEditor-conf.h"
@@ -25,8 +25,6 @@ EditorWindow::EditorWindow()
 
   updateWindowTitle("[*]");
 }
-
-EditorWindow ::~EditorWindow() { clear(); }
 
 void EditorWindow::setMainMenu(QMenuBar& menu) { setMenuBar(&menu); }
 
@@ -136,4 +134,15 @@ void EditorWindow::addToEdit(QMenu& newMenu) { menus.addToEdit(newMenu); }
 
 void EditorWindow::removeFromEdit(QMenu& newMenu) {
   menus.removeFromEdit(newMenu);
+}
+
+void EditorWindow::closeEvent(QCloseEvent* event) {
+  // just in case
+  if (event == nullptr) {
+    return;
+  }
+
+  if (!clear()) {
+    event->ignore();
+  }
 }

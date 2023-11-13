@@ -24,7 +24,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
  public:
   EditorWindow();
-  ~EditorWindow();
+  ~EditorWindow() = default;
 
   virtual void showStatusMessage(const char* status) override;
 
@@ -98,6 +98,8 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
   void updateWindowTitle(const QString& appender = QString{});
 
   bool clearNoVirtual();
+
+  virtual void closeEvent(QCloseEvent* event) override;
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H

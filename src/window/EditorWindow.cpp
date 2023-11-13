@@ -26,6 +26,8 @@ EditorWindow::EditorWindow()
   updateWindowTitle("[*]");
 }
 
+EditorWindow ::~EditorWindow() { clear(); }
+
 void EditorWindow::setMainMenu(QMenuBar& menu) { setMenuBar(&menu); }
 
 QTextEdit& EditorWindow::getTextEdit() { return textEdit; }

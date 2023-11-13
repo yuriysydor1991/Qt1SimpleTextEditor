@@ -24,6 +24,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
  public:
   EditorWindow();
+  ~EditorWindow();
 
   virtual void showStatusMessage(const char* status) override;
 

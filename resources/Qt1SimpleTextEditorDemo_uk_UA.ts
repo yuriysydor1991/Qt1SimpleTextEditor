@@ -292,7 +292,7 @@ Save data into current file? - Press &quot;Save&quot; button.
 Cancel operation? - Press &quot;No&quot; button.
 Save data into current file? - Press &quot;Save&quot; button.
 </source>
-        <translation type="obsolete">Відкинути і закрити? - Натиснути кнопку &quot;Так&quot;
+        <translation>Відкинути і закрити? - Натиснути кнопку &quot;Так&quot;
 Перервати операцію? - Натиснути кнопку &quot;Ні&quot;
 Зберегти дані у поточний файл? - Натиснути кнопку &quot;Зберегти&quot;.
 </translation>
@@ -314,7 +314,7 @@ Save data into current file? - Press &quot;Save&quot; button.
     </message>
     <message>
         <source>Find text next</source>
-        <translation type="unfinished">Знайти настунпий текст</translation>
+        <translation>Знайти настунпий текст</translation>
     </message>
     <message>
         <source>Input the search text:</source>

@@ -78,6 +78,13 @@
         <source>What to do with the unsaved data?</source>
         <translation>Was tun mit den nicht gespeicherten Daten?</translation>
     </message>
+    <message>
+        <source>Close and dismiss unsaved data? - Press &quot;Yes&quot; button.
+Cancel operation? - Press &quot;No&quot; button.
+Save data into current file? - Press &quot;Save&quot; button.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FindEmbellisher</name>

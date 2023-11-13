@@ -68,9 +68,13 @@ endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(Qt5 COMPONENTS Gui REQUIRED)
 
 get_target_property(Qt5Includes Qt5::Widgets INTERFACE_INCLUDE_DIRECTORIES)
 get_target_property(Qt5CoreIncludes Qt5::Core INTERFACE_INCLUDE_DIRECTORIES)
+get_target_property(Qt5GuiIncludes Qt5::Gui INTERFACE_INCLUDE_DIRECTORIES)
+
+set(Qt5GeneralIncludes ${Qt5Includes} ${Qt5CoreIncludes} ${Qt5GuiIncludes})
 
 add_executable(
         ${PROJECT_NAME}
@@ -87,7 +91,7 @@ add_executable(
 )
 
 include_directories(
-        ${Qt5Includes} ${Qt5CoreIncludes}
+        ${Qt5GeneralIncludes}
         window window/file-dealers window/embellishers
         ${CMAKE_BINARY_DIR}
 )
@@ -121,7 +125,7 @@ if (CPPCHECK_EXEC)
     add_custom_target (
             unstable-cppcheck
             COMMAND ${CPPCHECK_EXEC} --std=c++${CMAKE_CXX_STANDARD} --inconclusive --enable=all -v
-                ${Qt5Includes} ${Qt5CoreIncludes}
+                ${Qt5GeneralIncludes}
                 -Iwindow -Iwindow/file-dealers -Iwindow/embellishers -I${CMAKE_BINARY_DIR} -I${CMAKE_BINARY_DIR}/src/window
                 ${CMAKE_CURRENT_SOURCE_DIR}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}

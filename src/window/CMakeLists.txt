@@ -42,7 +42,7 @@ add_library(
 
 include_directories(
         ${QT_WINDOW_LIB_TARGET}
-        ${Qt5Includes} ${Qt5CoreIncludes} ${CMAKE_CURRENT_BINARY_DIR}
+        ${Qt5GeneralIncludes} ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 add_dependencies(

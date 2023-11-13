@@ -5,6 +5,8 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H
 #define QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H
 
+#include <QApplication>
+
 class WindowFactory {
  public:
   explicit WindowFactory(int& argc, char**(&argv));
@@ -16,6 +18,8 @@ class WindowFactory {
  private:
   int& m_argc;
   char**& m_argv;
+
+  void installTranslators(QApplication& app);
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H

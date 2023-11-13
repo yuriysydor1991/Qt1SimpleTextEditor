@@ -16,14 +16,7 @@ WindowFactory::WindowFactory(int& argc, char**& argv)
 int WindowFactory::run() {
   QApplication EditorApp(m_argc, m_argv);
 
-  QTranslator translator;
-
-  // TODO: specify system installation
-  //  directory etc for lookup.
-  if (translator.load(QLocale(), "Qt1SimpleTextEditorDemo", "_",
-                      "../../resources/")) {
-    EditorApp.installTranslator(&translator);
-  }
+  installTranslators(EditorApp);
 
   EditorWindow Editor;
 
@@ -36,4 +29,15 @@ int WindowFactory::execute(int& argc, char**(&argv)) {
   WindowFactory factory(argc, argv);
 
   return factory.run();
+}
+
+void WindowFactory::installTranslators(QApplication& app) {
+  static QTranslator translator;
+
+  // TODO: specify system installation
+  //  directory etc for lookup.
+  if (translator.load(QLocale(), "Qt1SimpleTextEditorDemo", "_",
+                      "../../resources/")) {
+    app.installTranslator(&translator);
+  }
 }

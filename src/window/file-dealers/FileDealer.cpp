@@ -163,10 +163,11 @@ bool FileDealer::ensure_user_close() {
 }
 
 const QString FileDealer::makeCloseDialogText() {
-  return window.t(classname,
-                  "Close and dismiss unsaved data? - Press \"Yes\" button.\n"
-                  "Cancel operation? - Press \"No\" button.\n"
-                  "Save data into current file? - Press \"Save\" button.\n");
+  return window.t(
+      "Close and dismiss unsaved data? - Press \"Yes\" button.\n"
+      "Cancel operation? - Press \"No\" button.\n"
+      "Save data into current file? - Press \"Save\" button.\n",
+      classname);
 }
 
 QMessageBox::StandardButtons FileDealer::makeCloseDialogButtons() {

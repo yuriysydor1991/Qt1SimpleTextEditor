@@ -10,6 +10,12 @@
 #include "IDealer.h"
 #include "IEditorWindow.h"
 
+/**
+ * Class that encapsulates code that
+ * deals with raw file operations and
+ * stores the QFile instance that
+ * represents opened file.
+ */
 class TxtDealer : public IDealer {
  public:
   explicit TxtDealer(IEditorWindow& main);
@@ -38,8 +44,18 @@ class TxtDealer : public IDealer {
  private:
   constexpr static const char* const classname = "TxtDealer";
 
+  /**
+   * Instance that platform independently deals with
+   * the file storage.
+   */
   QFile file;
 
+  /**
+   * Method that encapsulates file opening routine.
+   * @param path Path to the file to be opened.
+   * @return Returns true if file was successfully
+   * opened and any other value in case of a failure.
+   */
   bool hideOpen(const QString& path);
 };
 

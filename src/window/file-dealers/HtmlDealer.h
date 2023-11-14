@@ -12,6 +12,14 @@
 #include "IEditorWindow.h"
 #include "TxtDealer.h"
 
+/**
+ * HTMLDealer class designed for additional functions
+ * for the HTML files. Creates a HTML submenu in
+ * the Edit top level menu to declare it's operations.
+ *
+ * Is descendant of the TxtDealer class, hence supports
+ * all the methods of a IDealer abstract class.
+ */
 class HtmlDealer : public QObject, public TxtDealer {
   Q_OBJECT
 

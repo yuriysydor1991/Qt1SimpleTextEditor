@@ -56,7 +56,7 @@ message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
 
 project(
         ${PROJECT_NAME}
-        VERSION 1.0.0
+        VERSION 2.1.0
         DESCRIPTION "A simple Qt5 text editor for demonstration purposes"
         HOMEPAGE_URL "http://www.kytok.org.ua/"
         LANGUAGES CXX

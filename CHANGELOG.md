@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2023-11-15
+
++ 7f1f835 main.cpp: inserted comments for a Doxygen documentation
++ 9523ccb TxtDealer: inserted comments for a Doxygen documentation
++ 4161517 AboutDialogEmbellisher: inserted comments for a Doxygen documentation
++ ef3718c FindEmbellisher: inserted comments for a Doxygen documentation
++ a563082 GoToLineEmbellisher: inserted comments for a Doxygen documentation
++ 82bdc62 MenuEmbellisher: inserted comments for a Doxygen documentation
++ bc6f2bc WindowFactory: inserted comments for a Doxygen documentation
++ f233a11 EditorWindow: inserted comments for a Doxygen documentation
++ 31921ee IEditorWindow: inserted comments for a Doxygen documentation
++ 7728e60 FilterCreator: inserted comments for a Doxygen documentation
++ d4ce511 FileDealer: inserted comments for a Doxygen documentation
++ 1e3c860 DealersFactory: inserted comments for a Doxygen documentation
++ 77c2197 HtmlDealer: added top level class description comment
++ 119c9da HtmlDealer: inserted comments with doc for a Doxygen
++ 0108a28 IDealer: added some initial documentaion for Doxygen
++ 36aee1e README.md: refined
++ b709e34 WindowFactory: decomposed QTranslator installation code
++ 72054ea includes: erased redundant includes
++ 29209fd EditorWindow: add data close logic with unsaved data
++ 74241b5 CMakeLists.txt: defined Qt5GeneralIncludes for all Qt5 includes
++ a0c5253 translations: regenerate TS-files due to previous repair
++ 24b1cec FileDealer: repair close window message tr call
+
 ## [2.0.0] - 2023-11-12
 
 + 67116bf translations: added de_DE locale and reduced script-vars

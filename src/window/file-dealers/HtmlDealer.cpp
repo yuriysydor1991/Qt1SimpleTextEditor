@@ -82,7 +82,7 @@ void HtmlDealer::wrapU() { wrapSelectionWith("<u>", "</u>"); }
 void HtmlDealer::wrapA() {
   wrapSelectionWith("<a href=\"\" target=\"_blank\">", "</a>");
 }
-void HtmlDealer::wrapP() { wrapSelectionWith("<p>", "</p>"); }
+void HtmlDealer::wrapP() { wrapSelectionWith("<p>\n", "\n</p>"); }
 void HtmlDealer::wrapH1() { wrapSelectionWith("<h1>", "</h1>"); }
 void HtmlDealer::wrapH2() { wrapSelectionWith("<h2>", "</h2>"); }
 void HtmlDealer::wrapH3() { wrapSelectionWith("<h3>", "</h3>"); }

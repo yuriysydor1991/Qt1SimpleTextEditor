@@ -169,6 +169,10 @@ Zapisać dane do bieżącego pliku? - Naciśnij przycisk „Zapisz”.
         <source>Headers &lt;hN&gt;</source>
         <translation>Tagi nagłówków &lt;hN&gt;</translation>
     </message>
+    <message>
+        <source>Wrap &lt;pre&gt;&lt;/pre&gt;</source>
+        <translation>Zawiń &lt;pre&gt;&lt;/pre&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MenuEmbellisher</name>

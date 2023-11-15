@@ -386,6 +386,10 @@ Save data into current file? - Press &quot;Save&quot; button.
         <source>Headers &lt;hN&gt;</source>
         <translation>Теґи заголовків &lt;hN&gt;</translation>
     </message>
+    <message>
+        <source>Wrap &lt;pre&gt;&lt;/pre&gt;</source>
+        <translation>Обгорнути у  &lt;pre&gt;&lt;/pre&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MenuEmbellisher</name>

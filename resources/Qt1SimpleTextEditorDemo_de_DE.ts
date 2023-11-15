@@ -161,6 +161,14 @@ Daten in aktuelle Datei speichern? - Klicken Sie auf die Schaltfläche „Speich
         <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
         <translation>Wickeln Sie &lt;p&gt;&lt;/p&gt; ein</translation>
     </message>
+    <message>
+        <source>HTML</source>
+        <translation>HTML</translation>
+    </message>
+    <message>
+        <source>Headers &lt;hN&gt;</source>
+        <translation>Header-Tags &lt;hN&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MenuEmbellisher</name>

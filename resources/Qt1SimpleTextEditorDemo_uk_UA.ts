@@ -378,6 +378,14 @@ Save data into current file? - Press &quot;Save&quot; button.
         <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
         <translation>Обгорнути у  &lt;p&gt;&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>HTML</source>
+        <translation>HTML операції</translation>
+    </message>
+    <message>
+        <source>Headers &lt;hN&gt;</source>
+        <translation>Теґи заголовків &lt;hN&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MenuEmbellisher</name>

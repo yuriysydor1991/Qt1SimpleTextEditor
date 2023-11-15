@@ -112,7 +112,7 @@ Zapisać dane do bieżącego pliku? - Naciśnij przycisk „Zapisz”.
     </message>
     <message>
         <source>Line </source>
-        <translation>Linia</translation>
+        <translation>Linia </translation>
     </message>
 </context>
 <context>
@@ -160,6 +160,14 @@ Zapisać dane do bieżącego pliku? - Naciśnij przycisk „Zapisz”.
     <message>
         <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
         <translation>Zawiń &lt;p&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>HTML</source>
+        <translation>HTML</translation>
+    </message>
+    <message>
+        <source>Headers &lt;hN&gt;</source>
+        <translation>Tagi nagłówków &lt;hN&gt;</translation>
     </message>
 </context>
 <context>

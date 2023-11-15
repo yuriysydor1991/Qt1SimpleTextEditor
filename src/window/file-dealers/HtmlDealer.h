@@ -40,11 +40,19 @@ class HtmlDealer : public QObject, public TxtDealer {
                                                      "xhtm"};
 
   /**
-   * Top level QMenu object that will be appended into
+   * The QMenu object that will be appended into
    * Edit menu as a submenu. So the user can
    * perform some HTML operations on the data.
    */
   QMenu subHtml;
+
+  /**
+   * The QMenu object that will be appended into
+   * subHtml menu as a submenu. So the user can
+   * perform HTML <hN>-tags wrapping of the
+   * selected text.
+   */
+  QMenu subHeaders;
 
   /**
    * Link for a main window text edit widget for convenience.

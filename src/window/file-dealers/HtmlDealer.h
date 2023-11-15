@@ -92,6 +92,11 @@ class HtmlDealer : public QObject, public TxtDealer {
   void wrapA();
 
   /**
+   * Wraps selected by the user text with a paragraph <p> tag.
+   */
+  void wrapP();
+
+  /**
    * Wraps selected by the user text with a header <h1> tag.
    */
   void wrapH1();

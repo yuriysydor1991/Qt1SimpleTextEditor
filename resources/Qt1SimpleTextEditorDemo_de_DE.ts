@@ -83,7 +83,10 @@
 Cancel operation? - Press &quot;No&quot; button.
 Save data into current file? - Press &quot;Save&quot; button.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht gespeicherte Daten schließen und verwerfen? - Drücken Sie die Schaltfläche „Ja“.
+Vorgang abbrechen? - Drücken Sie die Schaltfläche „Nein“.
+Daten in aktuelle Datei speichern? - Klicken Sie auf die Schaltfläche „Speichern“.
+</translation>
     </message>
 </context>
 <context>
@@ -153,6 +156,10 @@ Save data into current file? - Press &quot;Save&quot; button.
     <message>
         <source>Wrap &lt;h6&gt;</source>
         <translation>Wickeln Sie &lt;h6&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
+        <translation>Wickeln Sie &lt;p&gt;&lt;/p&gt; ein</translation>
     </message>
 </context>
 <context>

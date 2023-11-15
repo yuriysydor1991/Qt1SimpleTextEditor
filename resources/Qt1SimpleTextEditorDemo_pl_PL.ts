@@ -56,7 +56,7 @@
     </message>
     <message>
         <source>Failure to save the file: </source>
-        <translation>Nie udało się zapisać pliku:</translation>
+        <translation>Nie udało się zapisać pliku: </translation>
     </message>
     <message>
         <source>Save File As</source>
@@ -83,7 +83,10 @@
 Cancel operation? - Press &quot;No&quot; button.
 Save data into current file? - Press &quot;Save&quot; button.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknąć i odrzucić niezapisane dane? - Naciśnij przycisk „Tak”.
+Anulować operację? - Naciśnij przycisk „Nie”.
+Zapisać dane do bieżącego pliku? - Naciśnij przycisk „Zapisz”.
+</translation>
     </message>
 </context>
 <context>
@@ -153,6 +156,10 @@ Save data into current file? - Press &quot;Save&quot; button.
     <message>
         <source>Wrap &lt;h6&gt;</source>
         <translation>Zawiń &lt;h6&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
+        <translation>Zawiń &lt;p&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

@@ -41,6 +41,8 @@ void HtmlDealer::buildHtmlMenu() {
 
   subHtml.addSeparator();
 
+  QAction* preWrap = subHtml.addAction(window.t("Wrap <pre></pre>", classname));
+
   QAction* h1Wrap = subHeaders.addAction(window.t("Wrap <h1>", classname));
   QAction* h2Wrap = subHeaders.addAction(window.t("Wrap <h2>", classname));
   QAction* h3Wrap = subHeaders.addAction(window.t("Wrap <h3>", classname));
@@ -63,6 +65,8 @@ void HtmlDealer::buildHtmlMenu() {
   h5Wrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
   h6Wrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
 
+  preWrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_C));
+
   connect(bWrap, SIGNAL(triggered()), this, SLOT(wrapB()));
   connect(iWrap, SIGNAL(triggered()), this, SLOT(wrapI()));
   connect(uWrap, SIGNAL(triggered()), this, SLOT(wrapU()));
@@ -74,6 +78,7 @@ void HtmlDealer::buildHtmlMenu() {
   connect(h4Wrap, SIGNAL(triggered()), this, SLOT(wrapH4()));
   connect(h5Wrap, SIGNAL(triggered()), this, SLOT(wrapH5()));
   connect(h6Wrap, SIGNAL(triggered()), this, SLOT(wrapH6()));
+  connect(preWrap, SIGNAL(triggered()), this, SLOT(wrapPre()));
 }
 
 void HtmlDealer::wrapB() { wrapSelectionWith("<b>", "</b>"); }
@@ -89,6 +94,9 @@ void HtmlDealer::wrapH3() { wrapSelectionWith("<h3>", "</h3>"); }
 void HtmlDealer::wrapH4() { wrapSelectionWith("<h4>", "</h4>"); }
 void HtmlDealer::wrapH5() { wrapSelectionWith("<h5>", "</h5>"); }
 void HtmlDealer::wrapH6() { wrapSelectionWith("<h6>", "</h6>"); }
+void HtmlDealer::wrapPre() {
+  wrapSelectionWith("<pre class=\"\">\n", "\n</pre>");
+}
 
 bool HtmlDealer ::wrapSelectionWith(const QString& beforeWrap,
                                     const QString& afterWrap) {

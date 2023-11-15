@@ -134,6 +134,11 @@ class HtmlDealer : public QObject, public TxtDealer {
    */
   void wrapH6();
 
+  /**
+   * Wraps selected by the user text with a <pre> tag.
+   */
+  void wrapPre();
+
  private:
   constexpr static const char* const classname = "HtmlDealer";
 };

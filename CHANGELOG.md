@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2023-11-16
+
++ f29dec1 TextEdit: adding QTextEdit descendant to override behaviour
++ 159fdd6 Qt1SimpleTextEditor-conf.h.in: changed location
++ 9c3f15b translations: TS-files refine due to previous changes
++ 1246d76 HtmlDealer: adding pre-tag wrapping action
++ ed30b4a HtmlDealer: insert newlines during paragraph wrap
++ 2cefe9c translations: refined TS files due to prev changes
++ 7bef65a HtmlDealer: moved the hN-tags actions into separate submenu
++ 1fc09b3 translation: regen and translated TS due to new command
++ 6507c3a HtmlDealer: add paragraph wrap menu action
+
 ## [2.1.0] - 2023-11-15
 
 + 7f1f835 main.cpp: inserted comments for a Doxygen documentation

@@ -88,11 +88,15 @@ add_executable(
         window/embellishers/AboutDialogEmbellisher.cpp
         window/embellishers/GoToLineEmbellisher.cpp
         window/embellishers/FindEmbellisher.cpp
+        window/custom-widgets/TextEdit.cpp
 )
 
 include_directories(
         ${Qt5GeneralIncludes}
-        window window/file-dealers window/embellishers
+        window
+        window/file-dealers
+        window/embellishers
+        window/custom-widgets
         ${CMAKE_BINARY_DIR}
 )
 

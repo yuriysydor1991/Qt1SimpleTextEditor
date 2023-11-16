@@ -17,6 +17,7 @@
 #include "GoToLineEmbellisher.h"
 #include "IEditorWindow.h"
 #include "MenuEmbellisher.h"
+#include "TextEdit.h"
 
 /**
  * The main text editor application window.
@@ -221,7 +222,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    * which is returned by the getTextEdit()
    * method for all objects of interest.
    */
-  QTextEdit textEdit;
+  TextEdit textEdit;
 
   /**
    * Main status bar of the editor window.

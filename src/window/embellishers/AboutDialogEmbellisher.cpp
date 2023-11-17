@@ -8,11 +8,13 @@
 #include <QMessageBox>
 
 #include "Qt1SimpleTextEditor-conf.h"
+#include "kytok.org.ua-logo.h"
 
 AboutDialogEmbellisher ::AboutDialogEmbellisher(IEditorWindow& main)
     : window{main},
       dialog{&main.widget()},
-      box{QBoxLayout::Direction::TopToBottom, &dialog} {
+      vbox{QBoxLayout::Direction::LeftToRight, &dialog},
+      box{QBoxLayout::Direction::TopToBottom} {
   build_dialog();
 }
 
@@ -23,18 +25,19 @@ void AboutDialogEmbellisher::build_dialog() {
 
   set_labels();
 
-  auto& layout = *dialog.layout();
-
   gitlabel.setOpenExternalLinks(true);
   mainLabel.setOpenExternalLinks(true);
   homepageLabel.setOpenExternalLinks(true);
 
   buildLabel.setTextInteractionFlags(Qt::TextSelectableByMouse);
 
-  layout.addWidget(&gitlabel);
-  layout.addWidget(&mainLabel);
-  layout.addWidget(&homepageLabel);
-  layout.addWidget(&buildLabel);
+  box.addWidget(&gitlabel);
+  box.addWidget(&mainLabel);
+  box.addWidget(&homepageLabel);
+  box.addWidget(&buildLabel);
+
+  vbox.addWidget(&logoLabel);
+  vbox.addLayout(&box);
 }
 
 void AboutDialogEmbellisher::set_labels() {
@@ -55,6 +58,21 @@ void AboutDialogEmbellisher::set_labels() {
                      QString{qt1simpleted::constants::PROJECT_BUILD_DATE} +
                      window.t(" and git commit: ", classname) +
                      QString{qt1simpleted::constants::PROJECT_GIT_COMMIT});
+
+  bool imageLoaded =
+      logo.loadFromData(qt1simpleted::images::kytok_logo_data,
+                        qt1simpleted::images::kytok_logo_data_size);
+
+  if (imageLoaded) {
+    logo = logo.scaled(LOGO_SCALE_WIDTH, LOGO_SCALE_HEIGHT);
+
+    /*
+     * Do not blame me, it's from
+     * an official tutorial
+     * https://doc.qt.io/qt-5/qtwidgets-widgets-imageviewer-example.html
+     */
+    logoLabel.setPixmap(QPixmap::fromImage(logo));
+  }
 }
 
 QString AboutDialogEmbellisher::make_creator_name() {

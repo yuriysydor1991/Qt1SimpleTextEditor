@@ -38,6 +38,7 @@ add_library(
         OBJECT
         EditorWindow.cpp
         file-dealers/HtmlDealer.cpp
+        kytok.org.ua-logo.h.in
 )
 
 include_directories(

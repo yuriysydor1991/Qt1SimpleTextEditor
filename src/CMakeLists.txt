@@ -5,6 +5,22 @@ configure_file(
         ${CMAKE_BINARY_DIR}/Qt1SimpleTextEditor-conf.h
 )
 
+file(READ ${LOGO_FILEPATH} KYTOK_LOGO_DATA_HEX HEX)
+file(SIZE ${LOGO_FILEPATH} KYTOK_LOGO_DATA_SIZE)
+string(REGEX REPLACE "([0-9a-f][0-9a-f])" "0x\\1, "  KYTOK_LOGO_DATA_SINGLELINE ${KYTOK_LOGO_DATA_HEX})
+string(REGEX REPLACE
+        "(0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f],) "
+        "\t\t\\1\n"
+        KYTOK_LOGO_DATA
+        ${KYTOK_LOGO_DATA_SINGLELINE}
+)
+
+
+configure_file(
+        window/kytok.org.ua-logo.h.in
+        ${CMAKE_BINARY_DIR}/kytok.org.ua-logo.h
+)
+
 find_program(
         CLANG_FORMAT_EXEC
         clang-format

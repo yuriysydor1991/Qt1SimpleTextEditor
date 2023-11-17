@@ -1,0 +1,19 @@
+//
+// Created by cc on 17.11.23.
+//
+
+#ifndef QT1SIMPLETEXTEDITORDEMO_KYTOK_ORG_UA_LOGO_H
+#define QT1SIMPLETEXTEDITORDEMO_KYTOK_ORG_UA_LOGO_H
+
+#include <QChar>
+
+namespace qt1simpleted::images {
+
+constexpr const qsizetype kytok_logo_data_size {${KYTOK_LOGO_DATA_SIZE}} ;
+constexpr const uchar kytok_logo_data[] {
+${KYTOK_LOGO_DATA}
+} ;
+
+}
+
+#endif //QT1SIMPLETEXTEDITORDEMO_KYTOK_ORG_UA_LOGO_H

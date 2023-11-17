@@ -39,6 +39,11 @@ set(
 set(EDITOR_CREATOR_NAME "Yuriy Sydor")
 set(PROJECT_CREATOR_EMAIL "yuriysydor1991@gmail.com")
 set(PROJECT_GIT_URL "https://github.com/yuriysydor1991/Qt1SimpleTextEditor")
+set(
+        LOGO_FILEPATH
+        "${CMAKE_SOURCE_DIR}/resources/kytok.org.ua-logo.png"
+        CACHE STRING "The path to the about window left logo"
+)
 
 # Thanks for
 # https://stackoverflow.com/questions/71762846/set-cmake-project-description-with-commit-id

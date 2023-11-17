@@ -7,6 +7,7 @@
 
 #include <QBoxLayout>
 #include <QDialog>
+#include <QImage>
 #include <QLabel>
 
 #include "IEditorWindow.h"
@@ -42,6 +43,9 @@ class AboutDialogEmbellisher {
  private:
   constexpr static const char* const classname = "AboutDialogEmbellisher";
 
+  constexpr static const int LOGO_SCALE_WIDTH = 100;
+  constexpr static const int LOGO_SCALE_HEIGHT = LOGO_SCALE_WIDTH;
+
   /**
    * The editor application main window instance
    * reference.
@@ -54,11 +58,14 @@ class AboutDialogEmbellisher {
    */
   QDialog dialog;
 
+  QBoxLayout vbox;
   QBoxLayout box;
   QLabel gitlabel;
   QLabel mainLabel;
   QLabel homepageLabel;
   QLabel buildLabel;
+  QImage logo;
+  QLabel logoLabel;
 
   /**
    * Build the about this program dialog.

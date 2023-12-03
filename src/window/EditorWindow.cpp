@@ -2,10 +2,11 @@
 // Created by cc on 03.09.23.
 //
 
+#include "EditorWindow.h"
+
 #include <QApplication>
 #include <QCloseEvent>
 
-#include "EditorWindow.moc.h"
 #include "Qt1SimpleTextEditor-conf.h"
 
 EditorWindow::EditorWindow()

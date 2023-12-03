@@ -2,9 +2,9 @@
 // Created by cc on 10.11.23.
 //
 
-#include <QAction>
+#include "HtmlDealer.h"
 
-#include "HtmlDealer.moc.h"
+#include <QAction>
 
 HtmlDealer ::HtmlDealer(IEditorWindow& main)
     : TxtDealer(main), textEdit{window.getTextEdit()} {

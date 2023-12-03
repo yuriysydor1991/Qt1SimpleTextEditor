@@ -82,6 +82,8 @@ else()
     )
 endif()
 
+set(CMAKE_AUTOMOC ON)
+
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt5 COMPONENTS Gui REQUIRED)
@@ -105,6 +107,8 @@ add_executable(
         window/embellishers/GoToLineEmbellisher.cpp
         window/embellishers/FindEmbellisher.cpp
         window/custom-widgets/TextEdit.cpp
+        window/file-dealers/HtmlDealer.cpp
+        window/EditorWindow.cpp
 )
 
 include_directories(
@@ -123,7 +127,6 @@ add_compile_options(
 
 add_dependencies(
         ${PROJECT_NAME}
-        ${QT_WINDOW_LIB_TARGET}
         ${QM_TARGET}
 )
 
@@ -131,10 +134,7 @@ target_link_libraries(
         ${PROJECT_NAME}
         Qt5::Core
         Qt5::Widgets
-        $<TARGET_OBJECTS:${QT_WINDOW_LIB_TARGET}>
 )
-
-add_subdirectory(window)
 
 # cppcheck integration
 find_program(CPPCHECK_EXEC cppcheck cppcheck.exe)

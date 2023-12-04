@@ -31,6 +31,7 @@
 #include <QStatusBar>
 #include <QString>
 #include <QTextEdit>
+#include <QVBoxLayout>
 
 #include "AboutDialogEmbellisher.h"
 #include "FileDealer.h"
@@ -245,6 +246,10 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    */
   TextEdit textEdit;
 
+  QFrame frame;
+
+  QVBoxLayout flayout;
+
   /**
    * Main status bar of the editor window.
    */
@@ -337,6 +342,11 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    * by the user by pressing appropriate dialog button).
    */
   virtual void closeEvent(QCloseEvent* event) override;
+
+  /**
+   * Builds text editor window structure.
+   */
+  void buildWindow();
 };
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H

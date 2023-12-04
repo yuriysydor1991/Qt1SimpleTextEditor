@@ -36,8 +36,16 @@ EditorWindow::EditorWindow()
       finder{*this},
       gotoLine{*this},
       dealer{*this} {
+  buildWindow();
+}
+
+void EditorWindow::buildWindow() {
   textEdit.setUndoRedoEnabled(true);
-  setCentralWidget(&textEdit);
+  frame.setLayout(&flayout);
+
+  frame.layout()->addWidget(&textEdit);
+
+  setCentralWidget(&frame);
   setStatusBar(&statusBar);
   statusBar.addPermanentWidget(&permanentStatus, 1);
 

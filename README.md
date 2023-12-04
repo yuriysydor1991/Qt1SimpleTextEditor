@@ -21,6 +21,17 @@ There are implemented additional functionality for the HTML files. This text edi
 
 Visit [http://www.kytok.org.ua/](http://www.kytok.org.ua/) for more.
 
+# Installing necessary packages
+
+To install all the necessary packages, run command that may look like this:
+
+```
+# at least it works on the Linux Mint
+sudo apt-get install -y git cmake make qttools5-dev-tools qttools5-dev doxygen graphviz cppcheck
+```
+
+After that there will be tools to `git clone` and build project on the local Linux-machine.
+
 # Building
 
 To build this project run next command

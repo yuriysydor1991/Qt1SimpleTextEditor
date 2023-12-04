@@ -4,8 +4,6 @@
 
 #include "TxtDealer.h"
 
-#include <iostream>
-
 TxtDealer::TxtDealer(IEditorWindow& main) : window(main) {}
 
 bool TxtDealer::openFile(const QString& path) {

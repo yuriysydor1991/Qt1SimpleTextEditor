@@ -45,6 +45,12 @@ set(
         CACHE STRING "The path to the about window left logo"
 )
 
+set(
+        uk_UA_FILEPATH
+        "${CMAKE_SOURCE_DIR}/resources/Qt1SimpleTextEditorDemo_uk_UA.qm"
+        CACHE STRING "The path to the uk_UA locale translations"
+)
+
 # Thanks for
 # https://stackoverflow.com/questions/71762846/set-cmake-project-description-with-commit-id
 # page for git commit id code.

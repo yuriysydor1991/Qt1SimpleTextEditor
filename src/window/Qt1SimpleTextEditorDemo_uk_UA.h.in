@@ -23,54 +23,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "WindowFactory.h"
+#ifndef QT1SIMPLETEXTEDITORDEMO_uk_UA_H
+#define QT1SIMPLETEXTEDITORDEMO_uk_UA_H
 
-#include <QApplication>
-#include <QLocale>
-#include <QTranslator>
+#include <QChar>
 
-#include "EditorWindow.h"
-#include "Qt1SimpleTextEditorDemo_uk_UA.h"
-#include "iostream"
+namespace qt5simpleted22::translations {
 
-namespace qt5simpleted22 {
+constexpr const qsizetype uk_UA_size {${uk_UA_SIZE}};
+constexpr const uchar uk_UA_data[] {
+${uk_UA_DATA}
+};
 
-WindowFactory::WindowFactory(int &argc, char **&argv)
-    : m_argc(argc), m_argv(argv) {}
+} // qt5simpleted22::constants
 
-int WindowFactory::run() {
-  QApplication EditorApp(m_argc, m_argv);
-
-  installTranslators(EditorApp);
-
-  EditorWindow Editor;
-
-  Editor.show();
-
-  return EditorApp.exec();
-}
-
-int WindowFactory::execute(int &argc, char **(&argv)) {
-  WindowFactory factory(argc, argv);
-
-  return factory.run();
-}
-
-void WindowFactory::installTranslators(QApplication &app) {
-  static QTranslator translator;
-
-  // TODO: specify system installation
-  //  directory etc for lookup.
-  //  if (translator.load(QLocale(), "Qt1SimpleTextEditorDemo", "_",
-  //                      "../../resources/")) {
-  //    app.installTranslator(&translator);
-  //  }
-  if (translator.load(qt5simpleted22::translations::uk_UA_data,
-                      qt5simpleted22::translations::uk_UA_size)) {
-    std::cerr << "TRANSLATOR INSTALLED!" << std::endl;
-
-    app.installTranslator(&translator);
-  }
-}
-
-}  // namespace qt5simpleted22
+#endif //QT1SIMPLETEXTEDITORDEMO_uk_UA_H

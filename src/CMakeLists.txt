@@ -21,6 +21,22 @@ configure_file(
         ${CMAKE_BINARY_DIR}/kytok.org.ua-logo.h
 )
 
+file(READ ${uk_UA_FILEPATH} uk_UA_data_hex HEX)
+file(SIZE ${uk_UA_FILEPATH} uk_UA_SIZE)
+string(REGEX REPLACE "([0-9a-f][0-9a-f])" "0x\\1, "  uk_UA_data_singleline ${uk_UA_data_hex})
+string(REGEX REPLACE
+        "(0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f], 0x[0-9a-f][0-9a-f],) "
+        "\t\t\\1\n"
+        uk_UA_DATA
+        ${uk_UA_data_singleline}
+)
+
+
+configure_file(
+        window/Qt1SimpleTextEditorDemo_uk_UA.h.in
+        ${CMAKE_BINARY_DIR}/Qt1SimpleTextEditorDemo_uk_UA.h
+)
+
 find_program(
         CLANG_FORMAT_EXEC
         clang-format

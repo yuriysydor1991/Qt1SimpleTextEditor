@@ -30,6 +30,8 @@
 
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Class encapsulates text search operations
  * to be used by the EditorWindow class instance
@@ -38,7 +40,7 @@
  */
 class FindEmbellisher {
  public:
-  explicit FindEmbellisher(IEditorWindow& main);
+  explicit FindEmbellisher(IEditorWindow &main);
 
   /**
    * Shows the search window. Search direction is performed
@@ -50,12 +52,12 @@ class FindEmbellisher {
   void show(bool backwards = false);
 
  private:
-  constexpr static const char* const classname = "FindEmbellisher";
+  constexpr static const char *const classname = "FindEmbellisher";
 
   /**
    * The main editor window instance refenrece.
    */
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
    * QString instance to store previously entered
@@ -65,5 +67,7 @@ class FindEmbellisher {
    */
   QString text;
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_FINDEMBELLISHER_H

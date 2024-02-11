@@ -28,6 +28,8 @@
 
 #include <QString>
 
+namespace qt5simpleted22 {
+
 /** Interface for the file dealers.
  * Subclass and implement it's virtual functions
  * to substitute default TxtDealer for the
@@ -51,7 +53,7 @@ class IDealer {
    * @return Returns true on success. Anything else
    * in case of a failure.
    */
-  virtual bool openFile(const QString& path) = 0;
+  virtual bool openFile(const QString &path) = 0;
 
   /**
    * Triggers creation of a new file.
@@ -100,7 +102,7 @@ class IDealer {
    * @return Returns true on success. Anything else
    * in case of a failure.
    */
-  virtual bool saveFileAs(const QString& path) = 0;
+  virtual bool saveFileAs(const QString &path) = 0;
 
   /**
    * Clears current data contents of implementor.
@@ -130,5 +132,7 @@ class IDealer {
    */
   virtual QString filename() = 0;
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_IDEALER_H

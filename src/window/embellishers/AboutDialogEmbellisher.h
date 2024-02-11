@@ -33,6 +33,8 @@
 
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Class that encapsulates the main window
  * about dialog dealing code.
@@ -44,7 +46,7 @@
  */
 class AboutDialogEmbellisher {
  public:
-  explicit AboutDialogEmbellisher(IEditorWindow& main);
+  explicit AboutDialogEmbellisher(IEditorWindow &main);
 
   /**
    * Shows regular about this program dialog with
@@ -62,7 +64,7 @@ class AboutDialogEmbellisher {
   void show_aboutQt();
 
  private:
-  constexpr static const char* const classname = "AboutDialogEmbellisher";
+  constexpr static const char *const classname = "AboutDialogEmbellisher";
 
   constexpr static const int LOGO_SCALE_WIDTH = 100;
   constexpr static const int LOGO_SCALE_HEIGHT = LOGO_SCALE_WIDTH;
@@ -71,7 +73,7 @@ class AboutDialogEmbellisher {
    * The editor application main window instance
    * reference.
    */
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
    * Dialog instance to show with about this
@@ -104,11 +106,13 @@ class AboutDialogEmbellisher {
    * @return Returns computed creator text string.
    */
   static inline QString make_creator_name();
+
   /**
    * Creates creators email link.
    * @return Returns HTML link to a creator email.
    */
   static inline QString make_creator_email_link();
+
   /**
    * Creates a home page link string.
    * @return Returns homepage HTML link string text.
@@ -129,7 +133,9 @@ class AboutDialogEmbellisher {
    * about dialog.
    * @return Returns build HTML link.
    */
-  static inline QString make_link(const QString& url, const QString& text);
+  static inline QString make_link(const QString &url, const QString &text);
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_ABOUTDIALOGEMBELLISHER_H

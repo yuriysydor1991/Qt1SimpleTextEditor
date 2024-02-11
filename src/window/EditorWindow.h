@@ -40,6 +40,7 @@
 #include "MenuEmbellisher.h"
 #include "TextEdit.h"
 
+namespace qt5simpleted22 {
 /**
  * The main text editor application window.
  *
@@ -58,6 +59,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
 
  public:
   EditorWindow();
+
   ~EditorWindow() = default;
 
   /*
@@ -65,28 +67,29 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    * abstract class declaration.
    */
 
-  virtual void showStatusMessage(const char* status) override;
+  virtual void showStatusMessage(const char *status) override;
 
-  virtual void showStatusMessage(const QString& status) override;
+  virtual void showStatusMessage(const QString &status) override;
 
-  virtual bool openFile(const char* path) override;
+  virtual bool openFile(const char *path) override;
 
-  virtual bool openFile(const QString& path) override;
+  virtual bool openFile(const QString &path) override;
 
   virtual bool clear() override;
 
-  virtual void setMainMenu(QMenuBar& menu) override;
+  virtual void setMainMenu(QMenuBar &menu) override;
 
-  virtual QTextEdit& getTextEdit() override;
+  virtual QTextEdit &getTextEdit() override;
 
-  virtual QString t(const char* txt, const char* ctx) override;
+  virtual QString t(const char *txt, const char *ctx) override;
 
-  virtual QMainWindow& widget() override;
+  virtual QMainWindow &widget() override;
 
   virtual bool isTextChanged() override;
 
-  virtual void addToEdit(QMenu& newMenu) override;
-  virtual void removeFromEdit(QMenu& newMenu) override;
+  virtual void addToEdit(QMenu &newMenu) override;
+
+  virtual void removeFromEdit(QMenu &newMenu) override;
 
  private slots:
 
@@ -317,7 +320,7 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    * @param appender Text that will be appended after
    * standard text editor name and version.
    */
-  void updateWindowTitle(const QString& appender = QString{});
+  void updateWindowTitle(const QString &appender = QString{});
 
   /**
    * A clear method by itself that was encapsulated on the
@@ -336,7 +339,9 @@ class EditorWindow : public QMainWindow, public IEditorWindow {
    * altered data (which effectively can be discarded
    * by the user by pressing appropriate dialog button).
    */
-  virtual void closeEvent(QCloseEvent* event) override;
+  virtual void closeEvent(QCloseEvent *event) override;
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_EDITORWINDOW_H

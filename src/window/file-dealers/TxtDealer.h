@@ -31,6 +31,8 @@
 #include "IDealer.h"
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Class that encapsulates code that
  * deals with raw file operations and
@@ -39,9 +41,9 @@
  */
 class TxtDealer : public IDealer {
  public:
-  explicit TxtDealer(IEditorWindow& main);
+  explicit TxtDealer(IEditorWindow &main);
 
-  virtual bool openFile(const QString& path) override;
+  virtual bool openFile(const QString &path) override;
 
   virtual bool newFile() override;
 
@@ -51,7 +53,7 @@ class TxtDealer : public IDealer {
 
   virtual bool saveFileAs() override;
 
-  virtual bool saveFileAs(const QString& path) override;
+  virtual bool saveFileAs(const QString &path) override;
 
   virtual bool clear() override;
 
@@ -60,10 +62,10 @@ class TxtDealer : public IDealer {
   virtual QString filename() override;
 
  protected:
-  IEditorWindow& window;
+  IEditorWindow &window;
 
  private:
-  constexpr static const char* const classname = "TxtDealer";
+  constexpr static const char *const classname = "TxtDealer";
 
   /**
    * Instance that platform independently deals with
@@ -77,7 +79,9 @@ class TxtDealer : public IDealer {
    * @return Returns true if file was successfully
    * opened and any other value in case of a failure.
    */
-  bool hideOpen(const QString& path);
+  bool hideOpen(const QString &path);
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_TXTDEALER_H

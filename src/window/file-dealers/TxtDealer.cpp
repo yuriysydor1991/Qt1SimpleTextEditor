@@ -25,9 +25,11 @@
 
 #include "TxtDealer.h"
 
-TxtDealer::TxtDealer(IEditorWindow& main) : window(main) {}
+namespace qt5simpleted22 {
 
-bool TxtDealer::openFile(const QString& path) {
+TxtDealer::TxtDealer(IEditorWindow &main) : window(main) {}
+
+bool TxtDealer::openFile(const QString &path) {
   if (isOpen()) {
     clear();
   }
@@ -36,7 +38,7 @@ bool TxtDealer::openFile(const QString& path) {
     return false;
   }
 
-  auto& edit = window.getTextEdit();
+  auto &edit = window.getTextEdit();
 
   while (!file.atEnd()) {
     QString line = file.readLine();
@@ -63,7 +65,7 @@ bool TxtDealer::saveFile() {
 
 bool TxtDealer::saveFileAs() { return false; }
 
-bool TxtDealer::saveFileAs(const QString& path) {
+bool TxtDealer::saveFileAs(const QString &path) {
   return hideOpen(path) && saveFile();
 }
 
@@ -76,7 +78,7 @@ bool TxtDealer::clear() {
 
 bool TxtDealer::isOpen() { return file.isOpen(); }
 
-bool TxtDealer::hideOpen(const QString& path) {
+bool TxtDealer::hideOpen(const QString &path) {
   file.setFileName(path);
 
   if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) {
@@ -88,4 +90,6 @@ bool TxtDealer::hideOpen(const QString& path) {
   return file.isOpen();
 }
 
-QString TxtDealer ::filename() { return file.fileName(); }
+QString TxtDealer::filename() { return file.fileName(); }
+
+}  // namespace qt5simpleted22

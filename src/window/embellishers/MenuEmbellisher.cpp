@@ -27,7 +27,9 @@
 
 #include <QKeySequence>
 
-MenuEmbellisher::MenuEmbellisher(IEditorWindow& main) : window{main} {
+namespace qt5simpleted22 {
+
+MenuEmbellisher::MenuEmbellisher(IEditorWindow &main) : window{main} {
   entitleMenus();
   packMenus();
   setMenusShortCuts();
@@ -35,25 +37,25 @@ MenuEmbellisher::MenuEmbellisher(IEditorWindow& main) : window{main} {
   window.setMainMenu(menuBar);
 }
 
-QAction& MenuEmbellisher::getFileNew() { return fileNew; }
+QAction &MenuEmbellisher::getFileNew() { return fileNew; }
 
-QAction& MenuEmbellisher::getFileOpen() { return fileOpen; }
+QAction &MenuEmbellisher::getFileOpen() { return fileOpen; }
 
-QAction& MenuEmbellisher::getFileClose() { return fileClose; }
+QAction &MenuEmbellisher::getFileClose() { return fileClose; }
 
-QAction& MenuEmbellisher::getFileSave() { return fileSave; }
+QAction &MenuEmbellisher::getFileSave() { return fileSave; }
 
-QAction& MenuEmbellisher::getFileSaveAs() { return fileSaveAs; }
+QAction &MenuEmbellisher::getFileSaveAs() { return fileSaveAs; }
 
-QAction& MenuEmbellisher::getEditCopy() { return editCopy; }
+QAction &MenuEmbellisher::getEditCopy() { return editCopy; }
 
-QAction& MenuEmbellisher::getEditCut() { return editCut; }
+QAction &MenuEmbellisher::getEditCut() { return editCut; }
 
-QAction& MenuEmbellisher::getEditPaste() { return editPaste; }
+QAction &MenuEmbellisher::getEditPaste() { return editPaste; }
 
-QAction& MenuEmbellisher::getEditUndo() { return editUndo; }
+QAction &MenuEmbellisher::getEditUndo() { return editUndo; }
 
-QAction& MenuEmbellisher::getEditRedo() { return editRedo; }
+QAction &MenuEmbellisher::getEditRedo() { return editRedo; }
 
 void MenuEmbellisher::entitleMenus() {
   topMFile.setTitle(window.t("File", classname));
@@ -131,18 +133,20 @@ void MenuEmbellisher::setMenusShortCuts() {
   editGoTo.setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
 }
 
-QAction& MenuEmbellisher::getHelpAbout() { return helpAbout; }
+QAction &MenuEmbellisher::getHelpAbout() { return helpAbout; }
 
-QAction& MenuEmbellisher::getEditFind() { return editFind; }
+QAction &MenuEmbellisher::getEditFind() { return editFind; }
 
-QAction& MenuEmbellisher::getEditFindBack() { return editFindBack; }
+QAction &MenuEmbellisher::getEditFindBack() { return editFindBack; }
 
-QAction& MenuEmbellisher::getEditGoTo() { return editGoTo; }
+QAction &MenuEmbellisher::getEditGoTo() { return editGoTo; }
 
-QAction& MenuEmbellisher::getHelpAboutQt() { return helpAboutQt; }
+QAction &MenuEmbellisher::getHelpAboutQt() { return helpAboutQt; }
 
-void MenuEmbellisher::addToEdit(QMenu& newMenu) { topMEdit.addMenu(&newMenu); }
+void MenuEmbellisher::addToEdit(QMenu &newMenu) { topMEdit.addMenu(&newMenu); }
 
-void MenuEmbellisher::removeFromEdit(QMenu& newMenu) {
+void MenuEmbellisher::removeFromEdit(QMenu &newMenu) {
   topMEdit.removeAction(newMenu.menuAction());
 }
+
+}  // namespace qt5simpleted22

@@ -27,8 +27,12 @@
 
 #include <cassert>
 
+namespace qt5simpleted22 {
+
 void TextEdit::insertFromMimeData(const QMimeData *source) {
   assert(source != nullptr);
 
   insertPlainText(source->text());
 }
+
+}  // namespace qt5simpleted22

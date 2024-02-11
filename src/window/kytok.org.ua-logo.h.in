@@ -28,7 +28,7 @@
 
 #include <QChar>
 
-namespace qt1simpleted::images {
+namespace qt5simpleted22::images {
 
 constexpr const qsizetype kytok_logo_data_size {${KYTOK_LOGO_DATA_SIZE}} ;
 constexpr const uchar kytok_logo_data[] {

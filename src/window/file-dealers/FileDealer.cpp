@@ -31,9 +31,11 @@
 
 #include "FilterCreator.h"
 
-FileDealer::FileDealer(IEditorWindow& main) : window{main}, dfactory{main} {}
+namespace qt5simpleted22 {
 
-bool FileDealer::openFile(const QString& path) {
+FileDealer::FileDealer(IEditorWindow &main) : window{main}, dfactory{main} {}
+
+bool FileDealer::openFile(const QString &path) {
   clear();
 
   define_dealer(path);
@@ -117,7 +119,7 @@ bool FileDealer::saveFileAs() {
   return true;
 }
 
-bool FileDealer::saveFileAs(const QString& path) {
+bool FileDealer::saveFileAs(const QString &path) {
   if (cdealer == nullptr && define_dealer(path) == nullptr) {
     window.showStatusMessage(
         window.t("Error while creating reader for a file: ", classname) + path);
@@ -155,7 +157,7 @@ bool FileDealer::clear() {
 
 bool FileDealer::isOpen() { return cdealer != nullptr && cdealer->isOpen(); }
 
-std::shared_ptr<IDealer> FileDealer::define_dealer(const QString& path) {
+std::shared_ptr<IDealer> FileDealer::define_dealer(const QString &path) {
   cdealer = dfactory.dealer_by_ext(path);
 
   if (cdealer == nullptr) {
@@ -167,7 +169,7 @@ std::shared_ptr<IDealer> FileDealer::define_dealer(const QString& path) {
   return cdealer;
 }
 
-QString FileDealer ::filename() {
+QString FileDealer::filename() {
   return cdealer != nullptr ? cdealer->filename() : QString{};
 }
 
@@ -203,3 +205,5 @@ QMessageBox::StandardButton FileDealer::askUserAboutUnsaveds() {
       makeCloseDialogText(), makeCloseDialogButtons(),
       QMessageBox::StandardButton::No);
 }
+
+}  // namespace qt5simpleted22

@@ -28,6 +28,8 @@
 
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Class for dealing with showing
  * a dialog to enter the line number
@@ -36,7 +38,7 @@
  */
 class GoToLineEmbellisher {
  public:
-  explicit GoToLineEmbellisher(IEditorWindow& main);
+  explicit GoToLineEmbellisher(IEditorWindow &main);
 
   /**
    * Show the go to line dialog, which allows
@@ -46,16 +48,16 @@ class GoToLineEmbellisher {
   void show_goto();
 
  private:
-  constexpr static const char* const classname = "GoToLineEmbellisher";
+  constexpr static const char *const classname = "GoToLineEmbellisher";
 
   /**
    * Main editor window instance to perform
    * go to line operations on.
    */
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
-   * Contant to search and count of the
+   * Constant to search and count of the
    * available lines in the editor window.
    */
   constexpr static const char NLINE = '\n';
@@ -67,7 +69,7 @@ class GoToLineEmbellisher {
    * @param text The contents of a EditorWindow editor widget
    * @param cline Line to scroll to.
    */
-  void searchAndSet(QTextEdit& edit, const QString& text,
+  void searchAndSet(QTextEdit &edit, const QString &text,
                     const qsizetype cline);
 
   /**
@@ -77,7 +79,9 @@ class GoToLineEmbellisher {
    * application.
    * @param pos Position index to be set.
    */
-  void setCursor(QTextEdit& edit, const qsizetype pos);
+  void setCursor(QTextEdit &edit, const qsizetype pos);
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_GOTOLINEEMBELLISHER_H

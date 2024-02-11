@@ -29,6 +29,8 @@
 #include <QMimeData>
 #include <QTextEdit>
 
+namespace qt5simpleted22 {
+
 /**
  * Class designed to redefine some
  * of the default behaviour of the
@@ -42,6 +44,7 @@
 class TextEdit : public QTextEdit {
  public:
   TextEdit() = default;
+
   ~TextEdit() = default;
 
  protected:
@@ -57,5 +60,7 @@ class TextEdit : public QTextEdit {
    */
   virtual void insertFromMimeData(const QMimeData *source) override;
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_TEXTEDIT_H

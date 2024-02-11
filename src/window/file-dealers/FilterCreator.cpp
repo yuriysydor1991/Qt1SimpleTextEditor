@@ -367,4 +367,8 @@ static constexpr const char* defaultFileFilter =
     ")";
 }  // namespace
 
+namespace qt5simpleted22 {
+
 const char* FilterCreator::defaultTxtFilter() { return defaultFileFilter; }
+
+}  // namespace qt5simpleted22

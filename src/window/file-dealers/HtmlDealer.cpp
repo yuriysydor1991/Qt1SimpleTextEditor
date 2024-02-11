@@ -27,7 +27,9 @@
 
 #include <QAction>
 
-HtmlDealer ::HtmlDealer(IEditorWindow& main)
+namespace qt5simpleted22 {
+
+HtmlDealer::HtmlDealer(IEditorWindow &main)
     : TxtDealer(main), textEdit{window.getTextEdit()} {
   buildHtmlMenu();
   window.addToEdit(subHtml);
@@ -35,9 +37,9 @@ HtmlDealer ::HtmlDealer(IEditorWindow& main)
 
 HtmlDealer::~HtmlDealer() { window.removeFromEdit(subHtml); }
 
-bool HtmlDealer ::isHtml(const QString& ext) {
+bool HtmlDealer::isHtml(const QString &ext) {
   return std::any_of(HTML_EXTs.begin(), HTML_EXTs.end(),
-                     [ext](const QString& e) { return e == ext; });
+                     [ext](const QString &e) { return e == ext; });
 }
 
 void HtmlDealer::buildHtmlMenu() {
@@ -46,30 +48,30 @@ void HtmlDealer::buildHtmlMenu() {
 
   subHtml.addMenu(&subHeaders);
 
-  QAction* bWrap = subHtml.addAction(window.t("Wrap <b>bold</b>", classname));
-  QAction* iWrap = subHtml.addAction(window.t("Wrap <i>italic</i>", classname));
-  QAction* uWrap =
+  QAction *bWrap = subHtml.addAction(window.t("Wrap <b>bold</b>", classname));
+  QAction *iWrap = subHtml.addAction(window.t("Wrap <i>italic</i>", classname));
+  QAction *uWrap =
       subHtml.addAction(window.t("Wrap <u>underline</u>", classname));
 
   subHtml.addSeparator();
 
-  QAction* aWrap =
+  QAction *aWrap =
       subHtml.addAction(window.t("Wrap <a href=\"\"...>", classname));
 
   subHtml.addSeparator();
 
-  QAction* pWrap = subHtml.addAction(window.t("Wrap <p></p>", classname));
+  QAction *pWrap = subHtml.addAction(window.t("Wrap <p></p>", classname));
 
   subHtml.addSeparator();
 
-  QAction* preWrap = subHtml.addAction(window.t("Wrap <pre></pre>", classname));
+  QAction *preWrap = subHtml.addAction(window.t("Wrap <pre></pre>", classname));
 
-  QAction* h1Wrap = subHeaders.addAction(window.t("Wrap <h1>", classname));
-  QAction* h2Wrap = subHeaders.addAction(window.t("Wrap <h2>", classname));
-  QAction* h3Wrap = subHeaders.addAction(window.t("Wrap <h3>", classname));
-  QAction* h4Wrap = subHeaders.addAction(window.t("Wrap <h4>", classname));
-  QAction* h5Wrap = subHeaders.addAction(window.t("Wrap <h5>", classname));
-  QAction* h6Wrap = subHeaders.addAction(window.t("Wrap <h6>", classname));
+  QAction *h1Wrap = subHeaders.addAction(window.t("Wrap <h1>", classname));
+  QAction *h2Wrap = subHeaders.addAction(window.t("Wrap <h2>", classname));
+  QAction *h3Wrap = subHeaders.addAction(window.t("Wrap <h3>", classname));
+  QAction *h4Wrap = subHeaders.addAction(window.t("Wrap <h4>", classname));
+  QAction *h5Wrap = subHeaders.addAction(window.t("Wrap <h5>", classname));
+  QAction *h6Wrap = subHeaders.addAction(window.t("Wrap <h6>", classname));
 
   bWrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_B));
   iWrap->setShortcut(QKeySequence(Qt::ALT + Qt::Key_I));
@@ -103,24 +105,35 @@ void HtmlDealer::buildHtmlMenu() {
 }
 
 void HtmlDealer::wrapB() { wrapSelectionWith("<b>", "</b>"); }
+
 void HtmlDealer::wrapI() { wrapSelectionWith("<i>", "</i>"); }
+
 void HtmlDealer::wrapU() { wrapSelectionWith("<u>", "</u>"); }
+
 void HtmlDealer::wrapA() {
   wrapSelectionWith("<a href=\"\" target=\"_blank\">", "</a>");
 }
+
 void HtmlDealer::wrapP() { wrapSelectionWith("<p>\n", "\n</p>"); }
+
 void HtmlDealer::wrapH1() { wrapSelectionWith("<h1>", "</h1>"); }
+
 void HtmlDealer::wrapH2() { wrapSelectionWith("<h2>", "</h2>"); }
+
 void HtmlDealer::wrapH3() { wrapSelectionWith("<h3>", "</h3>"); }
+
 void HtmlDealer::wrapH4() { wrapSelectionWith("<h4>", "</h4>"); }
+
 void HtmlDealer::wrapH5() { wrapSelectionWith("<h5>", "</h5>"); }
+
 void HtmlDealer::wrapH6() { wrapSelectionWith("<h6>", "</h6>"); }
+
 void HtmlDealer::wrapPre() {
   wrapSelectionWith("<pre class=\"\">\n", "\n</pre>");
 }
 
-bool HtmlDealer ::wrapSelectionWith(const QString& beforeWrap,
-                                    const QString& afterWrap) {
+bool HtmlDealer::wrapSelectionWith(const QString &beforeWrap,
+                                   const QString &afterWrap) {
   auto cursor = textEdit.textCursor();
 
   auto initCursorPos = cursor.position();
@@ -145,3 +158,5 @@ bool HtmlDealer ::wrapSelectionWith(const QString& beforeWrap,
 
   return true;
 }
+
+}  // namespace qt5simpleted22

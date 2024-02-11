@@ -31,6 +31,7 @@
 #include <QString>
 #include <QTextEdit>
 
+namespace qt5simpleted22 {
 /**
  * An abstract class to implement by the editor window
  * class. Perform well known window related operations
@@ -50,7 +51,7 @@ class IEditorWindow {
    * with the QString parameter.
    * @param status
    */
-  virtual void showStatusMessage(const char* status) = 0;
+  virtual void showStatusMessage(const char *status) = 0;
 
   /**
    * Show some status or error message in the status bar
@@ -60,7 +61,7 @@ class IEditorWindow {
    * @param status Status string which should be shown
    * in the status bar of the main window.
    */
-  virtual void showStatusMessage(const QString& status) = 0;
+  virtual void showStatusMessage(const QString &status) = 0;
 
   /**
    * Instantiates the QString object from a given
@@ -72,7 +73,7 @@ class IEditorWindow {
    * @return Returns what it's QString overloaded version
    * returns.
    */
-  virtual bool openFile(const char* path) = 0;
+  virtual bool openFile(const char *path) = 0;
 
   /**
    * Makes window open and read the file by a given filepath
@@ -80,7 +81,7 @@ class IEditorWindow {
    * @return Returns true on success. Anything else
    * in case of a failure.
    */
-  virtual bool openFile(const QString& path) = 0;
+  virtual bool openFile(const QString &path) = 0;
 
   /**
    * Try to clear current contents of the QEditorWidget
@@ -96,14 +97,14 @@ class IEditorWindow {
    * @param menu built and filled menu with
    * appropriate items-actions.
    */
-  virtual void setMainMenu(QMenuBar& menu) = 0;
+  virtual void setMainMenu(QMenuBar &menu) = 0;
 
   /**
    * Returns the application's main window QTextEdit widget
    * @return Returns the application's main window
    * QTextEdit widget.
    */
-  virtual QTextEdit& getTextEdit() = 0;
+  virtual QTextEdit &getTextEdit() = 0;
 
   /**
    * Method helps classes objects to translate
@@ -116,14 +117,14 @@ class IEditorWindow {
    * @return Returns a QString object with translation if any or with original
    * text if no translation available for a given text.
    */
-  virtual QString t(const char* txt, const char* ctx) = 0;
+  virtual QString t(const char *txt, const char *ctx) = 0;
 
   /**
    * Returns a reference to the application's main window in
    * a form of the QMainWindow reference.
    * @return A casted reference to the QMainWindow
    */
-  virtual QMainWindow& widget() = 0;
+  virtual QMainWindow &widget() = 0;
 
   /**
    * Checks if window data was changed and unsaved.
@@ -138,7 +139,7 @@ class IEditorWindow {
    * @param newMenu Build and packed menu to display
    * under the Edit menu.
    */
-  virtual void addToEdit(QMenu& newMenu) = 0;
+  virtual void addToEdit(QMenu &newMenu) = 0;
 
   /**
    * Erases menu object given to the addTiEdit method
@@ -150,7 +151,9 @@ class IEditorWindow {
    * which should be deleted from the Edit top
    * level menu.
    */
-  virtual void removeFromEdit(QMenu& newMenu) = 0;
+  virtual void removeFromEdit(QMenu &newMenu) = 0;
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_IEDITORWINDOW_H

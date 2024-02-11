@@ -31,9 +31,11 @@
 #include "IDealer.h"
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 class DealersFactory {
  public:
-  explicit DealersFactory(IEditorWindow& main);
+  explicit DealersFactory(IEditorWindow &main);
 
   virtual ~DealersFactory() = default;
 
@@ -46,10 +48,10 @@ class DealersFactory {
    * @return Returns a smaprt pointer to the newly created
    * most appropriate file dealer.
    */
-  virtual std::shared_ptr<IDealer> dealer_by_ext(const QString& filepath);
+  virtual std::shared_ptr<IDealer> dealer_by_ext(const QString &filepath);
 
  protected:
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
    * Instantiates default file dealer which try to open and read
@@ -66,5 +68,7 @@ class DealersFactory {
    */
   virtual std::shared_ptr<IDealer> htmlDealer();
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_DEALERSFACTORY_H

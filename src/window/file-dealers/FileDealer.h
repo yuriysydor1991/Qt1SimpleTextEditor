@@ -33,6 +33,8 @@
 #include "IDealer.h"
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Top level dealer class for the QMainWindow descendant
  * EditorWindow instance  to decompose and encapsulate all
@@ -42,16 +44,16 @@
  */
 class FileDealer : public IDealer {
  public:
-  explicit FileDealer(IEditorWindow& main);
+  explicit FileDealer(IEditorWindow &main);
 
   ~FileDealer() override = default;
 
   /**
    * Default fallback directory path for all open and save dialogs.
    */
-  constexpr static const char* const default_save_folder = "/home/";
+  constexpr static const char *const default_save_folder = "/home/";
 
-  virtual bool openFile(const QString& path) override;
+  virtual bool openFile(const QString &path) override;
 
   virtual bool newFile() override;
 
@@ -61,7 +63,7 @@ class FileDealer : public IDealer {
 
   virtual bool saveFileAs() override;
 
-  virtual bool saveFileAs(const QString& path) override;
+  virtual bool saveFileAs(const QString &path) override;
 
   virtual bool clear() override;
 
@@ -73,13 +75,13 @@ class FileDealer : public IDealer {
   /**
    * Class name for the text translation purposes.
    */
-  constexpr static const char* const classname = "FileDealer";
+  constexpr static const char *const classname = "FileDealer";
 
   /**
    * A reference to the main editor window instance
    * to work with.
    */
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
    * Instance of a DealersFactory to instantiate
@@ -102,7 +104,7 @@ class FileDealer : public IDealer {
    * file dealer of available extension or nullptr in case
    * of a failure.
    */
-  std::shared_ptr<IDealer> define_dealer(const QString& path);
+  std::shared_ptr<IDealer> define_dealer(const QString &path);
 
   /**
    * Returns a home folder path if available or a default_save_folder
@@ -146,5 +148,7 @@ class FileDealer : public IDealer {
    */
   QMessageBox::StandardButton askUserAboutUnsaveds();
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_FILEDEALER_H

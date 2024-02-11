@@ -26,6 +26,8 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H
 #define QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H
 
+namespace qt5simpleted22 {
+
 /**
  * Factory class which encapsulates code for a
  * open Qt dialog file filter subsystem.
@@ -39,7 +41,9 @@ class FilterCreator {
    * filters for a file filter facility of an open dialog.
    * @return Created file filter pointer to a char string.
    */
-  static const char* defaultTxtFilter();
+  static const char *defaultTxtFilter();
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_FILTERCREATOR_H

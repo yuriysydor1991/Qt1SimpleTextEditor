@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, Yurii Sydor (yuriysydor1991@gmail.com) kytok.org.ua
+ * Copyright (c) 2023, 2024 Yurii Sydor (yuriysydor1991@gmail.com) kytok.org.ua
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -36,4 +36,6 @@
  * case it's QApplication's exec() method return value call of
  * which is encapsulated in the WindowFactory methods.
  */
-int main(int argc, char** argv) { return WindowFactory::execute(argc, argv); }
+int main(int argc, char** argv) {
+  return qt5simpleted22::WindowFactory::execute(argc, argv);
+}

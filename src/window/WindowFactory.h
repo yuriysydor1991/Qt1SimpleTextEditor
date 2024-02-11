@@ -28,13 +28,15 @@
 
 #include <QApplication>
 
+namespace qt5simpleted22 {
+
 /**
  * Class that encapsulates creation and running of
  * the main editor window EditorWindow object.
  */
 class WindowFactory {
  public:
-  explicit WindowFactory(int& argc, char**(&argv));
+  explicit WindowFactory(int &argc, char **(&argv));
 
   /**
    * Creates the main editor application window
@@ -75,7 +77,7 @@ class WindowFactory {
    * calling a run() method from created
    * WindowFactory instance.
    */
-  static int execute(int& argc, char**(&argv));
+  static int execute(int &argc, char **(&argv));
 
  private:
   /**
@@ -83,14 +85,14 @@ class WindowFactory {
    * through the command line (obtained by the main
    * function)
    */
-  int& m_argc;
+  int &m_argc;
 
   /**
    * Pointer to strings of the program parameters values
    * given by the system to the application through the
    * main function.
    */
-  char**& m_argv;
+  char **&m_argv;
 
   /**
    * Instantiates the QTranslation object, loads translations
@@ -99,7 +101,9 @@ class WindowFactory {
    * @param app The main QApplication instance of the
    * editor window.
    */
-  void installTranslators(QApplication& app);
+  void installTranslators(QApplication &app);
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_WINDOWFACTORY_H

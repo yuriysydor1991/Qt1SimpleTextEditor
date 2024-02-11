@@ -27,9 +27,11 @@
 
 #include <QInputDialog>
 
-FindEmbellisher ::FindEmbellisher(IEditorWindow& main) : window{main} {}
+namespace qt5simpleted22 {
 
-void FindEmbellisher ::show(bool backwards) {
+FindEmbellisher::FindEmbellisher(IEditorWindow &main) : window{main} {}
+
+void FindEmbellisher::show(bool backwards) {
   bool ok;
   text = QInputDialog::getText(&window.widget(),
                                backwards
@@ -47,3 +49,5 @@ void FindEmbellisher ::show(bool backwards) {
     window.getTextEdit().find(text, flags);
   }
 }
+
+}  // namespace qt5simpleted22

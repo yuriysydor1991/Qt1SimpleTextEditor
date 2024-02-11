@@ -33,6 +33,8 @@
 #include "IEditorWindow.h"
 #include "TxtDealer.h"
 
+namespace qt5simpleted22 {
+
 /**
  * HTMLDealer class designed for additional functions
  * for the HTML files. Creates a HTML submenu in
@@ -45,7 +47,8 @@ class HtmlDealer : public QObject, public TxtDealer {
   Q_OBJECT
 
  public:
-  explicit HtmlDealer(IEditorWindow& main);
+  explicit HtmlDealer(IEditorWindow &main);
+
   ~HtmlDealer();
 
   /**
@@ -54,7 +57,7 @@ class HtmlDealer : public QObject, public TxtDealer {
    * @param ext the file extension
    * @return a true value if given extension is for the HTML file.
    */
-  static bool isHtml(const QString& ext);
+  static bool isHtml(const QString &ext);
 
  private:
   inline static const std::vector<QString> HTML_EXTs{"html", "htm", "xhtml",
@@ -78,7 +81,7 @@ class HtmlDealer : public QObject, public TxtDealer {
   /**
    * Link for a main window text edit widget for convenience.
    */
-  QTextEdit& textEdit;
+  QTextEdit &textEdit;
 
   /**
    * HTML operations menu builder for a subHtml QMenu instance.
@@ -97,9 +100,10 @@ class HtmlDealer : public QObject, public TxtDealer {
    * @return Returns true on success. Anything else
    * in case of a failure.
    */
-  bool wrapSelectionWith(const QString& beforeWrap, const QString& afterWrap);
+  bool wrapSelectionWith(const QString &beforeWrap, const QString &afterWrap);
 
  private slots:
+
   /**
    * Wraps selected by the user text with a <b> tag.
    */
@@ -161,7 +165,9 @@ class HtmlDealer : public QObject, public TxtDealer {
   void wrapPre();
 
  private:
-  constexpr static const char* const classname = "HtmlDealer";
+  constexpr static const char *const classname = "HtmlDealer";
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_HTMLDEALER_H

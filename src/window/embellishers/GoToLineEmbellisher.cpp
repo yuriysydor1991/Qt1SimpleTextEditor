@@ -28,11 +28,13 @@
 #include <QInputDialog>
 #include <limits>
 
-GoToLineEmbellisher ::GoToLineEmbellisher(IEditorWindow& main) : window{main} {}
+namespace qt5simpleted22 {
 
-void GoToLineEmbellisher ::show_goto() {
-  auto& edit = window.getTextEdit();
-  const auto& text = edit.toPlainText();
+GoToLineEmbellisher::GoToLineEmbellisher(IEditorWindow &main) : window{main} {}
+
+void GoToLineEmbellisher::show_goto() {
+  auto &edit = window.getTextEdit();
+  const auto &text = edit.toPlainText();
   const qsizetype lines = text.count(NLINE);
 
   bool ok;
@@ -46,8 +48,8 @@ void GoToLineEmbellisher ::show_goto() {
   }
 }
 
-void GoToLineEmbellisher ::searchAndSet(QTextEdit& edit, const QString& text,
-                                        const qsizetype cline) {
+void GoToLineEmbellisher::searchAndSet(QTextEdit &edit, const QString &text,
+                                       const qsizetype cline) {
   qsizetype lineIter{1};
   qsizetype foundPos{0};
 
@@ -69,7 +71,7 @@ void GoToLineEmbellisher ::searchAndSet(QTextEdit& edit, const QString& text,
   setCursor(edit, ++foundPos);
 }
 
-void GoToLineEmbellisher ::setCursor(QTextEdit& edit, const qsizetype pos) {
+void GoToLineEmbellisher::setCursor(QTextEdit &edit, const qsizetype pos) {
   if (pos < 0) {
     return;
   }
@@ -80,3 +82,5 @@ void GoToLineEmbellisher ::setCursor(QTextEdit& edit, const qsizetype pos) {
 
   edit.ensureCursorVisible();
 }
+
+}  // namespace qt5simpleted22

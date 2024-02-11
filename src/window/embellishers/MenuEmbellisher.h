@@ -32,6 +32,8 @@
 
 #include "IEditorWindow.h"
 
+namespace qt5simpleted22 {
+
 /**
  * Class that handles menu building for
  * the editor application main window
@@ -43,7 +45,7 @@
  */
 class MenuEmbellisher {
  public:
-  explicit MenuEmbellisher(IEditorWindow& main);
+  explicit MenuEmbellisher(IEditorWindow &main);
 
   /**
    * Returns the fileNew QAction instance which is
@@ -51,7 +53,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the fileNew
    * QAction instance.
    */
-  QAction& getFileNew();
+  QAction &getFileNew();
 
   /**
    * Returns the fileOpen QAction instance which is
@@ -59,7 +61,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the fileOpen
    * QAction instance.
    */
-  QAction& getFileOpen();
+  QAction &getFileOpen();
 
   /**
    * Returns the fileClose QAction instance which is
@@ -67,7 +69,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the fileClose
    * QAction instance.
    */
-  QAction& getFileClose();
+  QAction &getFileClose();
 
   /**
    * Returns the fileSave QAction instance which is
@@ -75,7 +77,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the fileSave
    * QAction instance.
    */
-  QAction& getFileSave();
+  QAction &getFileSave();
 
   /**
    * Returns the fileSaveAs QAction instance which is
@@ -83,7 +85,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the fileSaveAs
    * QAction instance.
    */
-  QAction& getFileSaveAs();
+  QAction &getFileSaveAs();
 
   /**
    * Returns the editCopy QAction instance which is
@@ -91,7 +93,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editCopy
    * QAction instance.
    */
-  QAction& getEditCopy();
+  QAction &getEditCopy();
 
   /**
    * Returns the editCut QAction instance which is
@@ -99,7 +101,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editCut
    * QAction instance.
    */
-  QAction& getEditCut();
+  QAction &getEditCut();
 
   /**
    * Returns the editPaste QAction instance which is
@@ -107,7 +109,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editPaste
    * QAction instance.
    */
-  QAction& getEditPaste();
+  QAction &getEditPaste();
 
   /**
    * Returns the editUndo QAction instance which is
@@ -115,7 +117,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editUndo
    * QAction instance.
    */
-  QAction& getEditUndo();
+  QAction &getEditUndo();
 
   /**
    * Returns the editRedo QAction instance which is
@@ -123,7 +125,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editRedo
    * QAction instance.
    */
-  QAction& getEditRedo();
+  QAction &getEditRedo();
 
   /**
    * Returns the helpAbout QAction instance which is
@@ -131,7 +133,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the helpAbout
    * QAction instance.
    */
-  QAction& getHelpAbout();
+  QAction &getHelpAbout();
 
   /**
    * Returns the helpAboutQt QAction instance which is
@@ -139,7 +141,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the helpAboutQt
    * QAction instance.
    */
-  QAction& getHelpAboutQt();
+  QAction &getHelpAboutQt();
 
   /**
    * Returns the editFimd QAction instance which is
@@ -147,7 +149,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editFimd
    * QAction instance.
    */
-  QAction& getEditFind();
+  QAction &getEditFind();
 
   /**
    * Returns the editFimdBackwards QAction instance which is
@@ -155,7 +157,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editFimdBackwards
    * QAction instance.
    */
-  QAction& getEditFindBack();
+  QAction &getEditFindBack();
 
   /**
    * Returns the editGoTo QAction instance which is
@@ -163,7 +165,7 @@ class MenuEmbellisher {
    * @return Returns a reference to the editGoTo
    * QAction instance.
    */
-  QAction& getEditGoTo();
+  QAction &getEditGoTo();
 
   /**
    * Adds a given menu instance into
@@ -178,7 +180,7 @@ class MenuEmbellisher {
    * prepared QActions to add to the
    * Edit top level menu.
    */
-  void addToEdit(QMenu& newMenu);
+  void addToEdit(QMenu &newMenu);
 
   /**
    * Removes previously inserted by the addToEdit()
@@ -189,14 +191,14 @@ class MenuEmbellisher {
    * @param newMenu The QMenu instance that should be
    * removed from the Edit top level menu.
    */
-  void removeFromEdit(QMenu& newMenu);
+  void removeFromEdit(QMenu &newMenu);
 
  private:
   /**
    * Main window reference to perform
    * actions on.
    */
-  IEditorWindow& window;
+  IEditorWindow &window;
 
   /**
    * Main menu bar that eventually, after all
@@ -242,7 +244,7 @@ class MenuEmbellisher {
   QAction helpAboutQt;
 
  private:
-  constexpr static const char* const classname = "MenuEmbellisher";
+  constexpr static const char *const classname = "MenuEmbellisher";
 
   /**
    * Gives titles to all the QMenu and QAction
@@ -265,5 +267,7 @@ class MenuEmbellisher {
    */
   void setMenusShortCuts();
 };
+
+}  // namespace qt5simpleted22
 
 #endif  // QT1SIMPLETEXTEDITORDEMO_MENUEMBELLISHER_H

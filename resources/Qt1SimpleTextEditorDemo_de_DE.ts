@@ -5,85 +5,85 @@
     <name>AboutDialogEmbellisher</name>
     <message>
         <source>About window</source>
-        <translation>Über Fenster</translation>
+        <translation type="vanished">Über Fenster</translation>
     </message>
     <message>
         <source>Visit project github repository </source>
-        <translation>Besuchen Sie das Github-Repository des Projekts </translation>
+        <translation type="vanished">Besuchen Sie das Github-Repository des Projekts </translation>
     </message>
     <message>
         <source> for updates and additional info</source>
-        <translation> für Updates und zusätzliche Informationen</translation>
+        <translation type="vanished"> für Updates und zusätzliche Informationen</translation>
     </message>
     <message>
         <source>Created by </source>
-        <translation>Erstellt von </translation>
+        <translation type="vanished">Erstellt von </translation>
     </message>
     <message>
         <source>Visit home page for more </source>
-        <translation>Weitere Informationen finden Sie auf der Homepage </translation>
+        <translation type="vanished">Weitere Informationen finden Sie auf der Homepage </translation>
     </message>
     <message>
         <source>Build date: </source>
-        <translation>Baudatum: </translation>
+        <translation type="vanished">Baudatum: </translation>
     </message>
     <message>
         <source> and git commit: </source>
-        <translation> und git commit: </translation>
+        <translation type="vanished"> und git commit: </translation>
     </message>
     <message>
         <source>About used Qt5 framework</source>
-        <translation>Über das verwendete Qt5-Framework</translation>
+        <translation type="vanished">Über das verwendete Qt5-Framework</translation>
     </message>
 </context>
 <context>
     <name>FileDealer</name>
     <message>
         <source>Error while creating reader for a file: </source>
-        <translation>Fehler beim Erstellen des Readers für eine Datei: </translation>
+        <translation type="vanished">Fehler beim Erstellen des Readers für eine Datei: </translation>
     </message>
     <message>
         <source>Failure to read the file: </source>
-        <translation>Fehler beim Lesen der Datei: </translation>
+        <translation type="vanished">Fehler beim Lesen der Datei: </translation>
     </message>
     <message>
         <source>Open a text file</source>
-        <translation>Öffnen Sie eine Textdatei</translation>
+        <translation type="vanished">Öffnen Sie eine Textdatei</translation>
     </message>
     <message>
         <source>No file path given</source>
-        <translation>Kein Dateipfad angegeben</translation>
+        <translation type="vanished">Kein Dateipfad angegeben</translation>
     </message>
     <message>
         <source>Failure to save the file: </source>
-        <translation>Fehler beim Speichern der Datei: </translation>
+        <translation type="vanished">Fehler beim Speichern der Datei: </translation>
     </message>
     <message>
         <source>Save File As</source>
-        <translation>Datei speichern als</translation>
+        <translation type="vanished">Datei speichern als</translation>
     </message>
     <message>
         <source>Failure to open file: </source>
-        <translation>Fehler beim Öffnen der Datei: </translation>
+        <translation type="vanished">Fehler beim Öffnen der Datei: </translation>
     </message>
     <message>
         <source>Failure to save file as: </source>
-        <translation>Fehler beim Speichern der Datei als: </translation>
+        <translation type="vanished">Fehler beim Speichern der Datei als: </translation>
     </message>
     <message>
         <source>&lt;No file opened&gt;</source>
-        <translation>&lt;Keine Datei geöffnet&gt;</translation>
+        <translation type="vanished">&lt;Keine Datei geöffnet&gt;</translation>
     </message>
     <message>
         <source>What to do with the unsaved data?</source>
-        <translation>Was tun mit den nicht gespeicherten Daten?</translation>
+        <translation type="vanished">Was tun mit den nicht gespeicherten Daten?</translation>
     </message>
     <message>
         <source>Close and dismiss unsaved data? - Press &quot;Yes&quot; button.
 Cancel operation? - Press &quot;No&quot; button.
 Save data into current file? - Press &quot;Save&quot; button.
 </source>
-        <translation>Nicht gespeicherte Daten schließen und verwerfen? - Drücken Sie die Schaltfläche „Ja“.
+        <translation type="vanished">Nicht gespeicherte Daten schließen und verwerfen? - Drücken Sie die Schaltfläche „Ja“.
 Vorgang abbrechen? - Drücken Sie die Schaltfläche „Nein“.
 Daten in aktuelle Datei speichern? - Klicken Sie auf die Schaltfläche „Speichern“.
 </translation>
@@ -93,167 +93,422 @@ Daten in aktuelle Datei speichern? - Klicken Sie auf die Schaltfläche „Speich
     <name>FindEmbellisher</name>
     <message>
         <source>Find text previous</source>
-        <translation>Suchen Sie den vorherigen Text</translation>
+        <translation type="vanished">Suchen Sie den vorherigen Text</translation>
     </message>
     <message>
         <source>Find text next</source>
-        <translation>Suchen Sie als nächstes den Text</translation>
+        <translation type="vanished">Suchen Sie als nächstes den Text</translation>
     </message>
     <message>
         <source>Input the search text:</source>
-        <translation>Geben Sie den Suchtext ein:</translation>
+        <translation type="vanished">Geben Sie den Suchtext ein:</translation>
     </message>
 </context>
 <context>
     <name>GoToLineEmbellisher</name>
     <message>
         <source>Go to line</source>
-        <translation>Gehen Sie zur Zeile</translation>
+        <translation type="vanished">Gehen Sie zur Zeile</translation>
     </message>
     <message>
         <source>Line </source>
-        <translation>Linie </translation>
+        <translation type="vanished">Linie </translation>
     </message>
 </context>
 <context>
     <name>HtmlDealer</name>
     <message>
         <source>Wrap &lt;b&gt;bold&lt;/b&gt;</source>
-        <translation>Umbruch &lt;b&gt;fett&lt;/b&gt;</translation>
+        <translation type="vanished">Umbruch &lt;b&gt;fett&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wrap &lt;i&gt;italic&lt;/i&gt;</source>
-        <translation>Zeilenumbruch &lt;i&gt;kursiv&lt;/i&gt;</translation>
+        <translation type="vanished">Zeilenumbruch &lt;i&gt;kursiv&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Wrap &lt;u&gt;underline&lt;/u&gt;</source>
-        <translation>Umbrechen Sie &lt;u&gt;Unterstreichung&lt;/u&gt;</translation>
+        <translation type="vanished">Umbrechen Sie &lt;u&gt;Unterstreichung&lt;/u&gt;</translation>
     </message>
     <message>
         <source>Wrap &lt;a href=&quot;&quot;...&gt;</source>
-        <translation>Wrap &lt;a href=&quot;&quot;...&gt;</translation>
+        <translation type="vanished">Wrap &lt;a href=&quot;&quot;...&gt;</translation>
     </message>
     <message>
         <source>Wrap &lt;h1&gt;</source>
-        <translation>Wickeln Sie &lt;h1&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h1&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;h2&gt;</source>
-        <translation>Wickeln Sie &lt;h2&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h2&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;h3&gt;</source>
-        <translation>Wickeln Sie &lt;h3&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h3&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;h4&gt;</source>
-        <translation>Wickeln Sie &lt;h4&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h4&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;h5&gt;</source>
-        <translation>Wickeln Sie &lt;h5&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h5&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;h6&gt;</source>
-        <translation>Wickeln Sie &lt;h6&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;h6&gt; ein</translation>
     </message>
     <message>
         <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
-        <translation>Wickeln Sie &lt;p&gt;&lt;/p&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;p&gt;&lt;/p&gt; ein</translation>
     </message>
     <message>
         <source>HTML</source>
-        <translation>HTML</translation>
+        <translation type="vanished">HTML</translation>
     </message>
     <message>
         <source>Headers &lt;hN&gt;</source>
-        <translation>Header-Tags &lt;hN&gt;</translation>
+        <translation type="vanished">Header-Tags &lt;hN&gt;</translation>
     </message>
     <message>
         <source>Wrap &lt;pre&gt;&lt;/pre&gt;</source>
-        <translation>Wickeln Sie &lt;pre&gt;&lt;/pre&gt; ein</translation>
+        <translation type="vanished">Wickeln Sie &lt;pre&gt;&lt;/pre&gt; ein</translation>
     </message>
 </context>
 <context>
     <name>MenuEmbellisher</name>
     <message>
         <source>File</source>
-        <translation>Datei</translation>
+        <translation type="vanished">Datei</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Finden</translation>
+        <translation type="vanished">Finden</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="vanished">Bearbeiten</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Helfen</translation>
+        <translation type="vanished">Helfen</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Neu</translation>
+        <translation type="vanished">Neu</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Offen</translation>
+        <translation type="vanished">Offen</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Datei speichern</translation>
+        <translation type="vanished">Datei speichern</translation>
     </message>
     <message>
         <source>SaveAs</source>
-        <translation>Datei speichern als</translation>
+        <translation type="vanished">Datei speichern als</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="vanished">Schließen</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopieren</translation>
+        <translation type="vanished">Kopieren</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Schneiden</translation>
+        <translation type="vanished">Schneiden</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Daten einfügen</translation>
+        <translation type="vanished">Daten einfügen</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Rückgängig machen</translation>
+        <translation type="vanished">Rückgängig machen</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation>Wiederholen</translation>
+        <translation type="vanished">Wiederholen</translation>
     </message>
     <message>
         <source>Find backwards</source>
-        <translation>Rückwärts finden</translation>
+        <translation type="vanished">Rückwärts finden</translation>
     </message>
     <message>
         <source>Go to line</source>
-        <translation>Gehen Sie zur Zeile</translation>
+        <translation type="vanished">Gehen Sie zur Zeile</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Über das Programm</translation>
+        <translation type="vanished">Über das Programm</translation>
     </message>
     <message>
         <source>About Qt5</source>
-        <translation>Über das Qt5-Programm</translation>
+        <translation type="vanished">Über das Qt5-Programm</translation>
     </message>
 </context>
 <context>
     <name>TxtDealer</name>
     <message>
         <source>Error while opening the file: </source>
-        <translation>Fehler beim Öffnen der Datei: </translation>
+        <translation type="vanished">Fehler beim Öffnen der Datei: </translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::AboutDialogEmbellisher</name>
+    <message>
+        <source>About window</source>
+        <translation type="unfinished">Über Fenster</translation>
+    </message>
+    <message>
+        <source>Visit project github repository </source>
+        <translation type="unfinished">Besuchen Sie das Github-Repository des Projekts </translation>
+    </message>
+    <message>
+        <source> for updates and additional info</source>
+        <translation type="unfinished"> für Updates und zusätzliche Informationen</translation>
+    </message>
+    <message>
+        <source>Created by </source>
+        <translation type="unfinished">Erstellt von </translation>
+    </message>
+    <message>
+        <source>Visit home page for more </source>
+        <translation type="unfinished">Weitere Informationen finden Sie auf der Homepage </translation>
+    </message>
+    <message>
+        <source>Build date: </source>
+        <translation type="unfinished">Baudatum: </translation>
+    </message>
+    <message>
+        <source> and git commit: </source>
+        <translation type="unfinished"> und git commit: </translation>
+    </message>
+    <message>
+        <source>About used Qt5 framework</source>
+        <translation type="unfinished">Über das verwendete Qt5-Framework</translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::FileDealer</name>
+    <message>
+        <source>Error while creating reader for a file: </source>
+        <translation type="unfinished">Fehler beim Erstellen des Readers für eine Datei: </translation>
+    </message>
+    <message>
+        <source>Failure to read the file: </source>
+        <translation type="unfinished">Fehler beim Lesen der Datei: </translation>
+    </message>
+    <message>
+        <source>Open a text file</source>
+        <translation type="unfinished">Öffnen Sie eine Textdatei</translation>
+    </message>
+    <message>
+        <source>No file path given</source>
+        <translation type="unfinished">Kein Dateipfad angegeben</translation>
+    </message>
+    <message>
+        <source>Failure to save the file: </source>
+        <translation type="unfinished">Fehler beim Speichern der Datei: </translation>
+    </message>
+    <message>
+        <source>Save File As</source>
+        <translation type="unfinished">Datei speichern als</translation>
+    </message>
+    <message>
+        <source>Failure to open file: </source>
+        <translation type="unfinished">Fehler beim Öffnen der Datei: </translation>
+    </message>
+    <message>
+        <source>Failure to save file as: </source>
+        <translation type="unfinished">Fehler beim Speichern der Datei als: </translation>
+    </message>
+    <message>
+        <source>&lt;No file opened&gt;</source>
+        <translation type="unfinished">&lt;Keine Datei geöffnet&gt;</translation>
+    </message>
+    <message>
+        <source>Close and dismiss unsaved data? - Press &quot;Yes&quot; button.
+Cancel operation? - Press &quot;No&quot; button.
+Save data into current file? - Press &quot;Save&quot; button.
+</source>
+        <translation type="unfinished">Nicht gespeicherte Daten schließen und verwerfen? - Drücken Sie die Schaltfläche „Ja“.
+Vorgang abbrechen? - Drücken Sie die Schaltfläche „Nein“.
+Daten in aktuelle Datei speichern? - Klicken Sie auf die Schaltfläche „Speichern“.
+</translation>
+    </message>
+    <message>
+        <source>What to do with the unsaved data?</source>
+        <translation type="unfinished">Was tun mit den nicht gespeicherten Daten?</translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::FindEmbellisher</name>
+    <message>
+        <source>Find text previous</source>
+        <translation type="unfinished">Suchen Sie den vorherigen Text</translation>
+    </message>
+    <message>
+        <source>Find text next</source>
+        <translation type="unfinished">Suchen Sie als nächstes den Text</translation>
+    </message>
+    <message>
+        <source>Input the search text:</source>
+        <translation type="unfinished">Geben Sie den Suchtext ein:</translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::GoToLineEmbellisher</name>
+    <message>
+        <source>Go to line</source>
+        <translation type="unfinished">Gehen Sie zur Zeile</translation>
+    </message>
+    <message>
+        <source>Line </source>
+        <translation type="unfinished">Linie </translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::HtmlDealer</name>
+    <message>
+        <source>HTML</source>
+        <translation type="unfinished">HTML</translation>
+    </message>
+    <message>
+        <source>Headers &lt;hN&gt;</source>
+        <translation type="unfinished">Header-Tags &lt;hN&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;b&gt;bold&lt;/b&gt;</source>
+        <translation type="unfinished">Umbruch &lt;b&gt;fett&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;i&gt;italic&lt;/i&gt;</source>
+        <translation type="unfinished">Zeilenumbruch &lt;i&gt;kursiv&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;u&gt;underline&lt;/u&gt;</source>
+        <translation type="unfinished">Umbrechen Sie &lt;u&gt;Unterstreichung&lt;/u&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;a href=&quot;&quot;...&gt;</source>
+        <translation type="unfinished">Wrap &lt;a href=&quot;&quot;...&gt;</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;p&gt;&lt;/p&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;p&gt;&lt;/p&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;pre&gt;&lt;/pre&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;pre&gt;&lt;/pre&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h1&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h1&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h2&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h2&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h3&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h3&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h4&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h4&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h5&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h5&gt; ein</translation>
+    </message>
+    <message>
+        <source>Wrap &lt;h6&gt;</source>
+        <translation type="unfinished">Wickeln Sie &lt;h6&gt; ein</translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::MenuEmbellisher</name>
+    <message>
+        <source>File</source>
+        <translation type="unfinished">Datei</translation>
+    </message>
+    <message>
+        <source>Find</source>
+        <translation type="unfinished">Finden</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Helfen</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished">Neu</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Offen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Datei speichern</translation>
+    </message>
+    <message>
+        <source>SaveAs</source>
+        <translation type="unfinished">Datei speichern als</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Schließen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopieren</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished">Schneiden</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation type="unfinished">Daten einfügen</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished">Rückgängig machen</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished">Wiederholen</translation>
+    </message>
+    <message>
+        <source>Find backwards</source>
+        <translation type="unfinished">Rückwärts finden</translation>
+    </message>
+    <message>
+        <source>Go to line</source>
+        <translation type="unfinished">Gehen Sie zur Zeile</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Über das Programm</translation>
+    </message>
+    <message>
+        <source>About Qt5</source>
+        <translation type="unfinished">Über das Qt5-Programm</translation>
+    </message>
+</context>
+<context>
+    <name>qt5simpleted22::TxtDealer</name>
+    <message>
+        <source>Error while opening the file: </source>
+        <translation type="unfinished">Fehler beim Öffnen der Datei: </translation>
     </message>
 </context>
 </TS>

@@ -30,6 +30,8 @@
 
 #include "Qt1SimpleTextEditor-conf.h"
 
+namespace qt5simpleted22 {
+
 EditorWindow::EditorWindow()
     : menus{*this},
       about{*this},
@@ -48,23 +50,23 @@ EditorWindow::EditorWindow()
   updateWindowTitle("[*]");
 }
 
-void EditorWindow::setMainMenu(QMenuBar& menu) { setMenuBar(&menu); }
+void EditorWindow::setMainMenu(QMenuBar &menu) { setMenuBar(&menu); }
 
-QTextEdit& EditorWindow::getTextEdit() { return textEdit; }
+QTextEdit &EditorWindow::getTextEdit() { return textEdit; }
 
-void EditorWindow::showStatusMessage(const char* status) {
+void EditorWindow::showStatusMessage(const char *status) {
   showStatusMessage(QString(status));
 }
 
-void EditorWindow::showStatusMessage(const QString& status) {
+void EditorWindow::showStatusMessage(const QString &status) {
   permanentStatus.setText(status);
 }
 
-bool EditorWindow::openFile(const char* path) {
+bool EditorWindow::openFile(const char *path) {
   return openFile(QString(path));
 }
 
-bool EditorWindow::openFile(const QString& path) {
+bool EditorWindow::openFile(const QString &path) {
   return clear() && dealer.openFile(path) && setUnchanged();
 }
 
@@ -109,11 +111,11 @@ bool EditorWindow::saveFileAs() {
   return dealer.saveFileAs() && setUnchanged();
 }
 
-QString EditorWindow::t(const char* txt, const char* ctx) {
+QString EditorWindow::t(const char *txt, const char *ctx) {
   return QApplication::translate(ctx, txt);
 }
 
-QMainWindow& EditorWindow::widget() { return *this; }
+QMainWindow &EditorWindow::widget() { return *this; }
 
 void EditorWindow::paste() { textEdit.paste(); }
 
@@ -129,22 +131,23 @@ void EditorWindow::show_about() { about.show(); }
 
 void EditorWindow::show_find() { finder.show(); }
 
-void EditorWindow ::show_find_back() { finder.show(true); }
+void EditorWindow::show_find_back() { finder.show(true); }
 
-void EditorWindow ::show_goto() { gotoLine.show_goto(); }
+void EditorWindow::show_goto() { gotoLine.show_goto(); }
 
-void EditorWindow ::textChanged() { setWindowModified(true); }
+void EditorWindow::textChanged() { setWindowModified(true); }
 
-bool EditorWindow ::setUnchanged() {
+bool EditorWindow::setUnchanged() {
   setWindowModified(false);
   return !isTextChanged();
 }
 
 bool EditorWindow::isTextChanged() { return isWindowModified(); }
 
-void EditorWindow::updateWindowTitle(const QString& appender) {
-  static const QString projectName{qt1simpleted::constants::PROJECT_NAME};
-  static const QString projectVersion{qt1simpleted::constants::EDITOR_VERSION};
+void EditorWindow::updateWindowTitle(const QString &appender) {
+  static const QString projectName{qt5simpleted22::constants::PROJECT_NAME};
+  static const QString projectVersion{
+      qt5simpleted22::constants::EDITOR_VERSION};
 
   setWindowTitle(projectName + " " + projectVersion +
                  (appender.isEmpty() ? appender : " " + appender));
@@ -152,13 +155,13 @@ void EditorWindow::updateWindowTitle(const QString& appender) {
 
 void EditorWindow::show_about_qt() { about.show_aboutQt(); }
 
-void EditorWindow::addToEdit(QMenu& newMenu) { menus.addToEdit(newMenu); }
+void EditorWindow::addToEdit(QMenu &newMenu) { menus.addToEdit(newMenu); }
 
-void EditorWindow::removeFromEdit(QMenu& newMenu) {
+void EditorWindow::removeFromEdit(QMenu &newMenu) {
   menus.removeFromEdit(newMenu);
 }
 
-void EditorWindow::closeEvent(QCloseEvent* event) {
+void EditorWindow::closeEvent(QCloseEvent *event) {
   // just in case
   if (event == nullptr) {
     return;
@@ -168,3 +171,5 @@ void EditorWindow::closeEvent(QCloseEvent* event) {
     event->ignore();
   }
 }
+
+}  // namespace qt5simpleted22

@@ -31,7 +31,9 @@
 
 #include "EditorWindow.h"
 
-WindowFactory::WindowFactory(int& argc, char**& argv)
+namespace qt5simpleted22 {
+
+WindowFactory::WindowFactory(int &argc, char **&argv)
     : m_argc(argc), m_argv(argv) {}
 
 int WindowFactory::run() {
@@ -46,13 +48,13 @@ int WindowFactory::run() {
   return EditorApp.exec();
 }
 
-int WindowFactory::execute(int& argc, char**(&argv)) {
+int WindowFactory::execute(int &argc, char **(&argv)) {
   WindowFactory factory(argc, argv);
 
   return factory.run();
 }
 
-void WindowFactory::installTranslators(QApplication& app) {
+void WindowFactory::installTranslators(QApplication &app) {
   static QTranslator translator;
 
   // TODO: specify system installation
@@ -62,3 +64,5 @@ void WindowFactory::installTranslators(QApplication& app) {
     app.installTranslator(&translator);
   }
 }
+
+}  // namespace qt5simpleted22

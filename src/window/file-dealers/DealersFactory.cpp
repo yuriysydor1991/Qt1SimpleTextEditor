@@ -33,10 +33,12 @@
 #include "IEditorWindow.h"
 #include "TxtDealer.h"
 
-DealersFactory::DealersFactory(IEditorWindow& main) : window{main} {}
+namespace qt5simpleted22 {
+
+DealersFactory::DealersFactory(IEditorWindow &main) : window{main} {}
 
 std::shared_ptr<IDealer> DealersFactory::dealer_by_ext(
-    const QString& filepath) {
+    const QString &filepath) {
   QFileInfo finfo(filepath);
   // returns txt
   QString ext = finfo.completeSuffix();
@@ -52,6 +54,8 @@ std::shared_ptr<IDealer> DealersFactory::defaultDealer() {
   return std::make_shared<TxtDealer>(window);
 }
 
-std::shared_ptr<IDealer> DealersFactory ::htmlDealer() {
+std::shared_ptr<IDealer> DealersFactory::htmlDealer() {
   return std::make_shared<HtmlDealer>(window);
 }
+
+}  // namespace qt5simpleted22

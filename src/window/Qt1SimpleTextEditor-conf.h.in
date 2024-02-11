@@ -26,7 +26,7 @@
 #ifndef QT1SIMPLETEXTEDITORDEMO_CONF_H
 #define QT1SIMPLETEXTEDITORDEMO_CONF_H
 
-namespace qt1simpleted::constants {
+namespace qt5simpleted22::constants {
 
 constexpr const char* const EDITOR_VERSION = "${CMAKE_PROJECT_VERSION}" ;
 constexpr const char* const EDITOR_CREATOR_NAME = "${EDITOR_CREATOR_NAME}" ;
@@ -37,6 +37,6 @@ constexpr const char* const PROJECT_GIT_COMMIT = "${PROJECT_GIT_COMMIT}";
 constexpr const char* const PROJECT_BUILD_DATE = "${PROJECT_BUILD_DATE}";
 constexpr const char* const PROJECT_NAME = "${PROJECT_NAME}";
 
-}
+} // qt5simpleted22::constants
 
 #endif //QT1SIMPLETEXTEDITORDEMO_CONF_H

@@ -31,7 +31,9 @@
 #include "Qt1SimpleTextEditor-conf.h"
 #include "kytok.org.ua-logo.h"
 
-AboutDialogEmbellisher ::AboutDialogEmbellisher(IEditorWindow& main)
+namespace qt5simpleted22 {
+
+AboutDialogEmbellisher::AboutDialogEmbellisher(IEditorWindow &main)
     : window{main},
       dialog{&main.widget()},
       vbox{QBoxLayout::Direction::LeftToRight, &dialog},
@@ -39,7 +41,7 @@ AboutDialogEmbellisher ::AboutDialogEmbellisher(IEditorWindow& main)
   build_dialog();
 }
 
-void AboutDialogEmbellisher ::show() { dialog.show(); }
+void AboutDialogEmbellisher::show() { dialog.show(); }
 
 void AboutDialogEmbellisher::build_dialog() {
   dialog.setModal(true);
@@ -76,13 +78,13 @@ void AboutDialogEmbellisher::set_labels() {
                         make_homepage_link());
 
   buildLabel.setText(window.t("Build date: ", classname) +
-                     QString{qt1simpleted::constants::PROJECT_BUILD_DATE} +
+                     QString{qt5simpleted22::constants::PROJECT_BUILD_DATE} +
                      window.t(" and git commit: ", classname) +
-                     QString{qt1simpleted::constants::PROJECT_GIT_COMMIT});
+                     QString{qt5simpleted22::constants::PROJECT_GIT_COMMIT});
 
   bool imageLoaded =
-      logo.loadFromData(qt1simpleted::images::kytok_logo_data,
-                        qt1simpleted::images::kytok_logo_data_size);
+      logo.loadFromData(qt5simpleted22::images::kytok_logo_data,
+                        qt5simpleted22::images::kytok_logo_data_size);
 
   if (imageLoaded) {
     logo = logo.scaled(LOGO_SCALE_WIDTH, LOGO_SCALE_HEIGHT);
@@ -97,31 +99,33 @@ void AboutDialogEmbellisher::set_labels() {
 }
 
 QString AboutDialogEmbellisher::make_creator_name() {
-  return QString{qt1simpleted::constants::EDITOR_CREATOR_NAME};
+  return QString{qt5simpleted22::constants::EDITOR_CREATOR_NAME};
 }
 
 QString AboutDialogEmbellisher::make_creator_email_link() {
-  return make_link(qt1simpleted::constants::EDITOR_CREATOR_EMAIL,
-                   qt1simpleted::constants::EDITOR_CREATOR_EMAIL);
+  return make_link(qt5simpleted22::constants::EDITOR_CREATOR_EMAIL,
+                   qt5simpleted22::constants::EDITOR_CREATOR_EMAIL);
 }
 
 QString AboutDialogEmbellisher::make_homepage_link() {
-  return make_link(qt1simpleted::constants::EDITOR_HOMEPAGE_URL,
-                   qt1simpleted::constants::EDITOR_HOMEPAGE_URL);
+  return make_link(qt5simpleted22::constants::EDITOR_HOMEPAGE_URL,
+                   qt5simpleted22::constants::EDITOR_HOMEPAGE_URL);
 }
 
-QString AboutDialogEmbellisher ::make_git_link() {
-  return make_link(qt1simpleted::constants::PROJECT_GIT_URL,
-                   qt1simpleted::constants::PROJECT_GIT_URL);
+QString AboutDialogEmbellisher::make_git_link() {
+  return make_link(qt5simpleted22::constants::PROJECT_GIT_URL,
+                   qt5simpleted22::constants::PROJECT_GIT_URL);
 }
 
-QString AboutDialogEmbellisher ::make_link(const QString& url,
-                                           const QString& text) {
+QString AboutDialogEmbellisher::make_link(const QString &url,
+                                          const QString &text) {
   return QString{"<a href=\""} + (url.contains("@") ? "mailto:" + url : url) +
          "\">" + text + "</a>";
 }
 
-void AboutDialogEmbellisher ::show_aboutQt() {
+void AboutDialogEmbellisher::show_aboutQt() {
   QMessageBox::aboutQt(&window.widget(),
                        window.t("About used Qt5 framework", classname));
 }
+
+}  // namespace qt5simpleted22

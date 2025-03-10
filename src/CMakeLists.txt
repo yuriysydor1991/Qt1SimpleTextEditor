@@ -34,7 +34,7 @@ if (CLANG_FORMAT_EXEC)
 
     add_custom_target (
             clang-format
-            COMMAND ${CLANG_FORMAT_EXEC} -style=file --verbose -i ${ALLSOURCES}
+            COMMAND ${CLANG_FORMAT_EXEC} -style=file:'../.clang-format' --verbose -i ${ALLSOURCES}
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 else()
